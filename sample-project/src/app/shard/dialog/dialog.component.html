@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="form_area">
+        <p class="btn_area"> 
+        <mat-form-field class="">
+            <mat-label>타이틀</mat-label>
+            <input matInput placeholder="Ex. Pizza" value="타이틀">
+        </mat-form-field>
+        </p>
+        <p class="btn_area"> 
+        <mat-form-field class="">
+            <mat-label>URL</mat-label>
+            <input matInput placeholder="Ex. Pizza" value="URl">
+        </mat-form-field>
+        </p>
+  
+        <p class="btn_area"> 
+            <button mat-raised-button color="primary" (click)="flie_uploader.click()">
+                <mat-icon>image</mat-icon>
+                이미지 찾기
+            </button>       
+            <input type="file" hidden #flie_uploader accept="image/png, image/jpeg" multiple (change)="selectFile($event.target.files)">
+        </p>
+        <p class="btn_area">
+        <button mat-raised-button color="primary">추가</button><button mat-raised-button>취소</button>
+        </p>
+    </div>
+    <div class="thumnail_area">
+        <img [src]="imageSrc" />
+    </div>
+</div>

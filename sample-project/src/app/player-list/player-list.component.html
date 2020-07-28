@@ -1,0 +1,7 @@
+<mat-list role="list" *ngFor="let data of list">
+  <mat-list-item role="listitem">{{data.title}}</mat-list-item>
+</mat-list>
+<div class="button-area">
+<button class="btn" (click)="add()" mat-raised-button color="primary" >리스트 추가</button>
+<button class="btn" mat-raised-button (click)="del()">리스트 삭제</button>
+</div>

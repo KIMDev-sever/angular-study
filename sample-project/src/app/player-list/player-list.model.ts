@@ -1,6 +1,6 @@
-export interface PlayerModel{
-    playerId:string;
-    title:string;
-    index:number;
-    thumnail:string;
+export interface PlayerModel {
+    playerId: string;
+    title: string;
+    index: number;
+    thumnail: string;
 }

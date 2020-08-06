@@ -34,11 +34,9 @@ export class DialogComponent implements OnInit {
     if (files && files.length > 0) {
       // For Preview
       const file = files[0];
-      this.utilityService.imageUpload(file).then((value) => {
+      // tslint:disable-next-line:no-unused-expression
+      Promise.all([this.utilityService.imageUpload(file)]).then(() => {
 
-        // this.imageSrc = ;
-      }).catch((error) => {
-        console.error(error);
       });
     }
   }

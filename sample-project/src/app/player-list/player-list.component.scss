@@ -1,6 +1,20 @@
-.button-area{
-    width: 100%;
-    .btn {
-        margin: 10px;
+.wrapper{
+    .list-area{
+        margin-top: 50px;
+        .item{
+            cursor: pointer;
+            margin-bottom: 20px;
+            height: 100px;
+        }
+        .item:hover{
+            background: #3f51b5 ;
+        }
     }
+    .button-area{
+        width: 100%;
+        .btn {
+            margin: 10px;
+        }
+    }
+    
 }

@@ -1,19 +1,22 @@
-import { Component, OnInit , OnDestroy} from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { PlayerModel } from './player-list.model';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../shard/dialog/dialog.component';
 import { Subscription } from 'rxjs';
-
-@Component({
+import { UtilityService } from '../shard/utility.service';
+@Component({ 
   selector: 'app-player-list',
   templateUrl: './player-list.component.html',
   styleUrls: ['./player-list.component.scss']
 })
 export class PlayerListComponent implements OnInit, OnDestroy {
-  list: PlayerModel[];
+  list: PlayerModel[] = [];
   subscription: Subscription = new Subscription();
+
+
   constructor(
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private utilityService: UtilityService,
   ) {
 
   }
@@ -21,23 +24,28 @@ export class PlayerListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
   // tslint:disable-next-line:typedef
-  add(): void  {
+  add(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '80%',
       height: '80%'
     });
 
     this.subscription.add(dialogRef.afterClosed().subscribe((result: PlayerModel) => {
-      const data: PlayerModel = {
-        index: this.list.length,
-        playerId: result.playerId,
-        thumnail: result.thumnail,
-        title: result.title
-      };
+      console.log(result);
+      if (!!result) {
+        const data: PlayerModel = { ...result };
+        this.list.push(data);
+        data.index = this.list.length;
+        // 데이터 베이스 처리는 나중에 함
+      }
+
     }));
   }
-
-  del(): void  {
+  // tslint:disable-next-line:typedef
+  playVideo(videoId: string){
+    this.utilityService.setStringdata(videoId);
+  }
+  del(): void {
   }
 
   ngOnDestroy(): void {

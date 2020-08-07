@@ -1,7 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 
 import { UtilityService } from '../utility.service';
-import { MatDialogRef} from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { VirtualTimeScheduler } from 'rxjs';
+import { PlayerModel } from 'src/app/player-list/player-list.model';
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
@@ -10,18 +13,30 @@ import { MatDialogRef} from '@angular/material/dialog';
 export class DialogComponent implements OnInit {
   imageSrc = '../../../assets/image.png';
   reader: FileReader;
+  data: PlayerModel = {
+    index: 0,
+    playerId: '',
+    thumnail: '',
+    title: ''
+  };
   constructor(
     private utilityService: UtilityService,
-    private matDialogRef: MatDialogRef<DialogComponent>
+    private matDialogRef: MatDialogRef<DialogComponent>,
+
   ) { }
 
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line:typedef
+  addData(key: string, value: string) {
+    this.data[key] = value;
+  }
 
   // tslint:disable:typedef
-  addData() {
-    this.matDialogRef.close();
+  commitData() {
+    this.data.thumnail = this.imageSrc;
+    this.matDialogRef.close(this.data);
     // 프로미스로 구현할 예정
   }
 
@@ -30,13 +45,15 @@ export class DialogComponent implements OnInit {
   }
   // tslint:disable-next-line:typedef
   selectFile(files: FileList): void {
-    const message = '';
     if (files && files.length > 0) {
-      // For Preview
       const file = files[0];
       // tslint:disable-next-line:no-unused-expression
-      Promise.all([this.utilityService.imageUpload(file)]).then(() => {
-
+      this.utilityService.imageUpload(file).then((value) => {
+        // tslint:disable-next-line:no-string-literal
+        if (!!value['message'] && value['message'] === 'ok') {
+          this.utilityService.openSnackBar('이미지가 업로드 되였습니다.');
+          this.imageSrc = 'http://localhost:3000/images/' + file.name;
+        }
       });
     }
   }

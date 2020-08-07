@@ -7,14 +7,15 @@ var body_parse = require("body-parser");
 var app = express();
 app.use(cos());
 app.use(body_parse.json());
+app.use(express.static('./public'));
 app.post('/createImg', function (req, res) {
-    var body = req['body'];
-    if (!!body) {
-        var binaryData = new Buffer(body, 'base64').toString('binary');
-        fs.writeFile('test.png', binaryData, { encoding: 'binary' }, function (value) {
-            console.log(value);
+    var request = req['body'];
+    if (!!request) {
+        var binaryData = Buffer.from(request['body'], 'base64');
+        fs.writeFile('./public/images/' + request['fileName'], binaryData, { encoding: 'binary' }, function (value) {
+            var message = value == null ? 'ok' : value;
+            res.send({ message: message });
         });
     }
 });
-app.listen(3000, function () {
-});
+app.listen(3000);

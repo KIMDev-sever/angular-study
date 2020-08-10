@@ -17,18 +17,29 @@ import { DialogComponent } from './shard/dialog/dialog.component';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule   } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatStepperModule} from '@angular/material/stepper';
+import { LoginComponent } from './login/login.component';
+import {MatCardModule} from '@angular/material/card';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { SignUpDialogComponent } from './login/sign-up-dialog/sign-up-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
     YoutubeComponent,
     PlayerListComponent,
-    DialogComponent
+    DialogComponent,
+    LoginComponent,
+    SignUpDialogComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     MatButtonModule,
+    MatCardModule,
     MatIconModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     MatInputModule,
     MatSnackBarModule,

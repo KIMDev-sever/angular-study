@@ -1,0 +1,59 @@
+<div class="wrapper">
+    <div class="container">
+
+        <mat-horizontal-stepper linear #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel>가입여부 확인</ng-template>
+                    <hr>
+                    <div class="content">
+                        <div class="content-form">
+                            <p>
+                                <mat-form-field>
+                                    <input matInput formControlName="firstCtrl" placeholder="이름" required>
+                                </mat-form-field>
+                            </p>
+                            <p>
+                                <mat-form-field>
+                                    <input matInput formControlName="firstCtrl" placeholder="생년월일" required>
+                                </mat-form-field>
+                            </p>
+                            <p>
+                                <mat-form-field>
+                                    <input matInput formControlName="firstCtrl" placeholder="전화번호" required>
+                                </mat-form-field>
+                            </p>
+                        </div>
+                        <div class="content-btn">
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="secondFormGroup">
+                <form [formGroup]="secondFormGroup">
+                    <ng-template matStepLabel>정보 입력</ng-template>
+                    <hr>
+                    <mat-form-field>
+                        <mat-label>Address</mat-label>
+                        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+                    </mat-form-field>
+                    <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>가입 완료</ng-template>
+                <hr>
+                <p>You are now done.</p>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button (click)="stepper.reset()">Reset</button>
+                </div>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+</div>

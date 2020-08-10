@@ -4,7 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../shard/dialog/dialog.component';
 import { Subscription } from 'rxjs';
 import { UtilityService } from '../shard/utility.service';
-@Component({ 
+import { filter } from 'rxjs/operators';
+@Component({
   selector: 'app-player-list',
   templateUrl: './player-list.component.html',
   styleUrls: ['./player-list.component.scss']
@@ -30,8 +31,7 @@ export class PlayerListComponent implements OnInit, OnDestroy {
       height: '80%'
     });
 
-    this.subscription.add(dialogRef.afterClosed().subscribe((result: PlayerModel) => {
-      console.log(result);
+    this.subscription.add(dialogRef.afterClosed().pipe(filter(value => !!value)).subscribe((result: PlayerModel) => {
       if (!!result) {
         const data: PlayerModel = { ...result };
         this.list.push(data);
@@ -42,7 +42,7 @@ export class PlayerListComponent implements OnInit, OnDestroy {
     }));
   }
   // tslint:disable-next-line:typedef
-  playVideo(videoId: string){
+  playVideo(videoId: string) {
     this.utilityService.setStringdata(videoId);
   }
   del(): void {

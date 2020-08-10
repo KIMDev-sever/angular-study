@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './youtube.component.html',
   styleUrls: ['./youtube.component.scss']
 })
-export class YoutubeComponent implements OnInit,OnDestroy {
+export class YoutubeComponent implements OnInit, OnDestroy {
 
   value = 'vVaMN9R93ro';
   src: SafeResourceUrl;
@@ -24,6 +24,7 @@ export class YoutubeComponent implements OnInit,OnDestroy {
     this.src = this.domSanitizer.bypassSecurityTrustResourceUrl(`http://www.youtube.com/embed/${this.value}?enablejsapi=1&origin=http://example.com`);
     // 유튜브 소스 초기화
   }
+
 
 
   ngOnInit(): void {

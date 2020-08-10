@@ -14,6 +14,7 @@ export class DialogComponent implements OnInit {
   imageSrc = '../../../assets/image.png';
   reader: FileReader;
   data: PlayerModel = {
+    memberId: '',
     index: 0,
     playerId: '',
     thumnail: '',
@@ -35,9 +36,7 @@ export class DialogComponent implements OnInit {
 
   // tslint:disable:typedef
   commitData() {
-    this.data.thumnail = this.imageSrc;
     this.matDialogRef.close(this.data);
-    // 프로미스로 구현할 예정
   }
 
   cencel() {
@@ -53,6 +52,7 @@ export class DialogComponent implements OnInit {
         if (!!value['message'] && value['message'] === 'ok') {
           this.utilityService.openSnackBar('이미지가 업로드 되였습니다.');
           this.imageSrc = 'http://localhost:3000/images/' + file.name;
+          this.addData('thumnail', this.imageSrc);
         }
       });
     }

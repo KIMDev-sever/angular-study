@@ -6,19 +6,22 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class UtilityService {
+  // tslint:disable:typedef
+  // tslint:disable:variable-name
   corsHeaders: HttpHeaders;
   imageSrc: string | ArrayBuffer;
-  behaviorSubject = new BehaviorSubject<string>(null);
+
+  string_data_subject = new BehaviorSubject<string>(null);
+  send_loadingSW = new BehaviorSubject<boolean>(null);
   constructor(
     private httpClient: HttpClient,
-    // tslint:disable-next-line:variable-name
     private _snackBar: MatSnackBar,
   ) {
   }
 
   imageUpload(file: File): Promise<object> {
-    // tslint:disable-next-line:one-variable-per-declaration
-    // tslint:disable-next-line:prefer-const
+    // tslint:disable:one-variable-per-declaration
+    // tslint:disable:prefer-const
     let promise: Promise<object>;
     this.corsHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -32,7 +35,6 @@ export class UtilityService {
         { body: value, fileName: file.name }, { headers: this.corsHeaders }).toPromise();
     });
   }
-
   getImageSrc(reader: FileReader): Promise<string> {
     return new Promise((resolve, reject) => {
       reader.onload = (() => {
@@ -40,18 +42,23 @@ export class UtilityService {
       });
     });
   }
-  // tslint:disable-next-line:typedef
+
   openSnackBar(message: string) {
     this._snackBar.open(message, '', {
       duration: 2000,
     });
   }
-  // tslint:disable-next-line:typedef
   setStringdata(data: string) {
-    this.behaviorSubject.next(data);
+    this.string_data_subject.next(data);
   }
-  // tslint:disable-next-line:typedef
-  getStringdata(){
-    return this.behaviorSubject.asObservable();
+
+  getStringdata() {
+    return this.string_data_subject.asObservable();
+  }
+  setLoadingCheckData(sw: boolean) {
+    this.send_loadingSW.next(sw);
+  }
+  getLoadingCheckData() {
+    return this.send_loadingSW.asObservable();
   }
 }

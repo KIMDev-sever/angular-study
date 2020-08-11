@@ -1,3 +1,8 @@
+<div class="wrapper" [ngClass]="loadingSw?'show_spinner':''">
+  <div class="loading" *ngIf="loadingSw">
+    <mat-spinner class="spinner"></mat-spinner>
+  </div>
+
 <mat-toolbar color="primary">
   <span class="title" (click)="drawer.toggle()">
     <mat-icon>menu</mat-icon></span>
@@ -16,4 +21,5 @@
   </mat-drawer-container>
 
 
+</div>
 </div>

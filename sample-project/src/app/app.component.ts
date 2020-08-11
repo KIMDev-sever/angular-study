@@ -1,22 +1,24 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { AppService } from 'src/app/app.service';
+import { UtilityService } from './shard/utility.service';
+import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  numers: number[];
-  // tslint:disable-next-line:variable-name
-  _el: Element;
-  src: string;
+  loadingSw = false;
+  subscription = new Subscription();
   constructor(
-    private appService: AppService,   // 의존성주입 내부에서 만든 변수를 외부에서 넣어줌,
-    private el: ElementRef
+    private utilityService: UtilityService// 의존성주입 내부에서 만든 변수를 외부에서 넣어줌,
   ) {
-    this._el = this.el.nativeElement;
 
   }
   ngOnInit(): void {
+    this.subscription.add(
+      this.utilityService.getLoadingCheckData().subscribe((value: boolean) => {
+        this.loadingSw = value;
+      }));
   }
 }

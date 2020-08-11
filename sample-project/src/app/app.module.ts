@@ -22,6 +22,9 @@ import { LoginComponent } from './login/login.component';
 import {MatCardModule} from '@angular/material/card';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SignUpDialogComponent } from './login/sign-up-dialog/sign-up-dialog.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +38,7 @@ import { SignUpDialogComponent } from './login/sign-up-dialog/sign-up-dialog.com
     BrowserModule,
     HttpClientModule,
     MatButtonModule,
+    MatNativeDateModule,
     MatCardModule,
     MatIconModule,
     MatStepperModule,
@@ -45,12 +49,16 @@ import { SignUpDialogComponent } from './login/sign-up-dialog/sign-up-dialog.com
     MatSnackBarModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
+    MatProgressSpinnerModule,
     MatDialogModule,
     MatListModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDatepickerModule
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

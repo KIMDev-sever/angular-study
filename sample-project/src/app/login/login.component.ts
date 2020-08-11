@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
   signUp(){
     this.dialog.open(SignUpDialogComponent, {
       width: '80%',
-      height: '80%'
+      height: '70%'
     });
   }
 }

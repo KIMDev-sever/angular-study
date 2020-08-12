@@ -10,31 +10,34 @@
 
                     <div class="content">
                     <div class="content-form">
-
                         <p>
                             <mat-form-field class="content-field">
                                 <input matInput formControlName="name" placeholder="이름" required>
+                                <mat-error *ngIf="firstFormGroup.get('name').hasError('required')">이름을 입력해주세요</mat-error>
                             </mat-form-field>
                         </p>
                         <p>
                             <mat-form-field class="content-field">
                                 <mat-label>생년월일</mat-label>
-                                <input matInput formControlName="birthDay" [matDatepicker]="picker">
+                                <input matInput formControlName="birthDay" [matDatepicker]="picker" #test>
                                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                 <mat-datepicker #picker></mat-datepicker>
+                                <mat-error *ngIf="firstFormGroup.get('birthDay').hasError('required')">생년월일을 잘못되거나 </mat-error>
                             </mat-form-field>
                         </p>
                         <p>
                             <mat-form-field class="content-field">
                                 <mat-label>전화번호</mat-label>
-                                <input matInput formControlName="phoneNumber" placeholder="-없이 입력" required type="tel">
+                                <input matInput formControlName="phoneNumber" placeholder="-없이 입력" required>
+                                <mat-error *ngIf="firstFormGroup.get('phoneNumber').hasError('required')">전화번호를 입력해주세요</mat-error>
+                                <mat-error *ngIf="firstFormGroup.get('phoneNumber').hasError('pattern')">전화번호가 잘못되였습니다.</mat-error>
                             </mat-form-field>
                         </p>
                     </div>
                     </div>
                     <div class="content-btn">
                        <br>
-                        <button mat-raised-button color="primary" (click)="signUp(1,stepper)">다음</button>
+                        <button mat-raised-button color="primary" (click)="signUp(1,stepper)" [disabled]="firstFormGroup.errors">다음</button>
                     </div>
                 </form>
             </mat-step>
@@ -42,22 +45,23 @@
             <mat-step [stepControl]="secondFormGroup">
                 <form [formGroup]="secondFormGroup">
                     <ng-template matStepLabel>정보 입력</ng-template>
-                    <hr>
+                 
                     <div class="content">
                         <div class="content-form">
                             <p>
                                 <mat-form-field class="content-field">
                                     <mat-label>아이디</mat-label>
-                                    <input matInput formControlName="id" placeholder="아이디" required>
-                                    <mat-error>아이디 입력해주세요</mat-error>
+                                    <input matInput formControlName="name" required>
                                 </mat-form-field>
-
+                                &nbsp;&nbsp;
+                                <button mat-raised-button color="primary">중복체크</button>
                             </p>
                             <p>
                                 <mat-form-field class="content-field">
                                     <mat-label>비밀번호</mat-label>
                                     <input matInput type="password" formControlName="password" placeholder="비밀번호"
                                         required>
+                                    <mat-error *ngIf="secondFormGroup.get('password').hasError('required')">이름을 입력해주세요</mat-error>
                                 </mat-form-field>
                             </p>
                             <p>
@@ -81,11 +85,19 @@
                                         type="tel">
                                 </mat-form-field>
                             </p>
+                            <p>
+                                <mat-form-field class="content-field">
+                                    <mat-label>관심사</mat-label>
+                                    <input matInput formControlName="phoneNumber" placeholder="-없이 입력" required
+                                        type="tel">
+                                </mat-form-field>
+                            </p>
+                        </div>
                         </div>
                         <div class="content-btn">
-                            <button mat-raised-button color="primary" (click)="signUp(2,stepper)">가입하기</button>
+                           <br>
+                            <button mat-raised-button color="primary" (click)="signUp(1,stepper)" [disabled]="firstFormGroup.errors">가입하기</button>
                         </div>
-                    </div>
                 </form>
             </mat-step>
             <mat-step>

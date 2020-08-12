@@ -30,8 +30,12 @@
     &-form{
         display: inline-block;
         width: 50%;
-        margin-top: 12%;
+        margin-top: 5%;
+        margin-bottom: 5%;
         border: 1px solid grey;
+        p{
+            min-width: 210px;
+        }
         &-field{
             width: 300px;
         }
@@ -55,7 +59,7 @@
   }
   
 ::ng-deep .mat-horizontal-content-container {
-    height: 80%;
+    height: 90%;
   }
   
   

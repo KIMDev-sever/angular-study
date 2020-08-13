@@ -51,10 +51,10 @@
                             <p>
                                 <mat-form-field class="content-field">
                                     <mat-label>아이디</mat-label>
-                                    <input matInput formControlName="name" required>
+                                    <input matInput formControlName="id" #id required>
                                 </mat-form-field>
                                 &nbsp;&nbsp;
-                                <button mat-raised-button color="primary">중복체크</button>
+                                <button mat-raised-button color="primary" (click)="checkId(id.value)">중복체크</button>
                             </p>
                             <p>
                                 <mat-form-field class="content-field">

@@ -27,16 +27,40 @@
     border-bottom:1px solid #3f51b5 ;
     height: 100% !important;
     text-align: center;
+    &-message{
+        display: inline-block;
+        margin: 30%;
+    }
     &-form{
         display: inline-block;
-        width: 50%;
+        width: 30%;
         margin-top: 5%;
         margin-bottom: 5%;
-        border: 1px solid grey;
-        min-width: 500px;
-        
-        &-field{
-            width: 300px;
+        min-width: 450px;
+        padding: 1%;
+        .form-table{
+            display: inline-block;
+            text-align: center;
+            .form-row{
+                display: table-row;
+                text-align: center;
+                height: 80px;
+                .form-cell{
+                    display: table-cell;
+                    span{
+                        margin-right: 20px;
+                        font-size: large;
+                        font-weight: bolder;
+                        color: rgba(0,0,0,.54);
+                        display: block;
+                        width: 100px;
+                    }
+                    .content-field{
+                        width: 200px;
+                    }
+                }
+    
+            }
         }
     }
 
@@ -46,6 +70,9 @@
         display: block;
     }
     
+}
+.addbtn{
+    width: 500px;
 }
 .stepper{
     height: 100% !important;

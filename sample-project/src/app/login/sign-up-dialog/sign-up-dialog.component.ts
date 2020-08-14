@@ -8,6 +8,7 @@ import { } from '@angular/material/datepicker';
   styleUrls: ['./sign-up-dialog.component.scss']
 })
 export class SignUpDialogComponent implements OnInit {
+  idChecked = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   // tslint:disable:typedef
@@ -26,24 +27,26 @@ export class SignUpDialogComponent implements OnInit {
     // 작업용 샘플 데이터
     this.firstFormGroup = this._formBuilder.group({
       name: ['test', Validators.required],
-      birthDay: ['1/1/2020', [Validators.required]],
+      birthDay: ['', [Validators.required]],
       phoneNumber: ['01012341234', [Validators.required, Validators.pattern('^\\d{11}$')]]
     });
 
     this.secondFormGroup = this._formBuilder.group({
       id: ['', Validators.required],
-      password: ['', Validators.required, Validators.pattern('')],
+      password: ['', [Validators.required , Validators.pattern('[a-zA-Z0-9]+[!@#$%^*()\\-_=+\\\\|\\[\\]{};:\'",.<>\/?]')]],
       name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       birthDay: ['', Validators.required],
       phoneNumber: ['', [Validators.required, Validators.pattern('^\\d{11}$')]]
     });
   }
   checkId(id: string) {
-
+    console.log(id);
   }
   signUp(level: number, stepper: MatStepper) {
     switch (level) {
       case 1: {
+
         stepper.next();
         break;
       }

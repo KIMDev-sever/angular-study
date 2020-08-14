@@ -9,104 +9,183 @@
                     <ng-template matStepLabel>가입여부 확인</ng-template>
 
                     <div class="content">
-                    <div class="content-form">
-                        <p>
-                            <mat-form-field class="content-field">
-                                <input matInput formControlName="name" placeholder="이름" required>
-                                <mat-error *ngIf="firstFormGroup.get('name').hasError('required')">이름을 입력해주세요</mat-error>
-                            </mat-form-field>
-                        </p>
-                        <p>
-                            <mat-form-field class="content-field">
-                                <mat-label>생년월일</mat-label>
-                                <input matInput formControlName="birthDay" [matDatepicker]="picker" #test>
-                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                <mat-datepicker #picker></mat-datepicker>
-                                <mat-error *ngIf="firstFormGroup.get('birthDay').hasError('required')">생년월일을 잘못되거나 </mat-error>
-                            </mat-form-field>
-                        </p>
-                        <p>
-                            <mat-form-field class="content-field">
-                                <mat-label>전화번호</mat-label>
-                                <input matInput formControlName="phoneNumber" placeholder="-없이 입력" required>
-                                <mat-error *ngIf="firstFormGroup.get('phoneNumber').hasError('required')">전화번호를 입력해주세요</mat-error>
-                                <mat-error *ngIf="firstFormGroup.get('phoneNumber').hasError('pattern')">전화번호가 잘못되였습니다.</mat-error>
-                            </mat-form-field>
-                        </p>
-                    </div>
+                        <div class="content-form">
+                            <div class="form-table">
+                                <div class="form-row">
+                                    <div class="form-cell">
+                                        <span>이름</span>
+                                    </div>
+                                    <div class="form-cell">
+                                        <mat-form-field class="content-field">
+                                            <input matInput formControlName="name" required>
+                                            <mat-error *ngIf="firstFormGroup.get('name').hasError('required')">이름을
+                                                입력해주세요</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-cell">
+                                        <span>생년월일</span>
+                                    </div>
+                                    <div class="form-cell">
+                                        <mat-form-field class="content-field">
+                                            <input matInput formControlName="birthDay" [matDatepicker]="picker">
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                            <mat-error *ngIf="firstFormGroup.get('birthDay').hasError('required')">생년월일
+                                                형식이 잘못되거나 입력이 되지않았습니다.</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-cell">
+                                        <span>연락처</span>
+                                    </div>
+                                    <div class="form-cell">
+                                        <mat-form-field class="content-field">
+                                            <input matInput formControlName="phoneNumber" placeholder="-없이 입력" required>
+                                            <mat-error *ngIf="firstFormGroup.get('phoneNumber').hasError('required')">
+                                                전화번호를
+                                                입력해주세요</mat-error>
+                                            <mat-error *ngIf="firstFormGroup.get('phoneNumber').hasError('pattern')">
+                                                전화번호가
+                                                잘못되였습니다.</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
                     <div class="content-btn">
-                       <br>
-                        <button mat-raised-button color="primary" (click)="signUp(1,stepper)" [disabled]="firstFormGroup.errors">다음</button>
+                        <br>
+                        <button mat-raised-button color="primary" (click)="signUp(1,stepper)"
+                            [disabled]="firstFormGroup.errors">다음</button>
                     </div>
                 </form>
             </mat-step>
-
             <mat-step [stepControl]="secondFormGroup">
                 <form [formGroup]="secondFormGroup">
                     <ng-template matStepLabel>정보 입력</ng-template>
-                 
+
                     <div class="content">
                         <div class="content-form">
-                            <p>
-                                <mat-form-field class="content-field">
-                                    <mat-label>아이디</mat-label>
-                                    <input matInput formControlName="id" #id required>
-                                </mat-form-field>
-                                &nbsp;&nbsp;
-                                <button mat-raised-button color="primary" (click)="checkId(id.value)">중복체크</button>
-                            </p>
-                            <p>
-                                <mat-form-field class="content-field">
-                                    <mat-label>비밀번호</mat-label>
-                                    <input matInput type="password" formControlName="password" placeholder="비밀번호"
-                                        required>
-                                    <mat-error *ngIf="secondFormGroup.get('password').hasError('required')">이름을 입력해주세요</mat-error>
-                                </mat-form-field>
-                            </p>
-                            <p>
-                                <mat-form-field class="content-field">
-                                    <mat-label>이름</mat-label>
-                                    <input matInput formControlName="name" placeholder="이름" required>
-                                </mat-form-field>
-                            </p>
-                            <p>
-                                <mat-form-field class="content-field">
-                                    <mat-label>생년월일</mat-label>
-                                    <input matInput formControlName="birthDay" [matDatepicker]="picker2" required>
-                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                    <mat-datepicker #picker2></mat-datepicker>
-                                </mat-form-field>
-                            </p>
-                            <p>
-                                <mat-form-field class="content-field">
-                                    <mat-label>전화번호</mat-label>
-                                    <input matInput formControlName="phoneNumber" placeholder="-없이 입력" required
-                                        type="tel">
-                                </mat-form-field>
-                            </p>
-                            <p>
-                                <mat-form-field class="content-field">
-                                    <mat-label>관심사</mat-label>
-                                    <input matInput formControlName="phoneNumber" placeholder="-없이 입력" required
-                                        type="tel">
-                                </mat-form-field>
-                            </p>
+
+                            <div class="form-table">
+                                <div class="form-row">
+                                    <div class="form-cell">
+                                        <span>아이디</span>
+                                    </div>
+                                    <div class="form-cell">
+                                        <mat-form-field class="content-field">
+                                            <input matInput formControlName="id" #id required>
+
+                                            <mat-error *ngIf="secondFormGroup.get('id').hasError('required')">아이디 입력해주세요
+                                            </mat-error>
+
+                                        </mat-form-field>
+                                        &nbsp;&nbsp;
+                                        <mat-checkbox class="example-margin" (change)="checkId(id.value)"
+                                            [disabled]="idChecked">중복체크</mat-checkbox>
+
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-cell">
+                                        <span>비밀번호</span>
+                                    </div>
+                                    <div class="form-cell">
+                                        <mat-form-field class="content-field">
+                                            <input matInput type="password" formControlName="password" required>
+                                            <mat-error *ngIf="secondFormGroup.get('password').hasError('required')">
+                                                비밀번호을 입력해주세요</mat-error>
+                                            <mat-error *ngIf="secondFormGroup.get('password').hasError('pattern')">반드시
+                                                특수문자포함을 해야합니다.</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-cell">
+                                        <span>이름</span>
+                                    </div>
+                                    <div class="form-cell">
+                                        <mat-form-field class="content-field">
+                                            <input matInput formControlName="name" required>
+                                            <mat-error *ngIf="secondFormGroup.get('name').hasError('required')">이름을
+                                                입력해주세요</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-cell">
+                                        <span>생년월일</span>
+                                    </div>
+                                    <div class="form-cell">
+                                        <mat-form-field class="content-field">
+                                            <input matInput formControlName="birthDay" [matDatepicker]="picker2">
+                                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker2></mat-datepicker>
+                                            <mat-error *ngIf="secondFormGroup.get('birthDay').hasError('required')">생년월일
+                                                형식이 잘못되거나 입력이 되지않았습니다.</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-cell">
+                                        <span>연락처</span>
+                                    </div>
+                                    <div class="form-cell">
+                                        <mat-form-field class="content-field">
+                                            <input matInput formControlName="phoneNumber" placeholder="-없이 입력" required>
+                                            <mat-error *ngIf="secondFormGroup.get('phoneNumber').hasError('required')">
+                                                전화번호를
+                                                입력해주세요</mat-error>
+                                            <mat-error *ngIf="secondFormGroup.get('phoneNumber').hasError('pattern')">
+                                                전화번호가
+                                                잘못되였습니다.</mat-error>
+                                        </mat-form-field>
+                                    </div>
+
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-cell">
+                                        <span>이메일</span>
+                                    </div>
+                                    <div class="form-cell">
+                                        <mat-form-field class="content-field">
+                                            <mat-label>Email</mat-label>
+                                            <input matInput formControlName="email" placeholder="Ex. pat@example.com">
+                                            <mat-error
+                                                *ngIf="secondFormGroup.get('email').hasError('email') && !secondFormGroup.get('email').hasError('required')">
+                                                이메일 형식이 맞지 않습니다.
+                                            </mat-error>
+                                            <mat-error *ngIf="secondFormGroup.get('email').hasError('required')">
+                                                이메일을 입력해주세요
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        </div>
-                        <div class="content-btn">
-                           <br>
-                            <button mat-raised-button color="primary" (click)="signUp(1,stepper)" [disabled]="firstFormGroup.errors">가입하기</button>
-                        </div>
+                    </div>
+                    <div class="content-btn">
+                        <br>
+                        <button mat-raised-button color="primary" (click)="signUp(2,stepper)">가입하기</button>
+                    </div>
                 </form>
             </mat-step>
             <mat-step>
                 <ng-template matStepLabel>가입 완료</ng-template>
-                <hr>
-                <p>가입이 완료 되었습니다.</p>
-                <div>
-                    <button mat-button (click)="signUp(3,stepper)">닫기</button>>
+                <div class="content">
+                    <div class="content-message">
+                        <p><b>가입이 완료 되었습니다.</b></p>
+                        <div>
+                            <button mat-button (click)="signUp(3,stepper)">닫기</button>
+                        </div>
+                    </div>
                 </div>
+
             </mat-step>
         </mat-horizontal-stepper>
     </div>

@@ -25,6 +25,7 @@ import { SignUpDialogComponent } from './login/sign-up-dialog/sign-up-dialog.com
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatCardModule,
     MatIconModule,
     MatStepperModule,
+    MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,

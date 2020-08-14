@@ -38,8 +38,8 @@ export class LoginComponent implements OnInit {
   // tslint:disable-next-line:typedef
   signUp(){
     this.dialog.open(SignUpDialogComponent, {
-      width: '80%',
-      height: '80%'
+      width: '90%',
+      height: '90%',
     });
   }
 }

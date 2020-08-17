@@ -22,7 +22,6 @@ export class UtilityService {
   imageUpload(file: File): Promise<object> {
     // tslint:disable:one-variable-per-declaration
     // tslint:disable:prefer-const
-    let promise: Promise<object>;
     this.corsHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
       Accept: 'application/json',

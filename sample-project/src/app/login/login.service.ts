@@ -1,21 +1,39 @@
 import { Injectable } from '@angular/core';
-import {MemberModel } from '../shard/member.model';
+import { MemberModel } from '../shard/member.model';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-
-  constructor() { }
+  corsHeaders: HttpHeaders;
+  constructor(
+    private httpClient: HttpClient,
+  ) {
+    this.corsHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    });
+  }
 
   // tslint:disable-next-line:typedef
   login(id: string, password: string) {
   }
   // tslint:disable-next-line:typedef
-  logout(){
+  logout() {
   }
-
+  signUp(data: MemberModel): Promise<object> {
+    return this.httpClient.post('http://localhost:3000/sign_up', // api gateway 사용예정
+      { body: data }, { headers: this.corsHeaders }).toPromise();
+  }
   // tslint:disable-next-line:typedef
-  check_signUp(data: MemberModel){
-
+  confirmSignUp(data: MemberModel, confirmationCode: string) {
+    return this.httpClient.post('http://localhost:3000/confirm_SignUp', // api gateway 사용예정
+      { body: { confirmationCode, id: data.id } }, { headers: this.corsHeaders }).toPromise();
+  }
+  // tslint:disable-next-line:typedef
+  check_signUp(data: MemberModel): Promise<object> {
+    return this.httpClient.post('http://localhost:3000/sign_up_Check', // api gateway 사용예정
+      { body: data }, { headers: this.corsHeaders }).toPromise();
   }
 }

@@ -1,8 +1,5 @@
 <div class="wrapper">
     <div class="container">
-
-
-
         <mat-horizontal-stepper linear #stepper class="stepper">
             <mat-step [stepControl]="firstFormGroup">
                 <form [formGroup]="firstFormGroup" class="stepper-form">
@@ -53,7 +50,7 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
-
+                                <b style="font-size: larger; color: red;" *ngIf="!!idChecked">가입이 되어있습니다</b>
                             </div>
 
                         </div>
@@ -79,7 +76,7 @@
                                     </div>
                                     <div class="form-cell">
                                         <mat-form-field class="content-field">
-                                            <input matInput formControlName="id" #id required>
+                                            <input matInput formControlName="id" #id required (change)="inputData('id',id.value)">
 
                                             <mat-error *ngIf="secondFormGroup.get('id').hasError('required')">아이디 입력해주세요
                                             </mat-error>
@@ -97,7 +94,7 @@
                                     </div>
                                     <div class="form-cell">
                                         <mat-form-field class="content-field">
-                                            <input matInput type="password" formControlName="password" required>
+                                            <input matInput type="password" #password formControlName="password" required (change)="inputData('password',password.value)">
                                             <mat-error *ngIf="secondFormGroup.get('password').hasError('required')">
                                                 비밀번호을 입력해주세요</mat-error>
                                             <mat-error *ngIf="secondFormGroup.get('password').hasError('pattern')">반드시
@@ -111,7 +108,7 @@
                                     </div>
                                     <div class="form-cell">
                                         <mat-form-field class="content-field">
-                                            <input matInput formControlName="name" required>
+                                            <input matInput #name formControlName="name" required (change)="inputData('name',name.value)">
                                             <mat-error *ngIf="secondFormGroup.get('name').hasError('required')">이름을
                                                 입력해주세요</mat-error>
                                         </mat-form-field>
@@ -123,7 +120,7 @@
                                     </div>
                                     <div class="form-cell">
                                         <mat-form-field class="content-field">
-                                            <input matInput formControlName="birthDay" [matDatepicker]="picker2">
+                                            <input matInput #birthDay formControlName="birthDay" [matDatepicker]="picker2" (blur)="inputData('birthDay',birthDay.value)">
                                             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                                             <mat-datepicker #picker2></mat-datepicker>
                                             <mat-error *ngIf="secondFormGroup.get('birthDay').hasError('required')">생년월일
@@ -137,7 +134,7 @@
                                     </div>
                                     <div class="form-cell">
                                         <mat-form-field class="content-field">
-                                            <input matInput formControlName="phoneNumber" placeholder="-없이 입력" required>
+                                            <input matInput formControlName="phoneNumber" #phoneNumber placeholder="-없이 입력" required (change)="inputData('phone_number',phoneNumber.value)">
                                             <mat-error *ngIf="secondFormGroup.get('phoneNumber').hasError('required')">
                                                 전화번호를
                                                 입력해주세요</mat-error>
@@ -155,7 +152,7 @@
                                     <div class="form-cell">
                                         <mat-form-field class="content-field">
                                             <mat-label>Email</mat-label>
-                                            <input matInput formControlName="email" placeholder="Ex. pat@example.com">
+                                            <input matInput #email formControlName="email" (change)="inputData('email',email.value)" placeholder="Ex. pat@example.com">
                                             <mat-error
                                                 *ngIf="secondFormGroup.get('email').hasError('email') && !secondFormGroup.get('email').hasError('required')">
                                                 이메일 형식이 맞지 않습니다.
@@ -176,12 +173,30 @@
                 </form>
             </mat-step>
             <mat-step>
+                <ng-template matStepLabel>인증코드 입력</ng-template>
+                <div class="content">
+                    <div class="content-message">
+                        <p><b>인증코드를 메일로 보내드렸습니다. 인증코드 입력 바랍니다.</b></p>
+                        <div>
+                            <mat-form-field class="content-field">
+                                <input matInput required #code (change)="confirmationCode=code.value" >
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-btn">
+                    <br>
+                    <button mat-raised-button color="primary" (click)="signUp(3,stepper)">다음</button>
+                </div>
+
+            </mat-step>
+            <mat-step>
                 <ng-template matStepLabel>가입 완료</ng-template>
                 <div class="content">
                     <div class="content-message">
                         <p><b>가입이 완료 되었습니다.</b></p>
                         <div>
-                            <button mat-button (click)="signUp(3,stepper)">닫기</button>
+                            <button mat-button (click)="signUp(4,stepper)">닫기</button>
                         </div>
                     </div>
                 </div>

@@ -12,14 +12,9 @@ var ConfigParams = /** @class */ (function () {
         };
     };
     ;
-    ConfigParams.prototype.getUserParam = function (userPoolId, username, name, phone_number) {
+    ConfigParams.prototype.getUserParam = function (userPoolId) {
         return {
-            Username: username,
-            UserPoolId: userPoolId,
-            AttributesToGet: [
-                phone_number,
-                name
-            ]
+            UserPoolId: userPoolId
         };
     };
     ConfigParams.prototype.getSignUpParams = function (data, clientId) {

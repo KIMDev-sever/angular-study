@@ -8,14 +8,9 @@ export class ConfigParams {
         };
     };
 
-    public getUserParam(userPoolId: string, username: string, name: string, phone_number: string) {
+    public getUserParam(userPoolId: string) {
         return {
-            Username: username,
             UserPoolId: userPoolId,
-            AttributesToGet: [
-                phone_number,
-                name
-            ],
         }
     }
     public getSignUpParams(data: MemberModel, clientId: string) {

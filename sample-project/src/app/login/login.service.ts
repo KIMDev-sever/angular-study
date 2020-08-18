@@ -22,6 +22,11 @@ export class LoginService {
   // tslint:disable-next-line:typedef
   logout() {
   }
+
+  id_check(id: string): Promise<object> {
+    return this.httpClient.post('http://localhost:3000/id_check', // api gateway 사용예정
+      { body: id }, { headers: this.corsHeaders }).toPromise();
+  }
   signUp(data: MemberModel): Promise<object> {
     return this.httpClient.post('http://localhost:3000/sign_up', // api gateway 사용예정
       { body: data }, { headers: this.corsHeaders }).toPromise();

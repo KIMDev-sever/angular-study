@@ -25,7 +25,7 @@ app.use(express.static('./public'));
 const awsAccessKeyId = 'AKIAIUNN5K2MSALBN3GA';
 const awsecretKey = '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';
 const clientId = '6ordo7clie48sj0fm4tc2qn26k'
-const userpoolId = ' ap-northeast-2_MyPyTU0ec';
+const userpoolId = 'ap-northeast-2_MyPyTU0ec';
 AWS.config.update({
   accessKeyId: awsAccessKeyId, secretAccessKey: awsecretKey, region: 'ap-northeast-2'
 })
@@ -33,6 +33,7 @@ AWS.config.update({
 const s3 = new AWS.S3;
 const cognito = new AWS.CognitoIdentityServiceProvider();
 
+//추후 lambda로 변경 예정 
 // exports.handler = (event: any, context) => { 
 //   console.log(event)
 // }
@@ -80,32 +81,47 @@ app.post('/sign_up', (req, res) => {
     });
   }
 });
+
+app.post('/id_check',(req, res) => {
+
+});
 app.post('/sign_up_Check', (req, res) => {
   const request = req['body'];
-  const data = request['body'];
-  const params = configParams.getUserParam(userpoolId, data['id'], data['name'], data['phon_number']);
   if (!!request) {
+    const data = request['body'];
+    const params = configParams.getUserParam(userpoolId);
+
     cognito.listUsers(params, (errors, value) => {
-      console.log(value);
       let cheked = false;
       if (!errors) {
         if (!!value) {
-          console.log(value);
+          const user = value.Users?.find((userData) => {
+            const phone_number = userData.Attributes?.find((attribute) => {
+              return (attribute.Value === data['phone_number']);
+            })
+            const birthDay = userData.Attributes?.find((attribute) => {
+              return (attribute.Value === data['birthDay']);
+            })
+            const name = userData.Attributes?.find((attribute) => {
+              return (attribute.Value === data['name']);
+            })
+            return !!phone_number && !!birthDay;
 
-          // const user = value.Users?.find((value) => {
-          //   const user = value.Attributes?.find((attribute) => {
-          //     return attribute
-          //   })
-          // })
-          cheked = false;
+          });
+
+          // 없으면 true반환
+          if (!user) {
+            cheked = true;
+          }
+
         } else {
           cheked = true;
         }
-        //res.send({ cheked })
+        res.send({ cheked })
       }
 
     });
-  }
 
+  }
 });
 app.listen(3000);

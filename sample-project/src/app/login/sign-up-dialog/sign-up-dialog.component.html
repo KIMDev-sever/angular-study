@@ -14,7 +14,7 @@
                                     </div>
                                     <div class="form-cell">
                                         <mat-form-field class="content-field">
-                                            <input matInput formControlName="name" required>
+                                            <input matInput formControlName="name" #name1 required (change)="inputData('name',name1.value)">
                                             <mat-error *ngIf="firstFormGroup.get('name').hasError('required')">이름을
                                                 입력해주세요</mat-error>
                                         </mat-form-field>
@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="form-cell">
                                         <mat-form-field class="content-field">
-                                            <input matInput formControlName="birthDay" [matDatepicker]="picker">
+                                            <input matInput formControlName="birthDay" #birthDay1 [matDatepicker]="picker" (dateChange)="inputData('birthDay',birthDay1.value)">
                                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                             <mat-datepicker #picker></mat-datepicker>
                                             <mat-error *ngIf="firstFormGroup.get('birthDay').hasError('required')">생년월일
@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="form-cell">
                                         <mat-form-field class="content-field">
-                                            <input matInput formControlName="phoneNumber" placeholder="-없이 입력" required>
+                                            <input matInput formControlName="phoneNumber" #phoneNumber1 placeholder="-없이 입력" required (change)="inputData('phone_number',phoneNumber1.value)">
                                             <mat-error *ngIf="firstFormGroup.get('phoneNumber').hasError('required')">
                                                 전화번호를
                                                 입력해주세요</mat-error>
@@ -50,7 +50,7 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
-                                <b style="font-size: larger; color: red;" *ngIf="!!idChecked">가입이 되어있습니다</b>
+                                <b style="font-size: larger; color: red;" *ngIf="!!accountChecked">가입된 회원입니다</b>
                             </div>
 
                         </div>
@@ -80,11 +80,13 @@
 
                                             <mat-error *ngIf="secondFormGroup.get('id').hasError('required')">아이디 입력해주세요
                                             </mat-error>
+                                            <mat-error *ngIf="!!idChecked">
+                                                중복된 아이디 입니다.
+                                            </mat-error>
 
                                         </mat-form-field>
                                         &nbsp;&nbsp;
-                                        <mat-checkbox class="example-margin" (change)="checkId(id.value)"
-                                            [disabled]="idChecked">중복체크</mat-checkbox>
+                                        <mat-checkbox class="example-margin" (change)="checkId(id.value)" >중복체크</mat-checkbox>
 
                                     </div>
                                 </div>
@@ -108,7 +110,7 @@
                                     </div>
                                     <div class="form-cell">
                                         <mat-form-field class="content-field">
-                                            <input matInput #name formControlName="name" required (change)="inputData('name',name.value)">
+                                            <input matInput #name2 formControlName="name" required (change)="inputData('name',name2.value)">
                                             <mat-error *ngIf="secondFormGroup.get('name').hasError('required')">이름을
                                                 입력해주세요</mat-error>
                                         </mat-form-field>
@@ -120,7 +122,7 @@
                                     </div>
                                     <div class="form-cell">
                                         <mat-form-field class="content-field">
-                                            <input matInput #birthDay formControlName="birthDay" [matDatepicker]="picker2" (blur)="inputData('birthDay',birthDay.value)">
+                                            <input matInput #birthDay2 formControlName="birthDay" [matDatepicker]="picker2" (dateChange)="inputData('birthDay',birthDay2.value)">
                                             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                                             <mat-datepicker #picker2></mat-datepicker>
                                             <mat-error *ngIf="secondFormGroup.get('birthDay').hasError('required')">생년월일
@@ -134,7 +136,7 @@
                                     </div>
                                     <div class="form-cell">
                                         <mat-form-field class="content-field">
-                                            <input matInput formControlName="phoneNumber" #phoneNumber placeholder="-없이 입력" required (change)="inputData('phone_number',phoneNumber.value)">
+                                            <input matInput formControlName="phoneNumber" #phoneNumber2 placeholder="-없이 입력" required (change)="inputData('phone_number',phoneNumber2.value)">
                                             <mat-error *ngIf="secondFormGroup.get('phoneNumber').hasError('required')">
                                                 전화번호를
                                                 입력해주세요</mat-error>

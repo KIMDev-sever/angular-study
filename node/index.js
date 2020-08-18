@@ -22,12 +22,13 @@ app.use(express.static('./public'));
 var awsAccessKeyId = 'AKIAIUNN5K2MSALBN3GA';
 var awsecretKey = '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';
 var clientId = '6ordo7clie48sj0fm4tc2qn26k';
-var userpoolId = ' ap-northeast-2_MyPyTU0ec';
+var userpoolId = 'ap-northeast-2_MyPyTU0ec';
 AWS.config.update({
     accessKeyId: awsAccessKeyId, secretAccessKey: awsecretKey, region: 'ap-northeast-2'
 });
 var s3 = new AWS.S3;
 var cognito = new AWS.CognitoIdentityServiceProvider();
+//추후 lambda로 변경 예정 
 // exports.handler = (event: any, context) => { 
 //   console.log(event)
 // }
@@ -76,26 +77,38 @@ app.post('/sign_up', function (req, res) {
 });
 app.post('/sign_up_Check', function (req, res) {
     var request = req['body'];
-    var data = request['body'];
-    var params = configParams.getUserParam(userpoolId, data['id'], data['name'], data['phon_number']);
+    var userName = '';
     if (!!request) {
+        var data_1 = request['body'];
+        var params = configParams.getUserParam(userpoolId);
         cognito.listUsers(params, function (errors, value) {
-            console.log(value);
+            var _a;
             var cheked = false;
             if (!errors) {
                 if (!!value) {
-                    console.log(value);
-                    // const user = value.Users?.find((value) => {
-                    //   const user = value.Attributes?.find((attribute) => {
-                    //     return attribute
-                    //   })
-                    // })
-                    cheked = false;
+                    var user = (_a = value.Users) === null || _a === void 0 ? void 0 : _a.find(function (userData) {
+                        var _a, _b, _c;
+                        var phone_number = (_a = userData.Attributes) === null || _a === void 0 ? void 0 : _a.find(function (attribute) {
+                            return (attribute.Value === data_1['phone_number']);
+                        });
+                        var birthDay = (_b = userData.Attributes) === null || _b === void 0 ? void 0 : _b.find(function (attribute) {
+                            return (attribute.Value === data_1['birthDay']);
+                        });
+                        var name = (_c = userData.Attributes) === null || _c === void 0 ? void 0 : _c.find(function (attribute) {
+                            return (attribute.Value === data_1['name']);
+                        });
+                        return !!phone_number && !!birthDay;
+                    });
+                    userName = user === null || user === void 0 ? void 0 : user.Username;
+                    // 없으면 true반환
+                    if (!user) {
+                        cheked = true;
+                    }
                 }
                 else {
                     cheked = true;
                 }
-                //res.send({ cheked })
+                res.send({ cheked: cheked, userName: userName });
             }
         });
     }

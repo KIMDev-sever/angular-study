@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { UtilityService } from './shard/utility.service';
 import { Subscription } from 'rxjs';
-import { filter } from 'rxjs/operators';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

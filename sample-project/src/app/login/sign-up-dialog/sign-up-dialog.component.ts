@@ -28,6 +28,7 @@ export const MY_FORMATS = {
 })
 export class SignUpDialogComponent implements OnInit {
   idChecked = false;
+  idCheckBoxState = false;
   accountChecked = false;
   confirmationCode = '';
   firstFormGroup: FormGroup;
@@ -67,16 +68,28 @@ export class SignUpDialogComponent implements OnInit {
 
     this.secondFormGroup = this._formBuilder.group({
       id: ['', Validators.required],
-      password: ['', [Validators.required, Validators.pattern('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{6,}$/')]],
+      // tslint:disable-next-line:max-line-length
+      password: ['', [Validators.required, Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])([a-zA-Z0-9@$!%*?&]{8,})$')]],
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       birthDay: ['', Validators.required],
       phoneNumber: ['', [Validators.required, Validators.pattern('^\\d{11}$')]]
     });
   }
-  checkId(id: string) {
+  checkId(id: string, check: boolean) {
+    if (!check){
+      return;
+    }
     this.loginService.id_check(id).then((value) => {
+      const newLocal = 'cheked';
+      console.log(value);
+      if (!!value && !value[newLocal]) {
+        // tslint:disable-next-line:no-string-literal
+        this.idChecked = true;
 
+      } else {
+        this.idChecked = false;
+      }
     });
   }
   inputData(key: string, value: string) {
@@ -95,9 +108,8 @@ export class SignUpDialogComponent implements OnInit {
       case 1: {
         this.loginService.check_signUp(this.member).then((value: object) => {
           // tslint:disable-next-line:no-string-literal
-
           const newLocal = 'cheked';
-          if (!!value && !!value[newLocal]) {
+          if (!!value && !!value[newLocal] && !this.accountChecked) {
             // tslint:disable-next-line:no-string-literal
 
             stepper.next();
@@ -113,7 +125,7 @@ export class SignUpDialogComponent implements OnInit {
         console.log(this.member);
         this.loginService.signUp(this.member).then((value) => {
           // tslint:disable-next-line:no-string-literal
-          if (!!value['message'] && value['message'] === 'ok') {
+          if (!!value['message'] && value['message'] === 'ok' && !this.idChecked) {
             stepper.next();
           }
         });

@@ -76,20 +76,18 @@
                                     </div>
                                     <div class="form-cell">
                                         <mat-form-field class="content-field">
-                                            <input matInput formControlName="id" #id required (change)="inputData('id',id.value)">
+                                            <input matInput formControlName="id" #id required (blur)="inputData('id',id.value)">
 
                                             <mat-error *ngIf="secondFormGroup.get('id').hasError('required')">아이디 입력해주세요
-                                            </mat-error>
-                                            <mat-error *ngIf="!!idChecked">
-                                                중복된 아이디 입니다.
                                             </mat-error>
 
                                         </mat-form-field>
                                         &nbsp;&nbsp;
-                                        <mat-checkbox class="example-margin" (change)="checkId(id.value)" >중복체크</mat-checkbox>
+                                        <mat-checkbox class="example-margin" (change)="checkId(id.value,$event.checked)" >중복체크</mat-checkbox>
 
                                     </div>
                                 </div>
+                                <b style="font-size: small; color: red;" *ngIf="!!idChecked">가입된 아이디입니다.</b>
                                 <div class="form-row">
                                     <div class="form-cell">
                                         <span>비밀번호</span>
@@ -100,7 +98,7 @@
                                             <mat-error *ngIf="secondFormGroup.get('password').hasError('required')">
                                                 비밀번호을 입력해주세요</mat-error>
                                             <mat-error *ngIf="secondFormGroup.get('password').hasError('pattern')">반드시
-                                                특수문자포함을 해야합니다.</mat-error>
+                                                소문자,대문자,숫자,특수문자는 포함을 해야합니다.</mat-error>
                                         </mat-form-field>
                                     </div>
                                 </div>
@@ -185,11 +183,11 @@
                             </mat-form-field>
                         </div>
                     </div>
+                    <div class="content-btn">
+                        <button mat-raised-button color="primary" (click)="signUp(3,stepper)">다음</button>
+                    </div>
                 </div>
-                <div class="content-btn">
-                    <br>
-                    <button mat-raised-button color="primary" (click)="signUp(3,stepper)">다음</button>
-                </div>
+
 
             </mat-step>
             <mat-step>

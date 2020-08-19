@@ -75,11 +75,28 @@ app.post('/sign_up', function (req, res) {
         });
     }
 });
-app.post('/sign_up_Check', function (req, res) {
+app.post('/id_check', function (req, res) {
+    var params = configParams.getUserParam(userpoolId);
     var request = req['body'];
-    var userName = '';
+    var cheked = false;
     if (!!request) {
         var data_1 = request['body'];
+        cognito.listUsers(params, function (errors, value) {
+            var _a;
+            var user = (_a = value.Users) === null || _a === void 0 ? void 0 : _a.find(function (value) {
+                return value.Username === data_1;
+            });
+            if (!user) {
+                cheked = true;
+            }
+            res.send({ cheked: cheked });
+        });
+    }
+});
+app.post('/sign_up_Check', function (req, res) {
+    var request = req['body'];
+    if (!!request) {
+        var data_2 = request['body'];
         var params = configParams.getUserParam(userpoolId);
         cognito.listUsers(params, function (errors, value) {
             var _a;
@@ -89,17 +106,17 @@ app.post('/sign_up_Check', function (req, res) {
                     var user = (_a = value.Users) === null || _a === void 0 ? void 0 : _a.find(function (userData) {
                         var _a, _b, _c;
                         var phone_number = (_a = userData.Attributes) === null || _a === void 0 ? void 0 : _a.find(function (attribute) {
-                            return (attribute.Value === data_1['phone_number']);
+                            return (attribute.Value === data_2['phone_number']);
                         });
                         var birthDay = (_b = userData.Attributes) === null || _b === void 0 ? void 0 : _b.find(function (attribute) {
-                            return (attribute.Value === data_1['birthDay']);
+                            return (attribute.Value === data_2['birthDay']);
                         });
                         var name = (_c = userData.Attributes) === null || _c === void 0 ? void 0 : _c.find(function (attribute) {
-                            return (attribute.Value === data_1['name']);
+                            return (attribute.Value === data_2['name']);
                         });
                         return !!phone_number && !!birthDay;
                     });
-                    userName = user === null || user === void 0 ? void 0 : user.Username;
+                    console.log(user);
                     // 없으면 true반환
                     if (!user) {
                         cheked = true;
@@ -108,7 +125,7 @@ app.post('/sign_up_Check', function (req, res) {
                 else {
                     cheked = true;
                 }
-                res.send({ cheked: cheked, userName: userName });
+                res.send({ cheked: cheked });
             }
         });
     }

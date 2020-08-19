@@ -82,8 +82,22 @@ app.post('/sign_up', (req, res) => {
   }
 });
 
-app.post('/id_check',(req, res) => {
-
+app.post('/id_check', (req, res) => {
+  const params = configParams.getUserParam(userpoolId);
+  const request = req['body'];
+  let cheked = false;
+  if (!!request) {
+    const data = request['body'];
+    cognito.listUsers(params, (errors, value) => {
+      const user = value.Users?.find((value) => {
+        return value.Username === data;
+      });
+      if(!user){
+        cheked=true;
+      }
+      res.send({ cheked })
+    });
+  }
 });
 app.post('/sign_up_Check', (req, res) => {
   const request = req['body'];
@@ -108,7 +122,7 @@ app.post('/sign_up_Check', (req, res) => {
             return !!phone_number && !!birthDay;
 
           });
-
+          console.log(user);
           // 없으면 true반환
           if (!user) {
             cheked = true;

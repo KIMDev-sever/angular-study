@@ -108,12 +108,11 @@ export class SignUpDialogComponent implements OnInit {
       case 1: {
         this.loginService.check_signUp(this.member).then((value: object) => {
           // tslint:disable-next-line:no-string-literal
+          console.log(value);
           const newLocal = 'cheked';
-          if (!!value && !!value[newLocal] && !this.accountChecked) {
+          if (!!value && !!value[newLocal]) {
             // tslint:disable-next-line:no-string-literal
-
             stepper.next();
-
           } else {
             this.accountChecked = true;
           }

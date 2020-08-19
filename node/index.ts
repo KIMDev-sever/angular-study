@@ -1,7 +1,3 @@
-//AWSAccessKeyId=AKIAIUNN5K2MSALBN3GA
-//AWSSecretKey=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
-
-
 import * as AWS from 'aws-sdk'; // npm install --save-dev @types/aws-sdk
 //////////////////////
 import express = require('express');
@@ -11,28 +7,34 @@ import body_parse = require('body-parser');
 import { MemberModel } from './model/member.model'
 
 import { ConfigParams } from './config/config_parms';
-import { send } from 'process';
+
+// Modules, e.g. Webpack:
+import * as AWSCognito from 'amazon-cognito-identity-js';
+
 const configParams = new ConfigParams();
 const app = express();
 app.use(cos());
 app.use(body_parse.json());
 app.use(express.static('./public'));
 ////////////////////
-// const awsAccessKeyId = process.env['AWSAccessKeyId'];
-// const awsecretKey = process.env['AWSAccessKeyId'];
-//const userpoolId=process.env['userpoolId'];
-//const clientId = process.env['clientId']'
-const awsAccessKeyId = 'AKIAIUNN5K2MSALBN3GA';
-const awsecretKey = '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';
-const clientId = '6ordo7clie48sj0fm4tc2qn26k'
-const userpoolId = 'ap-northeast-2_MyPyTU0ec';
+const awsAccessKeyId = process.env['AWSAccessKeyId'];
+const awsecretKey = process.env['AWSAccessKeyId'];
+const userpoolId=process.env['userpoolId'];
+const clientId = process.env['clientId']
+//Asdf1234@
+
+
 AWS.config.update({
   accessKeyId: awsAccessKeyId, secretAccessKey: awsecretKey, region: 'ap-northeast-2'
 })
 
 const s3 = new AWS.S3;
 const cognito = new AWS.CognitoIdentityServiceProvider();
-
+const poolData = {
+  UserPoolId: userpoolId, // your user pool id here
+  ClientId: clientId // your client id here
+};
+const userPool = new AWSCognito.CognitoUserPool(poolData);
 //추후 lambda로 변경 예정 
 // exports.handler = (event: any, context) => { 
 //   console.log(event)
@@ -81,7 +83,39 @@ app.post('/sign_up', (req, res) => {
     });
   }
 });
+app.post('/logined',(req,res)=>{
+  userPool.getCurrentUser()?.getSession((err: any, session: any)=>{
+      res.send(session.isValid());
+  })
+})
+app.post('/login', (req, res) => {
+  const request = req['body'];
+  console.log(request)
+  if (!!request) {
+    const data = request['body'];
+  console.log(data)
+    const authenticationData = {
+      Username: data['id'], // your username here
+      Password: data['password'], // your password here
+    }
+    const authenticationDetails = new AWSCognito.AuthenticationDetails(authenticationData);
 
+    const userData = {
+      Username: data['id'], // your username here
+      Pool: userPool
+    };
+    const cognitoUser = new AWSCognito.CognitoUser(userData);
+    cognitoUser.authenticateUser(authenticationDetails, {
+      onSuccess:  (result)=> {
+        res.send('access token + ' + result.getAccessToken().getJwtToken());
+      },
+
+      onFailure: (err)=> {
+          console.log(err);
+      },
+  });
+  }
+})
 app.post('/id_check', (req, res) => {
   const params = configParams.getUserParam(userpoolId);
   const request = req['body'];
@@ -92,14 +126,15 @@ app.post('/id_check', (req, res) => {
       const user = value.Users?.find((value) => {
         return value.Username === data;
       });
-      if(!user){
-        cheked=true;
+      if (!user) {
+        cheked = true;
       }
       res.send({ cheked })
     });
   }
 });
 app.post('/sign_up_Check', (req, res) => {
+  console.log("asdasd")
   const request = req['body'];
   if (!!request) {
     const data = request['body'];
@@ -107,6 +142,7 @@ app.post('/sign_up_Check', (req, res) => {
 
     cognito.listUsers(params, (errors, value) => {
       let cheked = false;
+      console.log(errors)
       if (!errors) {
         if (!!value) {
           const user = value.Users?.find((userData) => {

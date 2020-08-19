@@ -1,6 +1,4 @@
 "use strict";
-//AWSAccessKeyId=AKIAIUNN5K2MSALBN3GA
-//AWSSecretKey=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
 exports.__esModule = true;
 var AWS = require("aws-sdk"); // npm install --save-dev @types/aws-sdk
 //////////////////////
@@ -9,6 +7,8 @@ var fs = require("fs");
 var cos = require("cors");
 var body_parse = require("body-parser");
 var config_parms_1 = require("./config/config_parms");
+// Modules, e.g. Webpack:
+var AWSCognito = require("amazon-cognito-identity-js");
 var configParams = new config_parms_1.ConfigParams();
 var app = express();
 app.use(cos());
@@ -19,8 +19,9 @@ app.use(express.static('./public'));
 // const awsecretKey = process.env['AWSAccessKeyId'];
 //const userpoolId=process.env['userpoolId'];
 //const clientId = process.env['clientId']'
-var awsAccessKeyId = 'AKIAIUNN5K2MSALBN3GA';
-var awsecretKey = '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';
+//Asdf1234@
+var awsAccessKeyId = 'AKIAJYAKMPEYVDOTJ7TA';
+var awsecretKey = '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';
 var clientId = '6ordo7clie48sj0fm4tc2qn26k';
 var userpoolId = 'ap-northeast-2_MyPyTU0ec';
 AWS.config.update({
@@ -28,6 +29,11 @@ AWS.config.update({
 });
 var s3 = new AWS.S3;
 var cognito = new AWS.CognitoIdentityServiceProvider();
+var poolData = {
+    UserPoolId: userpoolId,
+    ClientId: clientId // your client id here
+};
+var userPool = new AWSCognito.CognitoUserPool(poolData);
 //추후 lambda로 변경 예정 
 // exports.handler = (event: any, context) => { 
 //   console.log(event)
@@ -75,6 +81,38 @@ app.post('/sign_up', function (req, res) {
         });
     }
 });
+app.post('/logined', function (req, res) {
+    var _a;
+    (_a = userPool.getCurrentUser()) === null || _a === void 0 ? void 0 : _a.getSession(function (err, session) {
+        res.send(session.isValid());
+    });
+});
+app.post('/login', function (req, res) {
+    var request = req['body'];
+    console.log(request);
+    if (!!request) {
+        var data = request['body'];
+        console.log(data);
+        var authenticationData = {
+            Username: data['id'],
+            Password: data['password']
+        };
+        var authenticationDetails = new AWSCognito.AuthenticationDetails(authenticationData);
+        var userData = {
+            Username: data['id'],
+            Pool: userPool
+        };
+        var cognitoUser = new AWSCognito.CognitoUser(userData);
+        cognitoUser.authenticateUser(authenticationDetails, {
+            onSuccess: function (result) {
+                res.send('access token + ' + result.getAccessToken().getJwtToken());
+            },
+            onFailure: function (err) {
+                console.log(err);
+            }
+        });
+    }
+});
 app.post('/id_check', function (req, res) {
     var params = configParams.getUserParam(userpoolId);
     var request = req['body'];
@@ -94,6 +132,7 @@ app.post('/id_check', function (req, res) {
     }
 });
 app.post('/sign_up_Check', function (req, res) {
+    console.log("asdasd");
     var request = req['body'];
     if (!!request) {
         var data_2 = request['body'];
@@ -101,6 +140,7 @@ app.post('/sign_up_Check', function (req, res) {
         cognito.listUsers(params, function (errors, value) {
             var _a;
             var cheked = false;
+            console.log(errors);
             if (!errors) {
                 if (!!value) {
                     var user = (_a = value.Users) === null || _a === void 0 ? void 0 : _a.find(function (userData) {

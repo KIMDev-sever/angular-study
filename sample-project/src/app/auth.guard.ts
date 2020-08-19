@@ -1,16 +1,27 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
-
+import { LoginService } from './login/login.service';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  canActivate(
-   // login check;
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+  constructor(
+    private loginService: LoginService
+  ) {
+
+  }
+
+  // tslint:disable-next-line:typedef
+  canActivate() {
+    // login check;
+    const guard = this.loginService.getloginSession().then((value) => {
+      if (!!value) {
+        return true;
+      }else{
+        return false;
+      }
+    });
+    return guard;
   }
 
 }

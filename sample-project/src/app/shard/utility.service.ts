@@ -13,6 +13,7 @@ export class UtilityService {
 
   string_data_subject = new BehaviorSubject<string>(null);
   send_loadingSW = new BehaviorSubject<boolean>(null);
+  loginState = new BehaviorSubject<boolean>(null);
   constructor(
     private httpClient: HttpClient,
     private _snackBar: MatSnackBar,
@@ -46,6 +47,12 @@ export class UtilityService {
     this._snackBar.open(message, '', {
       duration: 2000,
     });
+  }
+  setlogined(state: boolean) {
+    this.loginState.next(state);
+  }
+  getlogined() {
+    return this.loginState.asObservable();
   }
   setStringdata(data: string) {
     this.string_data_subject.next(data);

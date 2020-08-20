@@ -17,12 +17,12 @@ export class LoginService {
     });
   }
   // tslint:disable-next-line:typedef
-  getloginSession() {
+  getloginSession(): Promise<object> {
     return this.httpClient.post('http://localhost:3000/logined', // api gateway 사용예정
       { body: {  }}, { headers: this.corsHeaders }).toPromise();
   }
   // tslint:disable-next-line:typedef
-  login(id: string, password: string) {
+  login(id: string, password: string): Promise<object> {
     return this.httpClient.post('http://localhost:3000/login', // api gateway 사용예정
       { body: { id, password }}, { headers: this.corsHeaders }).toPromise();
   }

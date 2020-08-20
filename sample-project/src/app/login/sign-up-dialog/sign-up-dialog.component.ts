@@ -5,6 +5,7 @@ import { LoginService } from '../login.service';
 import { MemberModel } from 'src/app/shard/member.model';
 import { MAT_DATE_FORMATS } from '@angular/material/core';
 import * as moment from 'moment';
+import { MatDialogRef } from '@angular/material/dialog';
 export const MY_FORMATS = {
   parse: {
     dateInput: 'YYYY/MM/DD',
@@ -39,7 +40,8 @@ export class SignUpDialogComponent implements OnInit {
   constructor(
     // tslint:disable:variable-name
     private _formBuilder: FormBuilder,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private matDialogRef: MatDialogRef<SignUpDialogComponent>,
   ) {
 
   }
@@ -141,6 +143,7 @@ export class SignUpDialogComponent implements OnInit {
       }
       case 4: {
         console.log('done');
+        this.matDialogRef.close();
         break;
       }
     }

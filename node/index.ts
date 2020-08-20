@@ -7,7 +7,9 @@ import body_parse = require('body-parser');
 import { MemberModel } from './model/member.model'
 
 import { ConfigParams } from './config/config_parms';
-
+import * as fetch from 'node-fetch';
+const globalAny: any = global;
+globalAny.fetch = require('node-fetch');
 // Modules, e.g. Webpack:
 import * as AWSCognito from 'amazon-cognito-identity-js';
 
@@ -17,11 +19,15 @@ app.use(cos());
 app.use(body_parse.json());
 app.use(express.static('./public'));
 ////////////////////
-const awsAccessKeyId = process.env['AWSAccessKeyId'];
-const awsecretKey = process.env['AWSAccessKeyId'];
-const userpoolId=process.env['userpoolId'];
-const clientId = process.env['clientId']
+// const awsAccessKeyId = process.env['AWSAccessKeyId'];
+// const awsecretKey = process.env['AWSAccessKeyId'];
+// const userpoolId=process.env['userpoolId'];
+// const clientId = process.env['clientId']
 //Asdf1234@
+const awsAccessKeyId = 'AKIAJYAKMPEYVDOTJ7TA';
+const awsecretKey = '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';
+const clientId = '6ordo7clie48sj0fm4tc2qn26k'
+const userpoolId = 'ap-northeast-2_MyPyTU0ec';
 
 
 AWS.config.update({
@@ -66,7 +72,10 @@ app.post('/confirm_SignUp', (req, res) => {
       res.send({ message: 'ok' });
     }
   });
-})
+});
+app.post('/logout', (req, res) => {
+  userPool.getCurrentUser()?.signOut();
+});
 app.post('/sign_up', (req, res) => {
   const request = req['body'];
   if (!!request) {
@@ -83,17 +92,22 @@ app.post('/sign_up', (req, res) => {
     });
   }
 });
-app.post('/logined',(req,res)=>{
-  userPool.getCurrentUser()?.getSession((err: any, session: any)=>{
-      res.send(session.isValid());
-  })
+app.post('/logined', (req, res) => {
+  if (!!userPool.getCurrentUser()) {
+    userPool.getCurrentUser()?.getSession((err: any, session: any) => {
+      if (!!session) {
+        res.send(session.isValid());
+      }
+
+    })
+  } else {
+    res.send(false);
+  }
 })
 app.post('/login', (req, res) => {
   const request = req['body'];
-  console.log(request)
   if (!!request) {
     const data = request['body'];
-  console.log(data)
     const authenticationData = {
       Username: data['id'], // your username here
       Password: data['password'], // your password here
@@ -105,17 +119,20 @@ app.post('/login', (req, res) => {
       Pool: userPool
     };
     const cognitoUser = new AWSCognito.CognitoUser(userData);
+
+
     cognitoUser.authenticateUser(authenticationDetails, {
-      onSuccess:  (result)=> {
-        res.send('access token + ' + result.getAccessToken().getJwtToken());
+      onSuccess: (result) => {
+        console.log(result);
+        res.send({ message: 'ok' });
       },
 
-      onFailure: (err)=> {
-          console.log(err);
+      onFailure: (err) => {
+        console.log(err);
       },
-  });
+    });
   }
-})
+});
 app.post('/id_check', (req, res) => {
   const params = configParams.getUserParam(userpoolId);
   const request = req['body'];

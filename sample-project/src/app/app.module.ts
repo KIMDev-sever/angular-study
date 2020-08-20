@@ -26,6 +26,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ListComponent } from './list/list.component';
+import { MainComponent } from './main/main.component';
+import { MainChartComponent } from './main/main-chart/main-chart.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     DialogComponent,
     LoginComponent,
     SignUpDialogComponent,
+    ListComponent,
+    MainComponent,
+    MainChartComponent,
   ],
   imports: [
     BrowserModule,

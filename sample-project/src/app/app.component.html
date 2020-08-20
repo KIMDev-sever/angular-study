@@ -3,23 +3,26 @@
     <mat-spinner class="spinner"></mat-spinner>
   </div>
 
-<mat-toolbar color="primary">
-  <span class="title" (click)="drawer.toggle()">
-    <mat-icon>menu</mat-icon></span>
-    MyCMSApp
-</mat-toolbar>
-<div class="layout">
-  <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-      <app-player-list></app-player-list>
-    </mat-drawer>
-  
-    <div class="example-sidenav-content">
-      <router-outlet></router-outlet>
+  <mat-toolbar color="primary">
+    <div class="toolbar">
+      <span class="title">
+        MyCMSApp
+      </span>
+      <span class="logout-btn">
+        <button mat-raised-button color="warn" *ngIf="logined" (click)="logout()">로그아웃</button>
+      </span>
     </div>
-  
-  </mat-drawer-container>
+  </mat-toolbar>
+  <div class="warpper">
+      <div class="list">
+        <app-list></app-list>
+      </div>
+
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
 
 
-</div>
+
+  </div>
 </div>

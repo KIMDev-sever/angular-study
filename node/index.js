@@ -7,6 +7,8 @@ var fs = require("fs");
 var cos = require("cors");
 var body_parse = require("body-parser");
 var config_parms_1 = require("./config/config_parms");
+var globalAny = global;
+globalAny.fetch = require('node-fetch');
 // Modules, e.g. Webpack:
 var AWSCognito = require("amazon-cognito-identity-js");
 var configParams = new config_parms_1.ConfigParams();
@@ -17,8 +19,8 @@ app.use(express.static('./public'));
 ////////////////////
 // const awsAccessKeyId = process.env['AWSAccessKeyId'];
 // const awsecretKey = process.env['AWSAccessKeyId'];
-//const userpoolId=process.env['userpoolId'];
-//const clientId = process.env['clientId']'
+// const userpoolId=process.env['userpoolId'];
+// const clientId = process.env['clientId']
 //Asdf1234@
 var awsAccessKeyId = 'AKIAJYAKMPEYVDOTJ7TA';
 var awsecretKey = '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';
@@ -65,6 +67,10 @@ app.post('/confirm_SignUp', function (req, res) {
         }
     });
 });
+app.post('/logout', function (req, res) {
+    var _a;
+    (_a = userPool.getCurrentUser()) === null || _a === void 0 ? void 0 : _a.signOut();
+});
 app.post('/sign_up', function (req, res) {
     var request = req['body'];
     if (!!request) {
@@ -83,16 +89,21 @@ app.post('/sign_up', function (req, res) {
 });
 app.post('/logined', function (req, res) {
     var _a;
-    (_a = userPool.getCurrentUser()) === null || _a === void 0 ? void 0 : _a.getSession(function (err, session) {
-        res.send(session.isValid());
-    });
+    if (!!userPool.getCurrentUser()) {
+        (_a = userPool.getCurrentUser()) === null || _a === void 0 ? void 0 : _a.getSession(function (err, session) {
+            if (!!session) {
+                res.send(session.isValid());
+            }
+        });
+    }
+    else {
+        res.send(false);
+    }
 });
 app.post('/login', function (req, res) {
     var request = req['body'];
-    console.log(request);
     if (!!request) {
         var data = request['body'];
-        console.log(data);
         var authenticationData = {
             Username: data['id'],
             Password: data['password']
@@ -105,7 +116,8 @@ app.post('/login', function (req, res) {
         var cognitoUser = new AWSCognito.CognitoUser(userData);
         cognitoUser.authenticateUser(authenticationDetails, {
             onSuccess: function (result) {
-                res.send('access token + ' + result.getAccessToken().getJwtToken());
+                console.log(result);
+                res.send({ message: 'ok' });
             },
             onFailure: function (err) {
                 console.log(err);

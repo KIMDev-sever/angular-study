@@ -4,6 +4,7 @@ import { LoginService } from './login.service';
 import { MatDialog } from '@angular/material/dialog';
 import { SignUpDialogComponent } from './sign-up-dialog/sign-up-dialog.component';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,20 +27,23 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loginService.getloginSession().then((value) => {
+      if (!!value) {
+
+        this.route.navigate(['main']);
+      }
+    });
   }
 
   // tslint:disable-next-line:typedef
   // tslint:disable-next-line:typedef
   login(id: string, password: string) {
     this.loginService.login(id, password).then((value) => {
-      if (!!value) {
-        this.route.navigate(['my_player']);
+      // tslint:disable-next-line:no-string-literal
+      if (!!value && value['message'] === 'ok') {
+        this.route.navigate(['main']);
       }
     });
-  }
-  // tslint:disable-next-line:typedef
-  logout() {
-    this.loginService.logout();
   }
   // tslint:disable-next-line:typedef
   signUp() {

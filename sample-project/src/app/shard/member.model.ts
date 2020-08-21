@@ -5,4 +5,5 @@ export interface MemberModel {
     phone_number: string;
     email: string;
     birthDay: string;
+
 }

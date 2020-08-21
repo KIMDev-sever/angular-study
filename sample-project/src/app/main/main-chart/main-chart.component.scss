@@ -4,21 +4,16 @@
     .chart{
         margin-top: 20px;
         width: 100%;
-        height: 500px;
-  
+        height: 400px;
         &-left{
-            display: block;
-            margin: 10px;
-            width: 48%;
-            height: 500px;
-            float: left;
+            height: 400px;
         }
         &-right{
-            display: block;
-            width: 48%;
-            height: 500px;
-            margin: 10px;
-            float: right;
+            height: 400px;
         }
     }
+}
+.title{
+    font-size: larger;
+    font-weight: bolder;
 }

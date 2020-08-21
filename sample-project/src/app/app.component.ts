@@ -32,6 +32,10 @@ export class AppComponent implements OnInit {
 
   }
   // tslint:disable-next-line:typedef
+  go_main(){
+    this.router.navigate(['main']);
+  }
+  // tslint:disable-next-line:typedef
   logout() {
     this.loginService.logout();
     this.logined = false;

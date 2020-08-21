@@ -1,11 +1,11 @@
 <div class="wrapper">
-    <div class="list-area"> 
-        <mat-list role="list">
-            <mat-list-item role="listitem">기본 테마 설정</mat-list-item>
-            <mat-list-item role="listitem">네비게이션 설정</mat-list-item>
-            <mat-list-item role="listitem">공지사항 등록</mat-list-item>
-            <mat-list-item role="listitem">배너 등록 및 설정</mat-list-item>
-            <mat-list-item role="listitem">회원관리</mat-list-item>
-          </mat-list>
+    <div class="list-area" > 
+        <mat-selection-list [multiple]="false" color="primary">
+            <mat-list-option>기본 설정</mat-list-option>
+            <mat-list-option>네비게이션 설정</mat-list-option>
+            <mat-list-option>공지사항 등록</mat-list-option>
+            <mat-list-option>배너 등록 및 설정</mat-list-option>
+            <mat-list-option>회원관리</mat-list-option>
+          </mat-selection-list>
     </div>
 </div>

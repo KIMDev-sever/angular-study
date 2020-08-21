@@ -7,3 +7,17 @@
 
     
 }
+@media screen and (max-width: 860px) {
+    .wrapper{
+        .list-area{
+            display: none;
+        }
+    
+        
+    }
+}
+
+
+mat-list-option[aria-selected="true"] {
+  background: #5191FD22;
+}

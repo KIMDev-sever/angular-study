@@ -43,7 +43,7 @@ export class MainChartComponent implements OnInit, AfterViewInit {
       data: {
         labels: this.month_arry,
         datasets: [{
-          label: labels,
+          label: '',
           data: this.sampleData_arry,
           backgroundColor: [
             'rgba(255, 99, 132, 1)',

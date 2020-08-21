@@ -29,6 +29,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ListComponent } from './list/list.component';
 import { MainComponent } from './main/main.component';
 import { MainChartComponent } from './main/main-chart/main-chart.component';
+import { NewsComponent } from './main/news/news.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { MainChartComponent } from './main/main-chart/main-chart.component';
     ListComponent,
     MainComponent,
     MainChartComponent,
+    NewsComponent,
   ],
   imports: [
     BrowserModule,

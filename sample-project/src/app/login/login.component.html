@@ -1,14 +1,14 @@
 <div class="wrapper">
     <div class="container">
-        <mat-card class="container-card mat-elevation-z8">
+        <div class="container-card">
             <p>
-                <mat-form-field class="example-full-width">
+                <mat-form-field class="form-area">
                     <input matInput #id [formControl]="idformControl" placeholder="아이디" required>
                     <mat-error *ngIf="idformControl.hasError('required')">아이디 입력해주세요</mat-error>
                 </mat-form-field>
             </p>
             <p>
-                <mat-form-field class="example-full-width">
+                <mat-form-field class="form-area">
                     <input matInput #pass [formControl]="passformControl" placeholder="비밀번호" required type="password">
                     <mat-error *ngIf="passformControl.hasError('required')">비밀번호 입력해주세요</mat-error>
                 </mat-form-field>
@@ -19,6 +19,6 @@
                     [disabled]="idformControl.hasError('required') || passformControl.hasError('required')"
                     (click)="login(id.value,pass.value)">로그인</button>
             </p>
-        </mat-card>
+        </div>
     </div>
 </div>

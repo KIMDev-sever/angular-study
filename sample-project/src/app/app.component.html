@@ -3,23 +3,31 @@
     <div class="loading" *ngIf="loadingSw">
       <mat-spinner class="spinner"></mat-spinner>
     </div>
-
     <mat-toolbar color="primary">
       <div class="toolbar">
 
         <span class="title" >
-          <mat-icon class="menu">reorder</mat-icon> <span (click)="go_main()">MyCmsApp</span>
+          <button mat-button (click)="drawer.toggle()"  *ngIf="logined"><mat-icon>menu</mat-icon></button> MyApp
         </span>
         <span class="logout-btn">
           <button mat-raised-button color="warn" *ngIf="logined" (click)="logout()">로그아웃</button>
         </span>
       </div>
     </mat-toolbar>
-    <div class="list" *ngIf="logined">
+
+  <mat-drawer-container class="drawer-continaer" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <div class="list">
       <app-list></app-list>
     </div>
-    <div class="content">
-      <router-outlet></router-outlet>
-    </div>
+  </mat-drawer>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>
+
+
   </div>
 </div>

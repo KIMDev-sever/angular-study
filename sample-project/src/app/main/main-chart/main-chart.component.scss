@@ -2,18 +2,23 @@
     width: 100%;
     height: 100%;
     .chart{
-        margin-top: 20px;
-        width: 100%;
-        height: 400px;
+        margin:0 auto;
+        display: inline;
         &-left{
-            height: 400px;
+            margin-top:20px;
+            width: 100%;
+            display: inline-block;
         }
-        &-right{
-            height: 400px;
+        &-base{
+            width: 100%;
+            height: 300px;
         }
     }
 }
 .title{
     font-size: larger;
     font-weight: bolder;
+}
+::ng-deep .mat-sidenav-backdrop.mat-sidenav-shown {
+    background-color: transparent;
 }

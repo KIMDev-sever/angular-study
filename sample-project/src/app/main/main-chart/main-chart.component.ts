@@ -26,7 +26,7 @@ export class MainChartComponent implements OnInit, AfterViewInit {
       const data = Math.round(Math.random() * 100);
       this.sampleData_arry.push(data);
     }
-    this.initCart('bar', '신규회원수', this.newMemberChart);
+    this.initCart('line', '신규회원수', this.newMemberChart);
     this.initCart('pie', '컨텐츠 조회수', this.newContentCount);
   }
 
@@ -45,7 +45,7 @@ export class MainChartComponent implements OnInit, AfterViewInit {
         datasets: [{
           label: '',
           data: this.sampleData_arry,
-          backgroundColor: [
+          borderColor: [
             'rgba(255, 99, 132, 1)',
             'rgba(54, 162, 235, 1)',
             'rgba(255, 206, 86, 1)',
@@ -61,15 +61,6 @@ export class MainChartComponent implements OnInit, AfterViewInit {
           ],
           borderWidth: 2
         }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        }
       }
     });
   }

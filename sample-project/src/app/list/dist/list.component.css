@@ -1,0 +1,17 @@
+.wrapper {
+  width: 100%;
+}
+.wrapper .list-area {
+  text-align: center;
+  width: 100%;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 860px) {
+  .wrapper .list-area {
+    display: none;
+  }
+}
+mat-list-option[aria-selected=true] {
+  background: #5191FD22;
+}

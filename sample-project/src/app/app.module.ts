@@ -30,7 +30,7 @@ import { ListComponent } from './list/list.component';
 import { MainComponent } from './main/main.component';
 import { MainChartComponent } from './main/main-chart/main-chart.component';
 import { NewsComponent } from './main/news/news.component';
-
+import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +65,8 @@ import { NewsComponent } from './main/news/news.component';
     MatListModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatMenuModule
   ],
   providers: [
     MatDatepickerModule

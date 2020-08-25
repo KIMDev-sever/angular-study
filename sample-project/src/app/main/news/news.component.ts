@@ -19,7 +19,7 @@ export class NewsComponent implements OnInit {
         url: '',
         write_owner: '회원이름',
         content: '',
-        title: '여기선 데이터베이스에 있는 글을 검색하여 일정 기간에 있는 신규 글들을 취득합니다. ',
+        title: '여기 일정 기간에 있는 신규 글들을 취득합니다. ',
         date: moment(new Date()).format('YYYY-MM-DD')
       };
       this.newsList.push(newsModel);

@@ -31,6 +31,7 @@ import { MainComponent } from './main/main.component';
 import { MainChartComponent } from './main/main-chart/main-chart.component';
 import { NewsComponent } from './main/news/news.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatBadgeModule} from '@angular/material/badge';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +67,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatToolbarModule,
     MatSidenavModule,
     MatDatepickerModule,
-    MatMenuModule
+    MatMenuModule,
+    MatBadgeModule
   ],
   providers: [
     MatDatepickerModule

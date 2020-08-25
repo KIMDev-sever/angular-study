@@ -39,6 +39,7 @@ var main_component_1 = require("./main/main.component");
 var main_chart_component_1 = require("./main/main-chart/main-chart.component");
 var news_component_1 = require("./main/news/news.component");
 var menu_1 = require("@angular/material/menu");
+var badge_1 = require("@angular/material/badge");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -78,7 +79,8 @@ var AppModule = /** @class */ (function () {
                 toolbar_1.MatToolbarModule,
                 sidenav_1.MatSidenavModule,
                 datepicker_1.MatDatepickerModule,
-                menu_1.MatMenuModule
+                menu_1.MatMenuModule,
+                badge_1.MatBadgeModule
             ],
             providers: [
                 datepicker_1.MatDatepickerModule

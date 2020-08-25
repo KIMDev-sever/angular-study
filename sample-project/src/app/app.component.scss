@@ -33,7 +33,7 @@
   text-align: center;
   .container{
     margin:0 auto;
-    max-width: 1080px;
+    min-width: 800px;
     .drawer-continaer{
       width: 100%;
       height: 100%;
@@ -82,7 +82,15 @@
     }
   }
 }
+/* PC , 테블릿 가로 (해상도 768px ~ 1023px)*/
+@media all and (min-width:768px) and (max-width:1023px) { /*스타일입력*/}
 
-@media screen and (max-width: 640) {
+/* 테블릿 세로 (해상도 768px ~ 1023px)*/
+@media all and (min-width:768px) and (max-width:1023px) { /*스타일입력*/}
 
-}
+//모바일 대응 x
+// /* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/
+// @media all and (min-width:480px) and (max-width:767px) { /*스타일입력*/}
+
+// /* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/
+// @media all and (max-width:479px) { /*스타일입력*/}

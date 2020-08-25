@@ -7,7 +7,10 @@
       <div class="toolbar">
 
         <span class="title" >
-          <button mat-button (click)="drawer.toggle()"  *ngIf="logined"><mat-icon>menu</mat-icon></button> MyApp
+          <button mat-button (click)="drawer.toggle()"  *ngIf="logined"><mat-icon>menu</mat-icon></button> 
+          <span [matBadge]="newMessage"  matBadgeColor="warn" (click)="openMemberPage()">
+            MyApp
+          </span>
         </span>
         <span class="logout-btn">
           <button mat-raised-button color="warn" *ngIf="logined" (click)="logout()">로그아웃</button>

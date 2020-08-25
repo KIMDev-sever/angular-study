@@ -1,12 +1,13 @@
-<mat-card class="box">
-      <span class="title"><mat-icon>info 신규 등록된 글</mat-icon></span>
-      <br>
-      <br>
-      <mat-card-content>
-        <div class="news-content" >
-            <p *ngFor="let list of newsList; let i=index" >
-               <span *ngIf="i<=6" class="news"><b>{{i+1}}</b>&nbsp;&nbsp;&nbsp;&nbsp; {{list.title}} <span class="end">{{list.date}}</span></span>
-            </p>
-        </div>
-      </mat-card-content>
-</mat-card>
+<div class="box">
+  <p>
+    <span class="title">
+      <h3>신규 등록된 글</h3>
+    </span>
+  </p>
+    <div class="news-content">
+      <p *ngFor="let list of newsList; let i=index">
+        <span *ngIf="i<=6" class="news"><b>{{i+1}}</b>&nbsp;&nbsp;&nbsp;&nbsp; {{list.title}} <span
+            class="end">{{list.date}}</span></span>
+      </p>
+    </div>
+</div>

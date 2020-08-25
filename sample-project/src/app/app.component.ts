@@ -9,9 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  // tslint:disable:typedef
   loadingSw = false;
   subscription = new Subscription();
   logined = false;
+  // 회원이 관리자에게 메세지 및 글을 등록한우 새소식으로
+  newMessage = 15;
   constructor(
     private utilityService: UtilityService, // 의존성주입 내부에서 만든 변수를 외부에서 넣어줌,
     private loginService: LoginService,
@@ -31,14 +34,15 @@ export class AppComponent implements OnInit {
     );
 
   }
-  // tslint:disable-next-line:typedef
-  go_main(){
+  go_main(): void {
     this.router.navigate(['main']);
   }
-  // tslint:disable-next-line:typedef
-  logout() {
+  logout(): void {
     this.loginService.logout();
     this.logined = false;
     this.router.navigate(['login']);
+  }
+  openMemberPage(): void  {
+
   }
 }

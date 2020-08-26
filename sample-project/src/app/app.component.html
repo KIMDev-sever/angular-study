@@ -8,9 +8,13 @@
 
         <span class="title" >
           <button mat-button (click)="drawer.toggle()"  *ngIf="logined"><mat-icon>menu</mat-icon></button> 
-          <span [matBadge]="newMessage"  matBadgeColor="warn" (click)="openMemberPage()">
+          <span [matBadge]="newMessage"  matBadgeColor="warn" (click)="openMemberPage()" *ngIf="logined">
             MyApp
           </span>
+          <span *ngIf="!logined">
+            MyApp
+          </span>
+          
         </span>
         <span class="logout-btn">
           <button mat-raised-button color="warn" *ngIf="logined" (click)="logout()">로그아웃</button>

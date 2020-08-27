@@ -32,6 +32,15 @@ import { MainChartComponent } from './main/main-chart/main-chart.component';
 import { NewsComponent } from './main/news/news.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatBadgeModule} from '@angular/material/badge';
+import { ScheduleComponent } from './schedule/schedule.component';
+import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+import interaction from '@fullcalendar/interaction';
+import { ScheduleDialogComponent } from './schedule/schedule-dialog/schedule-dialog.component'; // a plugin
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin, interaction
+]);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +53,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MainComponent,
     MainChartComponent,
     NewsComponent,
+    ScheduleComponent,
+    ScheduleDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +64,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatCardModule,
     MatIconModule,
     MatStepperModule,
+    FullCalendarModule,
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,

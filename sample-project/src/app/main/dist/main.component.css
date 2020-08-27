@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.container .middle-contents {
+  width: 100%;
+  display: flex;
+}
+.container .middle-contents .news-contents {
+  width: 60%;
+}
+.container div {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

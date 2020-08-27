@@ -1,6 +1,6 @@
 .box {
   margin: 10px;
-  width: 52%;
+  width: 100%;
 }
 .box .title {
   width: 100%;
@@ -24,4 +24,5 @@
 .box .news-content .news .end {
   float: right;
   padding-right: 20px;
+  font-weight: bolder;
 }

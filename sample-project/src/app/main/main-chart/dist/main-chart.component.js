@@ -20,21 +20,22 @@ var MainChartComponent = /** @class */ (function () {
             var data = Math.round(Math.random() * 100);
             this.sampleData_arry.push(data);
         }
-        this.initCart('bar', '월 어떠한 컨텐츠', this.newMemberChart);
-        // this.initCart('pie', '컨텐츠 조회수', this.newContentCount);
+        var category_Arrys = ['아이스크림', '자동차', '컴퓨터', '고기', '생선', '주식', '부동산', '등등'];
+        this.initCart('bar', '', this.newMemberChart, this.month_arry);
+        this.initCart('pie', '', this.newContentCount, category_Arrys);
     };
     MainChartComponent.prototype.ngOnInit = function () {
     };
     // tslint:disable-next-line:typedef
-    MainChartComponent.prototype.initCart = function (types, labels, el) {
+    MainChartComponent.prototype.initCart = function (types, label, el, labels) {
         var context = el.nativeElement.getContext('2d');
         // tslint:disable-next-line:no-unused-expression
         new Chart(context, {
             type: types,
             data: {
-                labels: this.month_arry,
+                labels: labels,
                 datasets: [{
-                        label: labels,
+                        label: label,
                         data: this.sampleData_arry,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',

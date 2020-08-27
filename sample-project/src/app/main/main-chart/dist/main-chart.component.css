@@ -4,10 +4,20 @@
 }
 .wrapper .chart {
   margin: 20px;
+  width: 100%;
+  display: flex;
+}
+.wrapper .chart-left {
+  margin: 10px;
+  width: calc(50% - 20px);
+}
+.wrapper .chart-right {
+  margin: 10px;
+  width: calc(50% - 20px);
 }
 .wrapper .chart-base {
   width: 100%;
-  height: 535px !important;
+  height: 400px !important;
 }
 
 .title {

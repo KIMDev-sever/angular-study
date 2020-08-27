@@ -1,12 +1,19 @@
 <div class="wrapper">
+    <div class="title-main">
+        <span>
+            <mat-icon class="icon">tv</mat-icon><b>판매현황</b>
+        </span>
+    </div>
     <div class="chart">
-        <span class="title"></span>
-        <canvas #newMemberChart class="chart-base">
-        </canvas>
-        <!-- <div class="chart-right">
-            <span class="title">월별 컨텐츠수</span>
-            <canvas #newContentCount class="chart-base">
+        <div class="chart-left">
+            <span class="title">월별 판매량수</span>
+            <canvas #count_by_mounth class="chart-base">
             </canvas>
-        </div> -->
+        </div>
+        <div class="chart-right">
+            <span class="title">종류별 판매량</span>
+            <canvas #count_by_category class="chart-base">
+            </canvas>
+        </div>
     </div>
 </div>

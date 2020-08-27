@@ -1,9 +1,9 @@
 <div class="box">
-  <p>
-    <span class="title">
-      <h3>신규 등록된 글</h3>
+  <div class="title-main">
+    <span>
+        <mat-icon class="icon">create</mat-icon><b>신규 등록된 글</b>
     </span>
-  </p>
+  </div>
     <div class="news-content">
       <p *ngFor="let list of newsList; let i=index">
         <span *ngIf="i<=6" class="news"><b>{{i+1}}</b>&nbsp;&nbsp;&nbsp;&nbsp; {{list.title}} <span

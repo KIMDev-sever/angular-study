@@ -1,0 +1,14 @@
+<div class="box">
+    <div class="title-main">
+      <span>
+          <mat-icon class="icon">question_answer</mat-icon><b>신규 Q&A 글</b>
+          <span class="end">전체보기</span>
+      </span>
+    </div>
+      <div class="qna-content">
+        <p *ngFor="let list of qnaList; let i=index">
+          <span *ngIf="i<=6" class="qna"><b>[{{list.category}}]</b>&nbsp;<b>{{i+1}}</b>&nbsp;&nbsp;&nbsp; {{list.title}} <span
+              class="end">{{list.date}}</span></span>
+        </p>
+      </div>
+  </div>

@@ -3,6 +3,7 @@
     <div class="loading" *ngIf="loadingSw">
       <mat-spinner class="spinner"></mat-spinner>
     </div>
+    <header>
     <mat-toolbar color="primary">
       <div class="toolbar">
 
@@ -21,19 +22,21 @@
         </span>
       </div>
     </mat-toolbar>
-
-  <mat-drawer-container class="drawer-continaer" autosize>
+  </header>
+  <mat-drawer-container class="drawer-continaer">
   <mat-drawer #drawer class="example-sidenav" mode="side">
-    <div class="list">
+    <nav class="list">
       <app-list></app-list>
-    </div>
+    </nav>
   </mat-drawer>
 
-  <div class="content">
+  <section class="content">
     <router-outlet></router-outlet>
-  </div>
+  </section>
 
 </mat-drawer-container>
-
+  <footer class="footer">
+    <div>Copyright(c)2020 Kim-dev All rights reserved. </div>
+  </footer>
   </div>
 </div>

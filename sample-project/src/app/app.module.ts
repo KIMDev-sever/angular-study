@@ -36,7 +36,10 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interaction from '@fullcalendar/interaction';
-import { ScheduleDialogComponent } from './schedule/schedule-dialog/schedule-dialog.component'; // a plugin
+import {MatTableModule} from '@angular/material/table';
+import { ScheduleDialogComponent } from './schedule/schedule-dialog/schedule-dialog.component';
+import { QnAComponent } from './qn-a/qn-a.component';
+import { MemberPageComponent } from './member-page/member-page.component'; // a plugin
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin, interaction
 ]);
@@ -55,11 +58,14 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     NewsComponent,
     ScheduleComponent,
     ScheduleDialogComponent,
+    QnAComponent,
+    MemberPageComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     MatButtonModule,
+    MatTableModule,
     MatNativeDateModule,
     MatCardModule,
     MatIconModule,

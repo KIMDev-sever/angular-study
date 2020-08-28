@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit , OnDestroy} from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { CalendarOptions, EventClickArg, FullCalendarComponent, Calendar, } from '@fullcalendar/angular';
 import * as moment from 'moment';
 import { MatDialog, } from '@angular/material/dialog';
@@ -7,12 +7,14 @@ import { ScheduleModel } from '../shard/schedule.model';
 import { UtilityService } from '../shard/utility.service';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
+import { v4 as uuidv4 } from 'uuid';
+
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.scss']
 })
-export class ScheduleComponent implements OnInit, AfterViewInit , OnDestroy {
+export class ScheduleComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('calendar')
   calendarComponent: FullCalendarComponent;
 
@@ -28,18 +30,21 @@ export class ScheduleComponent implements OnInit, AfterViewInit , OnDestroy {
 
   events: ScheduleModel[] = [
     {
+      id: uuidv4(),
       color: 'gray',
       title: '상품발주',
       start: this.date1,
-      end: this.date2
+      end: this.date2,
     }
   ];
+
 
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
     initialEvents: this.events,
     dateClick: this.setDateEvent.bind(this),
-    eventClick: this.editEvent.bind(this)
+    eventClick: this.editEvent.bind(this),
+    locale: 'ko'
   };
 
   constructor(
@@ -50,41 +55,47 @@ export class ScheduleComponent implements OnInit, AfterViewInit , OnDestroy {
     this.subscription.unsubscribe();
   }
   ngAfterViewInit(): void {
+    console.log(moment().format('HH:mm:ss'));
     this.calendarApi = this.calendarComponent.getApi();
   }
 
   ngOnInit(): void {
   }
   editEvent(arg: EventClickArg) {
-    console.log(arg);
+    console.log(arg.event.id);
     const initData: ScheduleModel = {
+      id: arg.event.id,
       title: arg?.event?.title,
       color: arg?.event?.backgroundColor,
       start: arg?.event?.start,
-      end: arg?.event?.end
+      end: arg?.event?.end,
+      start_time: moment(arg?.event?.start).format('HH:mm:ss'),
+      end_time: moment(arg?.event?.end).format('HH:mm:ss')
     };
     const dialogRef = this.dialog.open(ScheduleDialogComponent, {
-      width: '50%',
-      height: '50%',
-      data: initData
+      width: '470px',
+      height: '600px',
+      data: { key: 'update', value: initData }
     });
-    this.subscription.add(dialogRef.afterClosed().subscribe((result: ScheduleModel) => {
-      // this.calendarApi. ([result]);
-      // this.utilityService.openSnackBar('스케쥴이 수정 되었습니다');
+    this.subscription.add(dialogRef.afterClosed().pipe(filter(value => !!value)).subscribe((result: ScheduleModel) => {
+      this.calendarApi.getEventById(result.id).remove();
+      this.calendarApi.addEventSource([result]);
+      this.utilityService.openSnackBar('스케쥴이 수정 되었습니다');
     }));
   }
   setDateEvent(arg) {
     const initData: ScheduleModel = {
+      id: uuidv4(),
       title: '',
       color: '',
       start: new Date(arg.dateStr),
-      end: null
+      end: null,
     };
 
     const dialogRef = this.dialog.open(ScheduleDialogComponent, {
-      width: '50%',
-      height: '50%',
-      data: initData
+      width: '470px',
+      height: '600px',
+      data: { key: 'insert', value: initData }
     });
     this.subscription.add(dialogRef.afterClosed().pipe(filter(value => !!value)).subscribe((result: ScheduleModel) => {
       this.calendarApi.addEventSource([result]);

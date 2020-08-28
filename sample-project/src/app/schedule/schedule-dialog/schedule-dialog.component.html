@@ -1,1 +1,72 @@
-<p>schedule-dialog works!</p>
+<div class="box">
+    <div class="title">
+        <span *ngIf="key==='insert';else other_content">새 스케줄 입력</span>
+        <ng-template #other_content>스케줄 수정</ng-template>
+    </div>
+    <div class="input-area" *ngIf="!!scheduelData">
+        <div class="row">
+            <div class="body-cell">
+                <mat-form-field>
+                    <mat-label>타이틀</mat-label>
+                    <input matInput type="text" [value]="scheduelData.title"
+                        (change)="inputData('title',$event.target.value)">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="body-cell">
+                배경색:<input matInput type="color" [value]="scheduelData.color"
+                    (change)="inputData('color',$event.target.value)" style="width: 20px;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="body-cell">
+                <mat-form-field>
+                    <mat-label>시작일</mat-label>
+                    <input matInput [value]="scheduelData.start" [matDatepicker]="picker1"
+                        (dateChange)="inputData('start',$event.target.value)">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <mat-label>시각</mat-label>
+                    <input matInput type="time" [value]="scheduelData.start_time"
+                        (change)="inputData('starttime',$event.target.value+':00')">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="body-cell">
+                <mat-form-field>
+                    <mat-label>끝나는날</mat-label>
+                    <input matInput [matDatepicker]="picker2" (dateChange)="inputData('end',$event.target.value)">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <mat-label>시각</mat-label>
+                    <input matInput type="time" [value]="scheduelData.end_time"
+                        (change)="inputData('endtime',$event.target.value+':00')">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <mat-form-field class="full-length-field">
+                <mat-label>설명</mat-label>
+                <textarea matInput rows="10" cols="100"
+                    (change)="inputData('description',$event.target.value)">{{scheduelData.description}}</textarea>
+            </mat-form-field>
+        </div>
+
+    </div>
+
+    <div class="btn-area">
+        <button mat-raised-button color="primary" (click)="close(true)">
+            <span *ngIf="key==='insert';else other_btn_name">등록</span>
+            <ng-template #other_btn_name>수정</ng-template>
+        </button>
+        <button mat-raised-button (click)="close(false)">취소</button>
+    </div>
+</div>

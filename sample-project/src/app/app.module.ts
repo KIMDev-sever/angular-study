@@ -40,6 +40,9 @@ import {MatTableModule} from '@angular/material/table';
 import { ScheduleDialogComponent } from './schedule/schedule-dialog/schedule-dialog.component';
 import { QnAComponent } from './qn-a/qn-a.component';
 import { MemberPageComponent } from './member-page/member-page.component'; // a plugin
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSelectModule} from '@angular/material/select';
+import { MemberPageDialogComponent } from './member-page/member-page-dialog/member-page-dialog.component';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin, interaction
 ]);
@@ -60,14 +63,17 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ScheduleDialogComponent,
     QnAComponent,
     MemberPageComponent,
+    MemberPageDialogComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    MatSelectModule,
     MatButtonModule,
     MatTableModule,
     MatNativeDateModule,
     MatCardModule,
+    MatPaginatorModule,
     MatIconModule,
     MatStepperModule,
     FullCalendarModule,

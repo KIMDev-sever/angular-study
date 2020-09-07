@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   loadingSw = false;
   subscription = new Subscription();
   logined = false;
+  name = '';
   // 회원이 관리자에게 메세지 및 글을 등록한우 새소식으로
   newMessage = 15;
   constructor(
@@ -28,8 +29,10 @@ export class AppComponent implements OnInit {
         this.loadingSw = value;
       }));
     this.subscription.add(
-      this.utilityService.getlogined().subscribe((value: boolean) => {
-        this.logined = value;
+      this.utilityService.getlogined().subscribe((value: string) => {
+        this.name = value;
+        this.logined = this.name ? true : false;
+
       })
     );
 
@@ -39,10 +42,11 @@ export class AppComponent implements OnInit {
   }
   logout(): void {
     this.loginService.logout();
-    this.logined = false;
+    this.logined = null;
+    this.name = '';
     this.router.navigate(['login']);
   }
-  openMemberPage(): void  {
+  openMemberPage(): void {
 
   }
 }

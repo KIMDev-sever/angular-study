@@ -1,0 +1,21 @@
+.wrapper{
+    width: 100%;
+    height: 100%;
+    .container{
+        width: 100%;
+        height:800px;
+        overflow-y: auto !important;
+        display: block;
+        .card{
+            margin:0px auto;
+            width: 80%;
+            height: 300px;
+        }
+     
+    }
+    .btn-area{
+        button{
+            margin:10px;
+        }
+    }
+}

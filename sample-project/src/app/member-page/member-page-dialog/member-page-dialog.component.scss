@@ -1,0 +1,41 @@
+.wrapper{
+    .title{
+        display: flex;
+        align-items: center;
+    }
+    .content{
+        width: 100%;
+        text-align: center;
+
+        table{
+            width: 900px;
+            margin:0px auto;
+            border:1px solid #b5b5b5;
+            tr{
+                .name{
+                    min-width: 100px;
+                    height: 50px;
+                }
+                td{
+                    width: 350px;
+                    height: 50px;
+          
+                }
+            }
+        
+        }
+        .buyList{
+            margin:0px auto;
+        }
+    }
+}
+.mat-row:hover{
+    background:#5191FD22;
+}
+.mat-header-cell.text-center { text-align: center; }
+.complate{
+    color:green;
+}
+.non_confirm{
+    color:red;
+}

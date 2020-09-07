@@ -62,7 +62,6 @@ app.post('/confirm_SignUp', function (req, res) {
             console.log(err);
         }
         else {
-            console.log(data);
             res.send({ message: 'ok' });
         }
     });
@@ -81,7 +80,6 @@ app.post('/sign_up', function (req, res) {
                 console.log(err);
             }
             else {
-                console.log(data);
                 res.send({ message: 'ok' });
             }
         });
@@ -91,13 +89,16 @@ app.post('/logined', function (req, res) {
     var _a;
     if (!!userPool.getCurrentUser()) {
         (_a = userPool.getCurrentUser()) === null || _a === void 0 ? void 0 : _a.getSession(function (err, session) {
+            var _a, _b, _c, _d;
             if (!!session) {
-                res.send(session.isValid());
+                var name_1 = ((_b = (_a = session === null || session === void 0 ? void 0 : session.idToken) === null || _a === void 0 ? void 0 : _a.payload) === null || _b === void 0 ? void 0 : _b.name) ? ((_d = (_c = session === null || session === void 0 ? void 0 : session.idToken) === null || _c === void 0 ? void 0 : _c.payload) === null || _d === void 0 ? void 0 : _d.name) : '';
+                console.log(name_1);
+                res.send({ name: name_1 });
             }
         });
     }
     else {
-        res.send(false);
+        res.send({ name: '' });
     }
 });
 app.post('/login', function (req, res) {
@@ -116,7 +117,7 @@ app.post('/login', function (req, res) {
         var cognitoUser = new AWSCognito.CognitoUser(userData);
         cognitoUser.authenticateUser(authenticationDetails, {
             onSuccess: function (result) {
-                console.log(result);
+                //console.log(result);
                 res.send({ message: 'ok' });
             },
             onFailure: function (err) {
@@ -144,7 +145,6 @@ app.post('/id_check', function (req, res) {
     }
 });
 app.post('/sign_up_Check', function (req, res) {
-    console.log("asdasd");
     var request = req['body'];
     if (!!request) {
         var data_2 = request['body'];

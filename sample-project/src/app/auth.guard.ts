@@ -18,14 +18,15 @@ export class AuthGuard implements CanActivate {
   // tslint:disable-next-line:typedef
   canActivate() {
     // login check;
-    const guard = this.loginService.getloginSession().then((value) => {
-      if (!!value) {
-        this.utilityService.setlogined(true);
+    const guard = this.loginService.getloginSession().then((value: {name: string}) => {
+      if (!!value.name) {
+
+        this.utilityService.setlogined(value.name);
         return true;
 
       } else {
         this.router.navigate(['./login']);
-        this.utilityService.setlogined(false);
+        this.utilityService.setlogined('');
         return false;
 
       }

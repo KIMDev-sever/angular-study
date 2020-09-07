@@ -68,7 +68,6 @@ app.post('/confirm_SignUp', (req, res) => {
       console.log(err);
     }
     else {
-      console.log(data);
       res.send({ message: 'ok' });
     }
   });
@@ -86,7 +85,6 @@ app.post('/sign_up', (req, res) => {
         console.log(err);
       }
       else {
-        console.log(data);
         res.send({ message: 'ok' });
       }
     });
@@ -96,12 +94,15 @@ app.post('/logined', (req, res) => {
   if (!!userPool.getCurrentUser()) {
     userPool.getCurrentUser()?.getSession((err: any, session: any) => {
       if (!!session) {
-        res.send(session.isValid());
+
+        const name=(session?.idToken?.payload?.name)?(session?.idToken?.payload?.name):'';
+        console.log(name);
+        res.send({name});
       }
 
     })
   } else {
-    res.send(false);
+    res.send({name:''});
   }
 })
 app.post('/login', (req, res) => {
@@ -123,7 +124,7 @@ app.post('/login', (req, res) => {
 
     cognitoUser.authenticateUser(authenticationDetails, {
       onSuccess: (result) => {
-        console.log(result);
+        //console.log(result);
         res.send({ message: 'ok' });
       },
 
@@ -151,7 +152,6 @@ app.post('/id_check', (req, res) => {
   }
 });
 app.post('/sign_up_Check', (req, res) => {
-  console.log("asdasd")
   const request = req['body'];
   if (!!request) {
     const data = request['body'];

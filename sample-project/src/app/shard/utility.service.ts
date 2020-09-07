@@ -13,7 +13,7 @@ export class UtilityService {
 
   string_data_subject = new BehaviorSubject<string>(null);
   send_loadingSW = new BehaviorSubject<boolean>(null);
-  loginState = new BehaviorSubject<boolean>(null);
+  loginState = new BehaviorSubject<string>(null);
   constructor(
     private httpClient: HttpClient,
     private _snackBar: MatSnackBar,
@@ -48,7 +48,7 @@ export class UtilityService {
       duration: 2000,
     });
   }
-  setlogined(state: boolean) {
+  setlogined(state: string) {
     this.loginState.next(state);
   }
   getlogined() {

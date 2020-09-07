@@ -10,10 +10,11 @@
         <span class="title" >
           <button mat-button (click)="drawer.toggle()"  *ngIf="logined"><mat-icon>menu</mat-icon></button> 
           <span [matBadge]="newMessage"  matBadgeColor="warn" (click)="openMemberPage()" *ngIf="logined">
-            MyApp
+            CMS
+            {{name}}님 반갑습니다.
           </span>
           <span *ngIf="!logined">
-            MyApp
+            CMS
           </span>
           
         </span>

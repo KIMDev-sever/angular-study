@@ -1,17 +1,71 @@
 <div class="wrapper">
-    <div class="container">
+  <div class="container">
+    <div class="content">
+      <div class="comment-area">
+        <h1>데이터 송신</h1>
+        <button mat-flat-button (click)="sendData()" color="primary">
+          <mat-icon>send</mat-icon> 송신
+        </button>
+        &nbsp;
+        <button mat-flat-button color="primary" (click)="update()">
+          <mat-icon>update</mat-icon>미리보기업데이트
+        </button>
         <br>
-        <p *ngFor="let nav of nav_list;let i=index">
-            <mat-card class="card">
-
-                fsadfasfs
-                <button mat-raised-button color="primary" (click)="del(i)">삭제</button>
-            </mat-card>
-        </p>
-
+        <br>
+        <h3>미리보기</h3>
+        <div class="pre-view">
+          <ul>
+            <li *ngFor="let nav of pre_list;let i=index" class="pre-button">
+            <!-- 추후 본페이지 네이게이션 디자인 연결 -->
+              <button mat-flat-button color="primary" *ngIf="nav.visible" [disabled]="!nav.disabled">
+                {{nav.title}}
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-area">
+        <div *ngFor="let nav of nav_list;let i=index">
+          <div class="card">
+            <p>
+              <mat-checkbox class="example-margin"></mat-checkbox>
+              <mat-form-field class="example-full-width">
+                <mat-label>타이틀</mat-label>
+                <input matInput [value]="nav.title" (change)="inputData('title',$event.target.value,i)">
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field class="example-full-width">
+                <mat-label>URL</mat-label>
+                <input matInput [value]="nav.url" (change)="inputData('url',$event.target.value,i)">
+              </mat-form-field>
+            </p>
+            <p>
+              표시 설정 :
+              <mat-radio-group [value]="nav.visible" (change)="inputData('visible',$event.value,i)">
+                <mat-radio-button [value]="true">표시</mat-radio-button>
+                <mat-radio-button [value]="false">비표시</mat-radio-button>
+              </mat-radio-group>
+            </p>
+            <p>
+              액티브설정 :
+              <mat-radio-group [value]="nav.disabled" (change)="inputData('disabled',$event.value,i)">
+                <mat-radio-button [value]="true">활성화</mat-radio-button>
+                <mat-radio-button [value]="false">비활성화</mat-radio-button>
+              </mat-radio-group>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="btn-area">
+        <button mat-button (click)="add()">
+          <mat-icon>playlist_add</mat-icon>추가
+        </button>
+        <button mat-button>
+          <mat-icon>delete</mat-icon>삭제
+        </button>
+      </div>
     </div>
-    <div class="btn-area">
-        <button mat-raised-button color="primary" (click)="add()">추가</button>
+  </div>
 
-    </div>
 </div>

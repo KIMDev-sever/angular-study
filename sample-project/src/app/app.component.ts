@@ -1,8 +1,9 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { UtilityService } from './shard/utility.service';
 import { Subscription } from 'rxjs';
 import { LoginService } from './login/login.service';
 import { Router } from '@angular/router';
+import { MatDrawer } from '@angular/material/sidenav'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   // tslint:disable:typedef
+  @ViewChild('drawer') drawer:MatDrawer;
   loadingSw = false;
   subscription = new Subscription();
   logined = false;
@@ -25,14 +27,9 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(): void {
     this.subscription.add(
-      this.utilityService.getLoadingCheckData().subscribe((value: boolean) => {
-        this.loadingSw = value;
-      }));
-    this.subscription.add(
       this.utilityService.getlogined().subscribe((value: string) => {
         this.name = value;
         this.logined = this.name ? true : false;
-
       })
     );
 
@@ -44,6 +41,7 @@ export class AppComponent implements OnInit {
     this.loginService.logout();
     this.logined = null;
     this.name = '';
+    this.drawer.close();
     this.router.navigate(['login']);
   }
   openMemberPage(): void {

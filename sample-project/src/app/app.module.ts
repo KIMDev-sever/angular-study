@@ -44,6 +44,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSelectModule} from '@angular/material/select';
 import { MemberPageDialogComponent } from './member-page/member-page-dialog/member-page-dialog.component';
 import { NavComponent } from './nav/nav.component';
+import {MatRadioModule} from '@angular/material/radio';
 import {MatTooltipModule} from '@angular/material/tooltip';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin, interaction
@@ -90,6 +91,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
+    MatRadioModule,
     MatDialogModule,
     MatListModule,
     MatToolbarModule,

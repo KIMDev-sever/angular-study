@@ -51,6 +51,30 @@
                 margin:20px auto 20px auto;
                 height: 250px;
                 padding:20px;
+                .text-area{
+                    width: 100%;
+                    text-align: left;
+                    margin-left: 20px;
+                
+                    mat-form-field{
+                        width: 30%;
+                        margin-left: 10px;
+                    }
+                }
+                .radio-area{
+                    width: 100%;
+                    display: flex;
+                    &-card{
+                        h2{
+                          vertical-align: middle;
+                        }
+                        width: calc(50% - 40px);
+                        border: 1px solid #b5b5b5;
+                        height: 150px;
+                        margin: 20px;
+                    }
+                
+                }
             }
         }
     

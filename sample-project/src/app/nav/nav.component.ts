@@ -56,7 +56,7 @@ export class NavComponent implements OnInit {
     //데이터 전송 서비스 구현예정
   }
   update() {
-    this.pre_list = [...this.nav_list];
+    this.pre_list = lodash.cloneDeep(this.nav_list);
     this.updateTrigger = false;
   }
 }

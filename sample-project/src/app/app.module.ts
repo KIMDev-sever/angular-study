@@ -46,6 +46,9 @@ import { MemberPageDialogComponent } from './member-page/member-page-dialog/memb
 import { NavComponent } from './nav/nav.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { ProductPageComponent } from './product-page/product-page.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatExpansionModule} from '@angular/material/expansion';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin, interaction
 ]);
@@ -68,6 +71,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MemberPageComponent,
     MemberPageDialogComponent,
     NavComponent,
+    ProductPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +82,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatTableModule,
     MatNativeDateModule,
     MatCardModule,
+    MatExpansionModule,
     MatPaginatorModule,
     MatIconModule,
     MatStepperModule,
@@ -86,6 +91,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    MatTabsModule,
     MatInputModule,
     MatSnackBarModule,
     BrowserAnimationsModule,

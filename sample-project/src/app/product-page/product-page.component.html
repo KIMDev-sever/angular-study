@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <mat-tab-group class="container" (selectedTabChange)="change_category($event)">
+    <mat-tab [label]="category.name" *ngFor="let category of category_list" class="tabs">
+      <div class="content">
+        <div class="list-box">
+          <mat-card>dd</mat-card>
+          <mat-accordion>
+            <div *ngFor="let product of change_product_list ;let i=index">
+              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+                *ngIf="i<=15" matTooltip="상세보기">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{product.name}}
+                  </mat-panel-title>
+                  <mat-panel-description>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="detail-box">
+                    <!-- 3개까지 -->
+                    <img *ngFor="let image of product.images" [src]="image">
+                
+                </div>
+              </mat-expansion-panel>
+            </div>
+          </mat-accordion>
+
+        </div>
+        <div class="btn-area">
+            <button mat-button>
+              <mat-icon>playlist_add</mat-icon>추가
+            </button>
+            <button mat-button>
+              <mat-icon>delete</mat-icon>삭제
+            </button>
+          </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

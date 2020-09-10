@@ -6,6 +6,7 @@ import { AuthGuard } from './auth.guard';
 import { MainComponent } from './main/main.component';
 import { MemberPageComponent } from './member-page/member-page.component';
 import { NavComponent } from './nav/nav.component';
+import { ProductPageComponent } from './product-page/product-page.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {
     path: 'nav', component: NavComponent, canActivate: [AuthGuard],
+  },
+  {
+    path: 'product_management', component: ProductPageComponent, canActivate: [AuthGuard],
   }
   // { path: '',   redirectTo: '/first-component', pathMatch: 'full' }, // redirect to `first-component`
   // { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page

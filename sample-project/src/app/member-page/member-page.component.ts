@@ -75,7 +75,7 @@ export class MemberPageComponent implements OnInit {
     for (let index = 0; index < Math.random() * 50; index++) {
       const sample_buyList: ProductModel = {
         category_num:index,
-        id: uuidv4().substring(0, 6),
+        code: uuidv4().substring(0, 6),
         date: new Date(),
         name: '어떠한 물건',
         count: Math.ceil(Math.random() * 100),

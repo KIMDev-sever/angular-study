@@ -3,4 +3,5 @@ export interface NavModel {
     url: string;
     visible: boolean;
     disabled: boolean;
+    id: string;
 };

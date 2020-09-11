@@ -37,19 +37,20 @@
                 <mat-label>URL</mat-label>
                 <input matInput [value]="nav.url" (change)="inputData('url',$event.target.value,i)">
               </mat-form-field>
+              <span><mat-checkbox class="example-margin" (change)="checkdel($event.checked,nav.id)">삭제하기</mat-checkbox></span>
             </div>
             <div class="radio-area">
               <div class="radio-area-card">
                 <h2><mat-icon>remove_red_eye</mat-icon>표시 설정</h2>
                 <mat-radio-group [value]="nav.visible" (change)="inputData('visible',$event.value,i)">
-                  <mat-radio-button [value]="true">표시</mat-radio-button>
+                  <mat-radio-button [value]="true" style="margin-right:10px;">표시</mat-radio-button>
                   <mat-radio-button [value]="false">비표시</mat-radio-button>
                 </mat-radio-group>
               </div>
               <div class="radio-area-card">
                 <h2><mat-icon>disabled_by_default</mat-icon>액티브설정</h2>
                 <mat-radio-group [value]="nav.disabled" (change)="inputData('disabled',$event.value,i)">
-                  <mat-radio-button [value]="false">활성화</mat-radio-button>
+                  <mat-radio-button [value]="false"  style="margin-right:10px;">활성화</mat-radio-button>
                   <mat-radio-button [value]="true">비활성화</mat-radio-button>
                 </mat-radio-group>
               </div>
@@ -61,7 +62,7 @@
         <button mat-button (click)="add()">
           <mat-icon>playlist_add</mat-icon>추가
         </button>
-        <button mat-button>
+        <button mat-button (click)="del()" [disabled]="!deleteTrigger">
           <mat-icon>delete</mat-icon>삭제
         </button>
       </div>

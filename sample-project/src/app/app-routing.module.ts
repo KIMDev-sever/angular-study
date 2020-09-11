@@ -20,7 +20,8 @@ const routes: Routes = [
     path: 'nav', component: NavComponent, canActivate: [AuthGuard],
   },
   {
-    path: 'product_management', component: ProductPageComponent, canActivate: [AuthGuard],
+    path: 'product_management/:category_num', component: ProductPageComponent, canActivate: [AuthGuard],
+    
   }
   // { path: '',   redirectTo: '/first-component', pathMatch: 'full' }, // redirect to `first-component`
   // { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page

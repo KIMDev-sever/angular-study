@@ -2,37 +2,58 @@
   <mat-tab-group class="container" (selectedTabChange)="change_category($event)">
     <mat-tab [label]="category.name" *ngFor="let category of category_list" class="tabs">
       <div class="content">
-        <div class="list-box">
-          <mat-card>dd</mat-card>
+        <div>
+
+
+        </div>
+        <div class="list-box  mat-elevation-z8">
+          <div class="list-header"></div>
           <mat-accordion>
-            <div *ngFor="let product of change_product_list ;let i=index">
-              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
-                *ngIf="i<=15" matTooltip="상세보기">
+            <div *ngFor="let product of change_product_list ;let i=index" [ngClass]="((startsize<=i) && (i<endsize))? 'card-box':'non-card-box'">
+              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="card"
+                *ngIf="(startsize<=i) && (i<endsize)">
                 <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    {{product.name}}
+                  <mat-panel-title class="panel_title">
+                    {{i+1}}.{{product.name}}
                   </mat-panel-title>
                   <mat-panel-description>
                   </mat-panel-description>
                 </mat-expansion-panel-header>
+                <div class="image-box">
+                  <img *ngFor="let image of product.images" [src]="image">
+
+                </div>
                 <div class="detail-box">
-                    <!-- 3개까지 -->
-                    <img *ngFor="let image of product.images" [src]="image">
-                
+                  <hr>
+                  <p>
+                    <b>가격</b>:{{product.price}} &nbsp;<b>수량</b>:{{product.count}}
+                  </p>
+                  <p>
+                    <b>설명</b><br>
+                    {{product.explan}}
+                  </p>
+                  <p>
+                    <b>등록일자</b>:{{product.date| date:'yyyy-MM-dd'}}
+                  </p>
+                  <p>
+                    <button mat-raised-button color="primary">수정하기 </button>
+                  </p>
                 </div>
               </mat-expansion-panel>
             </div>
           </mat-accordion>
-
+          <mat-paginator #paginator [length]="change_product_list.length" [pageSize]="15" [pageSizeOptions]="[5, 10, 15]"
+            (page)="change_paginator($event)">
+          </mat-paginator>
         </div>
         <div class="btn-area">
-            <button mat-button>
-              <mat-icon>playlist_add</mat-icon>추가
-            </button>
-            <button mat-button>
-              <mat-icon>delete</mat-icon>삭제
-            </button>
-          </div>
+          <button mat-raised-button color="primary">
+            <mat-icon>playlist_add</mat-icon>추가
+          </button>
+          <button mat-raised-button color="primary">
+            <mat-icon>delete</mat-icon>삭제
+          </button>
+        </div>
       </div>
     </mat-tab>
   </mat-tab-group>

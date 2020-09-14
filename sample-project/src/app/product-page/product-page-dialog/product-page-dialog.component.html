@@ -1,0 +1,113 @@
+<div class="wrapper" *ngIf="!!product">
+    <h2 mat-dialog-title class="title">
+        <mat-icon>create</mat-icon>
+        <ng-container *ngIf="key==='insert'">상품추가</ng-container>
+        <ng-container *ngIf="key==='update'">상품정보수정</ng-container>
+  
+    </h2>
+    <mat-dialog-content class="mat-typography" class="content">
+        <div class="image-box">
+            <ng-container *ngFor="let image of product.images;let i=index">
+                <img [src]="image" (click)="flie_uploader.click()">
+                <input type="file" hidden #flie_uploader accept="image/png, image/jpeg, image/gif, image/jpg" multiple
+                    (change)="selectFile($event.target.files,i)">
+            </ng-container>
+        </div>
+        <br>
+        <table>
+            <tr>
+                <th class="name">
+                    상품명
+                </th>
+                <td class="input">
+                    <ng-container *ngIf="key==='insert'">
+                        <mat-form-field>
+                            <input matInput [value]="product.name" (change)="inputdata('name',$event.target.value)">
+                        </mat-form-field>
+                    </ng-container>
+                    <ng-container *ngIf="key==='update'">{{product.name}}</ng-container>
+
+                </td>
+                <th class="name">
+                    분류
+                </th>
+                <td class="input">
+                    <ng-container *ngIf="key==='update'"> {{product.category_num | convert_category:category_list}}
+                    </ng-container>
+                    <ng-container *ngIf="key==='insert'">
+                        <mat-form-field (selectionChange)="inputdata('category_num',$event.value)">
+                            <mat-select>
+                                <mat-option *ngFor="let category of category_list" [value]="category.category_num">
+                                    {{category.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </ng-container>
+                </td>
+            </tr>
+            <tr>
+                <th class="name">
+                    상품코드
+                </th>
+                <td>
+                    {{product.code}}
+                </td>
+                <th class="name">
+                    가격
+                </th>
+                <td>
+                    <mat-form-field>
+                        <input matInput [value]="product.price" type="number" (change)="inputdata('price',$event.target.value)">
+                    </mat-form-field>
+
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    수량
+                </th>
+                <td>
+                    <mat-form-field>
+                        <input matInput [value]="product.count" type="number" (change)="inputdata('count',$event.target.value)">
+                    </mat-form-field>
+                </td>
+                <th>
+                    판매여부
+                </th>
+                <td>
+                    &nbsp;<mat-slide-toggle [checked]="product.sellTrigger" #slide (change)="inputdata('sellTrigger',$event.checked)">
+                        <ng-container *ngIf="slide.checked">판매중</ng-container>
+                        <ng-container *ngIf="!slide.checked">미판매</ng-container>
+                    </mat-slide-toggle>
+                </td>
+
+            </tr>
+            <tr>
+                <th>
+                    설명
+                </th>
+                <td colspan="3">
+                    <mat-form-field class="explan-form" (change)="inputdata('explan',$event.target.value)">
+                        <textarea matInput> {{product.explan}}</textarea>
+                    </mat-form-field>
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    등록일
+                </th>
+                <td colspan="3">
+                    {{product.date | date:'yyyy-MM-dd HH:mm:ss'}}
+                </td>
+            </tr>
+        </table>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button (click)="close(true)">
+            <ng-container *ngIf="key==='insert'">등록</ng-container>
+            <ng-container *ngIf="key==='update'">수정</ng-container>
+        </button>
+        <button mat-button (click)="close(false)">닫기</button>
+    </mat-dialog-actions>
+</div>

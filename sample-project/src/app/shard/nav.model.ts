@@ -4,4 +4,4 @@ export interface NavModel {
     visible: boolean;
     disabled: boolean;
     id: string;
-};
+}

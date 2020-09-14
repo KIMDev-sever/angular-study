@@ -45,6 +45,8 @@ const userPool = new AWSCognito.CognitoUserPool(poolData);
 // exports.handler = (event: any, context) => { 
 //   console.log(event)
 // }
+app.use(express.json({ limit : "50mb" })); //리퀘스트 용량
+
 app.post('./')
 app.post('/createImg', (req, res) => {
   const request = req['body'];

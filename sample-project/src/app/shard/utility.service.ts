@@ -12,7 +12,6 @@ export class UtilityService {
   imageSrc: string | ArrayBuffer;
 
   string_data_subject = new BehaviorSubject<string>(null);
-  send_loadingSW = new BehaviorSubject<boolean>(null);
   loginState = new BehaviorSubject<string>(null);
   constructor(
     private httpClient: HttpClient,
@@ -38,7 +37,7 @@ export class UtilityService {
   getImageSrc(reader: FileReader): Promise<string> {
     return new Promise((resolve, reject) => {
       reader.onload = (() => {
-        resolve(String(reader.result).replace(/^data:image\/jpeg;base64,/, '')); // 정규표현식 사용 필요
+        resolve(String(reader.result).replace(/^data:image\/(jpeg|gif|jpg|gif|png);base64,/, '')); // 정규표현식 사용 필요
       });
     });
   }
@@ -61,10 +60,6 @@ export class UtilityService {
   getStringdata() {
     return this.string_data_subject.asObservable();
   }
-  setLoadingCheckData(sw: boolean) {
-    this.send_loadingSW.next(sw);
-  }
-  getLoadingCheckData() {
-    return this.send_loadingSW.asObservable();
-  }
+
+
 }

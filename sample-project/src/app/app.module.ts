@@ -13,7 +13,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
-import { DialogComponent } from './shard/dialog/dialog.component';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule   } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -49,6 +48,11 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { ProductPageComponent } from './product-page/product-page.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { ProductPageDialogComponent } from './product-page/product-page-dialog/product-page-dialog.component';
+import { ProductPipe } from './shard/pipe/product.pipe';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { ConfirmComponent } from './shard/dialog/confirm/confirm.component';
+import { MainSeittingPageComponent } from './main-seitting-page/main-seitting-page.component';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin, interaction
 ]);
@@ -58,7 +62,6 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     AppComponent,
     YoutubeComponent,
     PlayerListComponent,
-    DialogComponent,
     LoginComponent,
     SignUpDialogComponent,
     ListComponent,
@@ -72,6 +75,10 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MemberPageDialogComponent,
     NavComponent,
     ProductPageComponent,
+    ProductPageDialogComponent,
+    ProductPipe,
+    ConfirmComponent,
+    MainSeittingPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,6 +86,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatSelectModule,
     MatTooltipModule,
     MatButtonModule,
+    MatSlideToggleModule,
     MatTableModule,
     MatNativeDateModule,
     MatCardModule,

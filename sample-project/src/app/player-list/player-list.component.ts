@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { PlayerModel } from './player-list.model';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../shard/dialog/dialog.component';
+// import { DialogComponent } from '../shard/dialog/dialog.component';
 import { Subscription } from 'rxjs';
 import { UtilityService } from '../shard/utility.service';
 import { filter } from 'rxjs/operators';
@@ -25,22 +25,22 @@ export class PlayerListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
   // tslint:disable-next-line:typedef
-  add(): void {
-    const dialogRef = this.dialog.open(DialogComponent, {
-      width: '80%',
-      height: '80%'
-    });
+  // add(): void {
+  //   const dialogRef = this.dialog.open(DialogComponent, {
+  //     width: '80%',
+  //     height: '80%'
+  //   });
 
-    this.subscription.add(dialogRef.afterClosed().pipe(filter(value => !!value)).subscribe((result: PlayerModel) => {
-      if (!!result) {
-        const data: PlayerModel = { ...result };
-        this.list.push(data);
-        data.index = this.list.length;
-        // 데이터 베이스 처리는 나중에 함
-      }
+  //   this.subscription.add(dialogRef.afterClosed().pipe(filter(value => !!value)).subscribe((result: PlayerModel) => {
+  //     if (!!result) {
+  //       const data: PlayerModel = { ...result };
+  //       this.list.push(data);
+  //       data.index = this.list.length;
+  //       // 데이터 베이스 처리는 나중에 함
+  //     }
 
-    }));
-  }
+  //   }));
+  // }
   // tslint:disable-next-line:typedef
   playVideo(videoId: string) {
     this.utilityService.setStringdata(videoId);

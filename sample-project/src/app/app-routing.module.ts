@@ -7,11 +7,15 @@ import { MainComponent } from './main/main.component';
 import { MemberPageComponent } from './member-page/member-page.component';
 import { NavComponent } from './nav/nav.component';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { MainSeittingPageComponent } from './main-seitting-page/main-seitting-page.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   {
     path: 'main', component: MainComponent, canActivate: [AuthGuard],
+  },
+  {
+    path: 'main-setting', component: MainSeittingPageComponent, canActivate: [AuthGuard],
   },
   {
     path: 'member_management', component: MemberPageComponent, canActivate: [AuthGuard],
@@ -21,7 +25,6 @@ const routes: Routes = [
   },
   {
     path: 'product_management/:category_num', component: ProductPageComponent, canActivate: [AuthGuard],
-    
   }
   // { path: '',   redirectTo: '/first-component', pathMatch: 'full' }, // redirect to `first-component`
   // { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page

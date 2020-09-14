@@ -80,7 +80,8 @@ export class MemberPageComponent implements OnInit {
         name: '어떠한 물건',
         count: Math.ceil(Math.random() * 100),
         price: 10000,
-        images:[]
+        images: [],
+        sellTrigger: true,
       };
       list.push(sample_buyList);
     }

@@ -1,0 +1,20 @@
+.content-box{
+    border:1px solid #3f51b5;
+    text-align: center;
+    table{
+        width: 100%;
+        margin: 0px auto;
+        text-align: left;
+        th{
+            text-align:center;
+        }
+        td{
+            mat-form-field{
+                width: 90%;
+            }
+        }
+        img{
+            cursor: pointer;
+        }
+    }
+}

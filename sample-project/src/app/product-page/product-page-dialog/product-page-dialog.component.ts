@@ -32,7 +32,6 @@ export class ProductPageDialogComponent implements OnInit {
     }
   }
   inputdata(key: string, value) {
-    console.log(value)
     this.product[key] = value;
   }
   close(value: boolean) {

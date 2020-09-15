@@ -1,0 +1,80 @@
+<div class="content">
+    <div class="title-main">
+        <span>
+            <mat-icon>settings</mat-icon>기본설정
+        </span>
+    </div>
+    <div class="content-box">
+        <table>
+            <tr>
+                <th>
+                    타이틀
+                </th>
+                <td colspan="3">
+                    <mat-form-field>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    로고
+                </th>
+                <td>
+                    <img src="../../../assets/image.png" height="50" (click)="flie_uploader.click()">
+                    <input type="file" hidden #flie_uploader accept="image/png, image/jpeg, image/gif, image/jpg" multiple>
+                </td>
+                <th>
+                    링크
+                </th>
+                <td>
+                    <mat-form-field>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    footer리스트 설정
+                </th>
+                <td colspan="3">
+                    <ng-container *ngFor="let footer of footerList;let i=index">
+                        <span *ngIf="footer.visible">{{footer.name}}</span> 
+                        <ng-container *ngIf="i<footerList.length-1">
+                            |
+                        </ng-container>
+                    </ng-container>
+             
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td colspan="3">
+                    <button mat-raised-button color="primary">추가</button>
+                    &nbsp;
+                    <button mat-raised-button color="warn">삭제</button>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    카피라이트 문구변경
+                </th>
+                <td colspan="3">
+                    <mat-form-field>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4">
+                    <app-category></app-category>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="4">
+                    <button mat-raised-button color="primary">사이트 적용</button>
+                </th>
+            </tr>
+        </table>
+    </div>
+</div>

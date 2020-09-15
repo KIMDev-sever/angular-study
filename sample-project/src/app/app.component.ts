@@ -3,7 +3,7 @@ import { UtilityService } from './shard/utility.service';
 import { Subscription } from 'rxjs';
 import { LoginService } from './login/login.service';
 import { Router } from '@angular/router';
-import { MatDrawer } from '@angular/material/sidenav'
+import { MatDrawer } from '@angular/material/sidenav';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +11,7 @@ import { MatDrawer } from '@angular/material/sidenav'
 })
 export class AppComponent implements OnInit {
   // tslint:disable:typedef
-  @ViewChild('drawer') drawer:MatDrawer;
+  @ViewChild('drawer') drawer: MatDrawer;
   loadingSw = false;
   subscription = new Subscription();
   logined = false;

@@ -52,7 +52,12 @@ import { ProductPageDialogComponent } from './product-page/product-page-dialog/p
 import { ProductPipe } from './shard/pipe/product.pipe';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { ConfirmComponent } from './shard/dialog/confirm/confirm.component';
-import { MainSeittingPageComponent } from './main-seitting-page/main-seitting-page.component';
+import { MainSettingPageComponent } from './main-setting-page/main-setting-page.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { CategoryComponent } from './main-setting-page/site-basic-setting/category/category.component';
+import { NoticeComponent } from './notice/notice.component';
+import { SiteBasicSettingComponent } from './main-setting-page/site-basic-setting/site-basic-setting.component';
+import { EventComponent } from './main-setting-page/event/event.component';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin, interaction
 ]);
@@ -78,7 +83,12 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ProductPageDialogComponent,
     ProductPipe,
     ConfirmComponent,
-    MainSeittingPageComponent,
+    MainSettingPageComponent,
+    AnalyticsComponent,
+    CategoryComponent,
+    NoticeComponent,
+    SiteBasicSettingComponent,
+    EventComponent,
   ],
   imports: [
     BrowserModule,

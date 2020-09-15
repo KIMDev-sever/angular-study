@@ -1,0 +1,25 @@
+<div class="content">
+    <span class="title">
+        <h2><b>상품 카테고리 설정</b></h2>
+    </span>
+    <div class="table-area">
+        <div class="table">
+            <ng-container *ngFor="let category of category_List;let i=index">
+                <span class="category-box" [class.end]="(i+1)%5===0">
+                    <h1>{{category.name}}</h1>
+                    <div class="sub-box">
+                        <ng-container *ngFor="let sub of category.sub_category">
+                            {{sub.name}}<br>
+                        </ng-container>
+                    </div>
+                </span>
+            </ng-container>
+        </div>
+
+    </div>
+    <div class="btn-area">
+        <button mat-flat-button>추가</button>
+        &nbsp;
+        <button mat-flat-button>삭제</button>
+    </div>
+</div>

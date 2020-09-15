@@ -1,6 +1,7 @@
 // 상품 통합 모델
 export interface ProductModel {
     category_num: number;
+    sub_category_num?: number;
     code: string;
     name?: string;
     price?: number;
@@ -13,4 +14,9 @@ export interface ProductModel {
 export interface CategoryModel {
     name: string;
     category_num: number;
+    sub_category?: SubCategoryModel[];
+}
+export interface SubCategoryModel {
+    name: string;
+    sub_category_num: number;
 }

@@ -1,0 +1,25 @@
+<!-- 이벤트 설정(추가,삭제)
+이벤트 종류(추가,삭제)
+
+이벤트 제목
+이벤트 내용
+이벤트 기간 -->
+<div class="content">
+    <div class="title-main">
+        <span>
+            <mat-icon>event_note</mat-icon>이벤트 설정
+        </span>
+    </div>
+    <div class="content-box">
+        <div class="input-box">
+            <button mat-raised-button color="primary">이벤트 적용</button>
+            &nbsp;
+            <button mat-raised-button color="primary">추가</button>
+            &nbsp;
+            <button mat-raised-button color="warn">삭제</button>
+        </div>
+        <div class="calendar-box">
+            <full-calendar #calendar [options]="calendarOptions"></full-calendar>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+.content{
+    margin: 0 auto;
+    width: 95%;
+    border: 1px solid #b5b5b5;
+    .title{
+        display: block;
+        width:calc(100%-10px);
+        border-bottom: 1px solid #b5b5b5;
+        padding-left: 10px;
+        padding-top:10px;
+        text-align: left;
+    }
+    .table-area{
+        
+        .table{
+            text-align: left;
+            margin: 0 auto;
+            padding: 0px;
+            width:100%;
+            .category-box{
+                vertical-align: middle;
+                text-align: center;
+                width: calc(20% - 1px);
+                height: 200px;
+                border-right: 1px solid #b5b5b5;
+                border-bottom: 1px solid #b5b5b5;
+                display: inline-block;
+                .sub-box{
+                    display: block;
+                    height: 140px;
+                    overflow: auto;
+                }
+            }
+
+        }
+    }
+    .btn-area{  
+        padding:10px;
+    }
+}
+.end{
+    border-right: 0px !important;
+}

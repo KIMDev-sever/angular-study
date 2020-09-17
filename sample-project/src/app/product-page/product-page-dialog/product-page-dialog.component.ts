@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ProductModel, CategoryModel } from '../../shard/product.model';
 import { UtilityService } from '../../shard/utility.service';
+import { v4 as uuidv4 } from 'uuid';
 @Component({
   selector: 'app-product-page-dialog',
   templateUrl: './product-page-dialog.component.html',
@@ -26,7 +27,7 @@ export class ProductPageDialogComponent implements OnInit {
     for (let index = 0; index < (Math.random() * 200); index++) {
       const data: CategoryModel = {
         name: '카테고리' + index,
-        category_num: index
+        category_num: uuidv4().substring(0, 6),
       };
       this.category_list.push(data);
     }

@@ -67,6 +67,9 @@
             <span *ngIf="key==='insert';else other_btn_name">등록</span>
             <ng-template #other_btn_name>수정</ng-template>
         </button>
+        <button mat-raised-button color="warn" (click)="close(null)" *ngIf="key!=='insert'">
+            삭제
+        </button>
         <button mat-raised-button (click)="close(false)">취소</button>
     </div>
 </div>

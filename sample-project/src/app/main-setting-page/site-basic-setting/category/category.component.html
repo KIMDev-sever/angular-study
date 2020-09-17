@@ -12,14 +12,15 @@
                             {{sub.name}}<br>
                         </ng-container>
                     </div>
+                    <b (click)="openDialog(category)" class="menu">수정하기</b>
+                    &nbsp;
+                    <b (click)="del(category.name,i)" class="menu">삭제하기</b>
                 </span>
             </ng-container>
         </div>
 
     </div>
     <div class="btn-area">
-        <button mat-flat-button>추가</button>
-        &nbsp;
-        <button mat-flat-button>삭제</button>
+        <button mat-flat-button (click)="openDialog(null)">추가</button>
     </div>
 </div>

@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular
 import { CalendarOptions, EventClickArg, FullCalendarComponent, Calendar, } from '@fullcalendar/angular';
 import * as moment from 'moment';
 import { MatDialog, } from '@angular/material/dialog';
-import { ScheduleDialogComponent } from './schedule-dialog/schedule-dialog.component';
+import { ScheduleDialogComponent } from '../shard/dialog/schedule-dialog/schedule-dialog.component';
 import { ScheduleModel } from '../shard/schedule.model';
 import { UtilityService } from '../shard/utility.service';
 import { filter } from 'rxjs/operators';
@@ -62,7 +62,7 @@ export class ScheduleComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit(): void {
   }
   editEvent(arg: EventClickArg) {
-    console.log(arg.event.id);
+
     const initData: ScheduleModel = {
       id: arg.event.id,
       title: arg?.event?.title,
@@ -79,7 +79,11 @@ export class ScheduleComponent implements OnInit, AfterViewInit, OnDestroy {
     });
     this.subscription.add(dialogRef.afterClosed().pipe(filter(value => !!value)).subscribe((result: ScheduleModel) => {
       this.calendarApi.getEventById(result.id).remove();
-      this.calendarApi.addEventSource([result]);
+      if (!!result) {
+        this.calendarApi.addEventSource([result]);
+      }
+
+
       this.utilityService.openSnackBar('스케쥴이 수정 되었습니다');
     }));
   }

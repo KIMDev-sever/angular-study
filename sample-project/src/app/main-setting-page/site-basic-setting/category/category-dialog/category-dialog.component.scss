@@ -1,0 +1,20 @@
+.wrapper{
+    width: 500px;
+    .list-box{
+        padding: 10px;
+        border: 1px solid #b5b5b5;
+        span{
+            border: 1px solid #b5b5b5;
+            margin: 5px;
+        }
+    
+    }
+    .chip-list{
+        width: 100%;
+    }
+}
+.del{
+    padding: 2px;
+    cursor: pointer;
+    text-decoration: underline;
+}

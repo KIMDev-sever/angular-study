@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <h3>카테고리 이름</h3>
+    <b>이름</b>:<mat-form-field>
+        <input matInput [value]="category_model.name" (change)="category_model.name=$event.target.value">
+    </mat-form-field>
+    <br>
+    <h3>서브 카테고리 </h3>
+
+    <mat-form-field class="chip-list">
+        <mat-chip-list #chipList aria-label="sub-category selection">
+            <mat-chip *ngFor="let sub of category_model.sub_category;let i=index" [selectable]="selectable"
+                [removable]="removable" (removed)="remove(i)">
+                {{sub.name}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="서브카테고리..." #subInput [formControl]="subCtrl" [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" (click)="close(true)">저장</button> &nbsp;
+    <button mat-raised-button (click)="close(false)">닫기</button>
+</div>

@@ -23,7 +23,7 @@ export class ProductPageComponent implements OnInit, AfterViewInit, OnDestroy {
   category_list: CategoryModel[] = [];
   product_list: ProductModel[] = [];
   change_product_list: ProductModel[] = [];
-  selected_Category = 0;
+  selected_Category = '';
   @ViewChild('paginator') paginator: MatPaginator;
   startsize = 0;
   endsize = 15;
@@ -47,7 +47,7 @@ export class ProductPageComponent implements OnInit, AfterViewInit, OnDestroy {
         for (let index = 0; index < (Math.random() * 200); index++) {
           for (let no = 0; no < Math.random() * 200; no++) {
             const sample_buyList: ProductModel = {
-              category_num: index,
+              category_num: 'abcd12',
               code: uuidv4().substring(0, 6),
               date: new Date(),
               name: '어떠한 물건',
@@ -62,12 +62,12 @@ export class ProductPageComponent implements OnInit, AfterViewInit, OnDestroy {
           }
           const data: CategoryModel = {
             name: '카테고리' + index,
-            category_num: index
+            category_num: uuidv4().substring(0, 6),
           };
           this.category_list.push(data);
         }
         // tslint:disable-next-line:radix
-        this.selected_Category = Number.parseInt(value.category_num);
+        this.selected_Category = value.category_num;
         this.change_product_list = this.product_list.filter((data, index) => {
           return data.category_num === this.selected_Category;
         });

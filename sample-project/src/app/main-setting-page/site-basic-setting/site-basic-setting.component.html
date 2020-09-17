@@ -12,7 +12,7 @@
                 </th>
                 <td colspan="3">
                     <mat-form-field>
-                        <input matInput>
+                        <input matInput [value]="settingData.title" (change)="inputData('title',$event.target.value)">
                     </mat-form-field>
                 </td>
             </tr>
@@ -21,15 +21,17 @@
                     로고
                 </th>
                 <td>
-                    <img src="../../../assets/image.png" height="50" (click)="flie_uploader.click()">
-                    <input type="file" hidden #flie_uploader accept="image/png, image/jpeg, image/gif, image/jpg" multiple>
+                    <img [src]="settingData.logo" height="50" (click)="flie_uploader.click()">
+                    <input type="file" hidden #flie_uploader accept="image/png, image/jpeg, image/gif, image/jpg"
+                        multiple>
                 </td>
                 <th>
                     링크
                 </th>
                 <td>
                     <mat-form-field>
-                        <input matInput>
+                        <input matInput [value]="settingData.logoLink"
+                            (change)="inputData('logoLink',$event.target.value)">
                     </mat-form-field>
                 </td>
             </tr>
@@ -39,20 +41,44 @@
                 </th>
                 <td colspan="3">
                     <ng-container *ngFor="let footer of footerList;let i=index">
-                        <span *ngIf="footer.visible">{{footer.name}}</span> 
+                        <span *ngIf="footer.visible">{{footer.name}}</span>
                         <ng-container *ngIf="i<footerList.length-1">
                             |
                         </ng-container>
+
                     </ng-container>
-             
+                    &nbsp;&nbsp;
+                    <b class="btn" (click)="delfooter()">삭제</b>
+                    <br> <br>
+                    <b class="btn" (click)="addBoxTrigger=true" *ngIf="!addBoxTrigger">추가하기</b>
+                    <b class="btn" (click)="addBoxTrigger=false" *ngIf="!!addBoxTrigger">닫기</b>
                 </td>
             </tr>
             <tr>
                 <th></th>
                 <td colspan="3">
-                    <button mat-raised-button color="primary">추가</button>
-                    &nbsp;
-                    <button mat-raised-button color="warn">삭제</button>
+                    <div class="add-box mat-elevation-z8" *ngIf="!!addBoxTrigger">
+                        <mat-form-field class="footer-input">
+                            <input matInput placeholder="이름" #name>
+                        </mat-form-field>
+                        <mat-form-field class="footer-input">
+                            <input matInput placeholder="URL" #link>
+                        </mat-form-field>
+                        <br>
+                        표시설정:
+                        <mat-radio-group [value]="true">
+                            <mat-radio-button [value]="true" style="margin-right:10px;" #visible>표시</mat-radio-button>
+                            <mat-radio-button [value]="false" #visible>비표시</mat-radio-button>
+                        </mat-radio-group>
+                        &nbsp;&nbsp;
+                        <mat-radio-group [value]="true">
+                            <mat-radio-button [value]="true" style="margin-right:10px;" #disabled>활성화</mat-radio-button>
+                            <mat-radio-button [value]="false" #disabled>비활성화</mat-radio-button>
+                        </mat-radio-group>
+                        <br><br>
+                        <button mat-raised-button color="primary"
+                            (click)="addfooter(name.value,link.value,visible.checked,disabled.checked)">추가</button>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -61,7 +87,8 @@
                 </th>
                 <td colspan="3">
                     <mat-form-field>
-                        <input matInput>
+                        <input matInput [value]="settingData.copyright"
+                            (change)="inputData('copyright',$event.target.value)">
                     </mat-form-field>
                 </td>
             </tr>

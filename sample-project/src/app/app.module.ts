@@ -36,11 +36,10 @@ import { FullCalendarModule } from '@fullcalendar/angular'; // the main connecto
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interaction from '@fullcalendar/interaction';
 import {MatTableModule} from '@angular/material/table';
-import { ScheduleDialogComponent } from './schedule/schedule-dialog/schedule-dialog.component';
+import { ScheduleDialogComponent } from './shard/dialog/schedule-dialog/schedule-dialog.component';
 import { QnAComponent } from './qn-a/qn-a.component';
 import { MemberPageComponent } from './member-page/member-page.component'; // a plugin
 import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatSelectModule} from '@angular/material/select';
 import { MemberPageDialogComponent } from './member-page/member-page-dialog/member-page-dialog.component';
 import { NavComponent } from './nav/nav.component';
 import {MatRadioModule} from '@angular/material/radio';
@@ -58,6 +57,10 @@ import { CategoryComponent } from './main-setting-page/site-basic-setting/catego
 import { NoticeComponent } from './notice/notice.component';
 import { SiteBasicSettingComponent } from './main-setting-page/site-basic-setting/site-basic-setting.component';
 import { EventComponent } from './main-setting-page/event/event.component';
+import { CategoryDialogComponent } from './main-setting-page/site-basic-setting/category/category-dialog/category-dialog.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatChipsModule} from '@angular/material/chips';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin, interaction
 ]);
@@ -89,6 +92,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     NoticeComponent,
     SiteBasicSettingComponent,
     EventComponent,
+    CategoryDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,9 +101,11 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatTooltipModule,
     MatButtonModule,
     MatSlideToggleModule,
+    MatAutocompleteModule,
     MatTableModule,
     MatNativeDateModule,
     MatCardModule,
+    MatChipsModule,
     MatExpansionModule,
     MatPaginatorModule,
     MatIconModule,

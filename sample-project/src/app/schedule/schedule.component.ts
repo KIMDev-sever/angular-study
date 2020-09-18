@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular
 import { CalendarOptions, EventClickArg, FullCalendarComponent, Calendar, } from '@fullcalendar/angular';
 import * as moment from 'moment';
 import { MatDialog, } from '@angular/material/dialog';
-import { ScheduleDialogComponent } from '../shard/dialog/schedule-dialog/schedule-dialog.component';
+import { ScheduleDialogComponent } from './schedule-dialog/schedule-dialog.component';
 import { ScheduleModel } from '../shard/schedule.model';
 import { UtilityService } from '../shard/utility.service';
 import { filter } from 'rxjs/operators';
@@ -77,15 +77,16 @@ export class ScheduleComponent implements OnInit, AfterViewInit, OnDestroy {
       height: '600px',
       data: { key: 'update', value: initData }
     });
-    this.subscription.add(dialogRef.afterClosed().pipe(filter(value => !!value)).subscribe((result: ScheduleModel) => {
-      this.calendarApi.getEventById(result.id).remove();
-      if (!!result) {
-        this.calendarApi.addEventSource([result]);
-      }
-
-
-      this.utilityService.openSnackBar('스케쥴이 수정 되었습니다');
-    }));
+    this.subscription.add(dialogRef.afterClosed().pipe(filter(value => !!value))
+      .subscribe((result: { key: number, data: ScheduleModel }) => {
+        this.calendarApi.getEventById(result.data.id).remove();
+        let message = '스케쥴이 삭제되었습니다';
+        if (result.key === 1) {
+          this.calendarApi.addEventSource([result]);
+          message = '스케쥴이 수정되었습니다.';
+        }
+        this.utilityService.openSnackBar(message);
+      }));
   }
   setDateEvent(arg) {
     const initData: ScheduleModel = {
@@ -101,10 +102,11 @@ export class ScheduleComponent implements OnInit, AfterViewInit, OnDestroy {
       height: '600px',
       data: { key: 'insert', value: initData }
     });
-    this.subscription.add(dialogRef.afterClosed().pipe(filter(value => !!value)).subscribe((result: ScheduleModel) => {
-      this.calendarApi.addEventSource([result]);
-      this.utilityService.openSnackBar('스케쥴이 추가 되었습니다');
-    }));
+    this.subscription.add(dialogRef.afterClosed().pipe(filter(value => !!value))
+      .subscribe((result: { key: number, data: ScheduleModel }) => {
+        this.calendarApi.addEventSource([result.data]);
+        this.utilityService.openSnackBar('스케쥴이 추가 되었습니다');
+      }));
   }
 
 }

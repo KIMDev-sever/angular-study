@@ -4,12 +4,12 @@ import { FullCalendarComponent } from '@fullcalendar/angular';
 import { Calendar, CalendarOptions, EventClickArg } from '@fullcalendar/core';
 import { ScheduleModel } from '../../shard/schedule.model';
 import { v4 as uuidv4 } from 'uuid';
-import { ScheduleDialogComponent } from '../../shard/dialog/schedule-dialog/schedule-dialog.component';
 import { filter } from 'rxjs/internal/operators/filter';
 import { UtilityService } from 'src/app/shard/utility.service';
 import { Subscription } from 'rxjs';
 import * as moment from 'moment';
 import { EventModel } from '../../shard/event.model';
+import { EventDialogComponent } from './event-dialog/event-dialog.component';
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
@@ -41,56 +41,58 @@ export class EventComponent implements OnInit, AfterViewInit {
     this.calendarApi = this.calendarComponent.getApi();
   }
   editEvent(arg: EventClickArg) {
-    console.log(arg.event.id);
-    const initData: ScheduleModel = {
-      id: arg.event.id,
-      title: arg?.event?.title,
-      color: arg?.event?.backgroundColor,
-      start: arg?.event?.start,
-      end: arg?.event?.end,
-      start_time: moment(arg?.event?.start).format('HH:mm:ss'),
-      end_time: moment(arg?.event?.end).format('HH:mm:ss')
-    };
-    const dialogRef = this.dialog.open(ScheduleDialogComponent, {
-      width: '470px',
-      height: '600px',
+    const id = arg.event.id;
+    const initData: EventModel = this.eventList.find((event) => {
+      return event.id === id;
+    });
+    const dialogRef = this.dialog.open(EventDialogComponent, {
       data: { key: 'update', value: initData }
     });
-    this.subscription.add(dialogRef.afterClosed().pipe(filter(value => !!value)).subscribe((result: ScheduleModel) => {
-      this.calendarApi.getEventById(result.id).remove();
-      if (!!result) {
-        this.calendarApi.addEventSource([result]);
-      }
+    this.subscription.add(dialogRef.afterClosed().pipe(filter(value => !!value))
+      .subscribe((result: { key: number, data: EventModel }) => {
+        this.calendarApi.getEventById(result.data.id).remove();
+        let message = '이벤트가 삭제되었습니다';
 
-      this.utilityService.openSnackBar('이벤트가 수정 되었습니다');
-    }));
+        if (result.key === 1) {
+          message = '이벤트가 수정 되었습니다';
+          const index = this.eventList.findIndex((event) => {
+            return event.id === id;
+          });
+          if (index !== undefined && index !== null) {
+            this.eventList[index] = result.data;
+          }
+
+          this.calendarApi.addEventSource([result.data]);
+        } else {
+
+        }
+
+        this.utilityService.openSnackBar(message);
+      }));
   }
   setDateEvent(arg) {
-    const initData: ScheduleModel = {
+    const initData: EventModel = {
       id: uuidv4(),
       title: '',
       color: '',
       start: new Date(arg.dateStr),
       end: null,
+      end_time: '',
+      explan: '',
+      images: ['../../../../assets/image.png', '../../../../assets/image.png', '../../../../assets/image.png'],
+      kind: '',
+      start_time: ''
     };
-    // const event: EventModel = {
-    //   title: '',
-    //   explan: '',
-    //   images: [],
-    //   kind: '',
-    //   event_Id: initData.id,
-    //   schedule: initData
-    // };
-    const dialogRef = this.dialog.open(ScheduleDialogComponent, {
-      width: '470px',
-      height: '600px',
+    const dialogRef = this.dialog.open(EventDialogComponent, {
       data: { key: 'insert', value: initData }
     });
-    this.subscription.add(dialogRef.afterClosed().pipe(filter(value => !!value)).subscribe((result: ScheduleModel) => {
-      this.calendarApi.addEventSource([result]);
-      this.utilityService.openSnackBar('이벤트가 추가 되었습니다');
+    this.subscription.add(dialogRef.afterClosed().pipe(filter(value => !!value))
+      .subscribe((result: { key: number, data: EventModel }) => {
+        this.calendarApi.addEventSource([result.data]);
+        this.eventList.push(result.data);
+        this.utilityService.openSnackBar('이벤트가 추가 되었습니다');
 
-    }));
+      }));
   }
 
 }

@@ -63,13 +63,13 @@
     </div>
 
     <div class="btn-area">
-        <button mat-raised-button color="primary" (click)="close(true)">
+        <button mat-raised-button color="primary" (click)="close(1)">
             <span *ngIf="key==='insert';else other_btn_name">등록</span>
             <ng-template #other_btn_name>수정</ng-template>
         </button>
-        <button mat-raised-button color="warn" (click)="close(null)" *ngIf="key!=='insert'">
+        <button mat-raised-button color="warn" (click)="close(2)" *ngIf="key!=='insert'">
             삭제
         </button>
-        <button mat-raised-button (click)="close(false)">취소</button>
+        <button mat-raised-button (click)="close(0)">취소</button>
     </div>
 </div>

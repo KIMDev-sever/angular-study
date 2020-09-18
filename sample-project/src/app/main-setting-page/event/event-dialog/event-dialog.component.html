@@ -1,0 +1,113 @@
+<div class="wrapper">
+    <div class="container">
+        <table>
+            <tr>
+                <th>타이틀</th>
+                <td colspan="">
+                    <mat-form-field>
+                        <input matInput [value]="event_data.title" (change)="inputData('title',$event.target.value)">
+                    </mat-form-field>
+                </td>
+                <th>이벤트컬러</th>
+                <td>
+                    <input matInput type="color" [value]="event_data.color"
+                        (change)="inputData('color',$event.target.value)">
+                </td>
+            </tr>
+            <tr>
+                <th>분류</th>
+                <td colspan="">
+                    <mat-form-field>
+                        <mat-select (selectionChange)="inputData('kind',$event.value)">
+                            <mat-option *ngFor="let kind of kindlist;let i=index" [value]="kind">
+                                {{kind}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <span class="setting-btn" (click)="kindSettingTrigger=true" *ngIf="!kindSettingTrigger">설정</span>
+                    <span class="setting-btn" (click)="kindSettingTrigger=false" *ngIf="!!kindSettingTrigger">닫기</span>
+                    <div *ngIf="!!kindSettingTrigger" class="kind-area">
+                        <mat-chip-list #chipList>
+                            <mat-chip *ngFor="let kind of kindlist;let i=index" [selectable]="selectable"
+                                [removable]="removable" (removed)="remove(i)">
+                                {{kind}}
+                                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                            </mat-chip>
+
+                            <input placeholder="서브카테고리..." #subInput [formControl]="subCtrl"
+                                [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                (matChipInputTokenEnd)="add($event)">
+                        </mat-chip-list>
+
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+
+            </tr>
+            <tr>
+                <th>시작일</th>
+                <td>
+                    <mat-form-field>
+                        <input matInput [value]="event_data.start" [matDatepicker]="picker1"
+                            (dateChange)="inputData('start',$event.target.value)">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                    &nbsp;
+                    <mat-form-field>
+                        <input matInput type="time" [value]="event_data.start_time"
+                            (change)="inputData('starttime',$event.target.value+':00')">
+                    </mat-form-field>
+                </td>
+                <th>끝나는날</th>
+                <td>
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker2" (dateChange)="inputData('end',$event.target.value)">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                    </mat-form-field>
+                    &nbsp;
+                    <mat-form-field>
+                        <input matInput type="time" [value]="event_data.end_time"
+                            (change)="inputData('endtime',$event.target.value+':00')">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" class="images-area">
+                    <ng-container *ngFor="let img of event_data.images;let i=index">
+                        <img [src]="img" (click)="flie_uploader.click()">
+                        <input type="file" hidden #flie_uploader accept="image/png, image/jpeg, image/gif, image/jpg"
+                            multiple (change)="selectFile($event.target.files,i)">
+                    </ng-container>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <mat-form-field class="full-length-field">
+                        <mat-label>설명</mat-label>
+                        <textarea matInput rows="10" cols="100"
+                            (change)="inputData('explan',$event.target.value)">{{event_data.explan}}</textarea>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" class="btn-area">
+                    <button mat-raised-button color="primary" (click)="close(1)">
+                        <span *ngIf="key==='insert';else other_btn_name">등록</span>
+                        <ng-template #other_btn_name>수정</ng-template>
+                    </button>
+                    <button mat-raised-button color="warn" (click)="close(2)" *ngIf="key!=='insert'">
+                        삭제
+                    </button>
+                    <button mat-raised-button (click)="close(0)">취소</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+</div>

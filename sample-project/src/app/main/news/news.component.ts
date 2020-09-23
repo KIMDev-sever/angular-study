@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NewsModel } from '../../shard/news.model';
+import { NoticeModel } from '../../shard/notice.model';
 import * as moment from 'moment';
+import { v4 as uuidv4 } from 'uuid';
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -8,14 +9,15 @@ import * as moment from 'moment';
 })
 export class NewsComponent implements OnInit {
 
-  newsList: NewsModel[] = [];
+  newsList: NoticeModel[] = [];
   constructor() { }
 
   ngOnInit(): void {
     // 샘플 데이터
     for (let index = 0; index < 20; index++) {
-      const newsModel: NewsModel = {
-        index,
+      const newsModel: NoticeModel = {
+        id: uuidv4().substring(0, 6),
+        kind: '',
         url: '',
         write_owner: '회원이름',
         content: '',

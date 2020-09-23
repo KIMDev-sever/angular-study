@@ -1,55 +1,99 @@
-import { Component, OnInit } from '@angular/core';
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-  { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-  { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-  { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-  { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-  { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-  { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-  { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-  { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-];
-
-
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { ActivatedRoute, Router } from '@angular/router';
+import * as moment from 'moment';
+import { NewsModel } from '../shard/news.model';
+import { NoticeModel } from '../shard/notice.model';
+import { QnAModel } from '../shard/qna.model';
+import { NoitceDialogComponent } from './noitce-dialog/noitce-dialog.component';
+import { v4 as uuidv4 } from 'uuid';
 @Component({
   selector: 'app-notice',
   templateUrl: './notice.component.html',
   styleUrls: ['./notice.component.scss']
 })
-export class NoticeComponent implements OnInit {
+export class NoticeComponent implements OnInit, AfterViewInit {
   // tslint:disable:variable-name
   // tslint:disable:typedef
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  // sample source
+
+  displayedColumns: string[] = ['no', 'title', 'date'];
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   page_key = 'total';
-  constructor() { }
+  dataSource = new MatTableDataSource<NoticeModel>();
+  constructor(
+    private router: ActivatedRoute,
+    private route: Router,
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
+    // sample
+    // db연계 이후 page key 값으로 필터링할 예정 일단 css작업을 위한 샘플데이터 생성;
+    // tslint:disable:one-variable-per-declaration
+    const kindlist = [
+      'notice',
+      'qna',
+      'product_qna'
+    ];
+    const list: NoticeModel[] = [];
+    for (let index = 0; index < 20; index++) {
+      const noticemodel: NoticeModel = {
+        id: uuidv4().substring(0, 6),
+        url: '',
+        write_owner: '회원이름',
+        content: '',
+        title: 'ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ ',
+        date: moment(this.randomDate(new Date(2012, 0, 1), new Date())).format('YYYY-MM-DD'),
+        kind: kindlist[Math.floor(Math.random() * 3)]
+      };
+      list.push(noticemodel);
+    }
+    this.router.params.subscribe((value) => {
+      if (!!value) {
+        this.page_key = value.key;
+      }
+      switch (this.page_key) {
+        case 'total': {
+          this.dataSource.data = list;
+          break;
+        }
+        default: {
+          this.dataSource.data = list.filter((list_data) => {
+            return list_data.kind === this.page_key;
+          });
+          break;
+        }
+      }
+      this.dataSource.data.sort((a, b) => {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+      });
+    });
 
   }
-
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
   changeTable(key: string) {
-    this.page_key = key;
+    this.route.navigate(['notice-management', key]);
+  }
+
+  open_dialog(value) {
+    const dialogRef = this.dialog.open(NoitceDialogComponent, {
+      width: '250px',
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+
+    });
+  }
+  // sample
+  randomDate(start, end) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
   }
 }

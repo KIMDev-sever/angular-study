@@ -33,7 +33,7 @@ const routes: Routes = [
   {
     path: 'analytics', component: AnalyticsComponent, canActivate: [AuthGuard],
   },
-  { path: 'notice-management', component: NoticeComponent, canActivate: [AuthGuard] }
+  { path: 'notice-management/:key', component: NoticeComponent, canActivate: [AuthGuard] }
   // { path: '',   redirectTo: '/first-component', pathMatch: 'full' }, // redirect to `first-component`
   // { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 ];

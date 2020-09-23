@@ -62,6 +62,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatChipsModule } from '@angular/material/chips';
 import { EventDialogComponent } from './main-setting-page/event/event-dialog/event-dialog.component';
+import { NoitceDialogComponent } from './notice/noitce-dialog/noitce-dialog.component';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin, interaction
 ]);
@@ -95,6 +96,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     EventComponent,
     CategoryDialogComponent,
     EventDialogComponent,
+    NoitceDialogComponent,
   ],
   imports: [
     BrowserModule,

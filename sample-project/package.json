@@ -31,7 +31,9 @@
     "chartjs": "^0.3.24",
     "lodash": "^4.17.20",
     "moment": "^2.27.0",
+    "ng2-ckeditor": "^1.2.9",
     "rxjs": "~6.5.5",
+    "textarea-editor": "^2.1.1",
     "tslib": "^2.0.0",
     "uuid": "^8.3.0",
     "zone.js": "~0.10.3"

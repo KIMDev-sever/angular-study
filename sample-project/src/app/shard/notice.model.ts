@@ -9,6 +9,7 @@ export interface NoticeModel {
     write_owner: string;
     date: string;
     kind: string;
-    reply_id?: string;
+    reply_id?: string; // 없을땐 본글 있을땐 추가
+    images?: string[];
 }
 

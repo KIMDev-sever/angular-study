@@ -1,1 +1,20 @@
-<p>noitce-dialog works!</p>
+<div class="wrapper">
+    <div class="container">
+        <div class="content-area">
+            <h2 *ngIf="notice_model.kind!=='notice'">제목:{{notice_model.title}}</h2>
+            <h2 *ngIf="notice_model.kind=='notice'">제목:  
+                <mat-form-field>
+                <input matInput [value]="notice_model.title">
+              </mat-form-field></h2>
+            <div class="contents">
+                    <div class="form-group has-feedback"
+                        [ngClass]="{ 'has-error': myckeditor.invalid && myckeditor.touched }">
+                        <ckeditor [(ngModel)]="mycontent" #myckeditor="ngModel" name="myckeditor" required
+                            [config]="ckeConfig" debounce="500" (paste)="onPaste($event)" (change)="onChange($event)">
+                        </ckeditor>
+                    </div>
+            </div>
+        </div>
+        <div class="replay-area" *ngIf="notice_model.kind!=='notice'"></div>
+    </div>
+</div>

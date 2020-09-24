@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { CKEditorModule } from 'ng2-ckeditor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -99,6 +99,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     NoitceDialogComponent,
   ],
   imports: [
+    CKEditorModule,
     BrowserModule,
     HttpClientModule,
     MatSelectModule,

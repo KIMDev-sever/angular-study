@@ -31,6 +31,10 @@
             width: 100%;
             table{
                 width:100%;
+                tr:hover{
+                    cursor: pointer;
+                    background:#5191FD22;
+                }
             }
         }
     }

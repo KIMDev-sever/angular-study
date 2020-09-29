@@ -100,6 +100,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   ],
   imports: [
     CKEditorModule,
+    MatListModule,
     BrowserModule,
     HttpClientModule,
     MatSelectModule,

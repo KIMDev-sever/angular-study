@@ -5,6 +5,9 @@
         height: 100%;
         margin: 0 auto;
         .content-area{
+            mat-form-field{
+                width: 700px;
+            }
             .contents{
                 height: 500px;
           
@@ -26,6 +29,18 @@
                         height: 150px;
                     }
                 }
+            }
+        }
+        .replay-area{
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #b5b5b5;
+        }
+        .btn-area{
+            width: 100%;
+            text-align: center;
+            button{
+                margin: 10px;
             }
         }
     }

@@ -10,11 +10,23 @@
                     <div class="form-group has-feedback"
                         [ngClass]="{ 'has-error': myckeditor.invalid && myckeditor.touched }">
                         <ckeditor [(ngModel)]="mycontent" #myckeditor="ngModel" name="myckeditor" required
-                            [config]="ckeConfig" debounce="500" (paste)="onPaste($event)" (change)="onChange($event)">
+                            [config]="ckeConfig" debounce="500" (paste)="onPaste($event)" (change)="onChange($event)" class="editor">
                         </ckeditor>
                     </div>
             </div>
         </div>
-        <div class="replay-area" *ngIf="notice_model.kind!=='notice'"></div>
+        <h2  *ngIf="notice_model.kind!=='notice'">답글</h2>
+        <div class="replay-area" *ngIf="notice_model.kind!=='notice'">
+            <mat-list role=" ">
+                <mat-list-item role="listitem" *ngFor="let reply of reply_list" item>
+                 <span><b>{{reply.write_owner}}</b></span> <span>{{reply.content}}</span>  <span> {{reply.date}}</span>
+                </mat-list-item>
+              </mat-list>
+        </div>
+        <br>    
+        <div class="btn-area">
+            <button mat-flat-button color="primary" (click)="close(notice_model)">확인</button>
+            <button mat-flat-button (click)="close(null)">취소</button>
+        </div>
     </div>
 </div>

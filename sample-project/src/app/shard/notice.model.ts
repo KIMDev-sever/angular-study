@@ -12,4 +12,11 @@ export interface NoticeModel {
     reply_id?: string; // 없을땐 본글 있을땐 추가
     images?: string[];
 }
+export interface ReplyModel {
+    id: string;
+    content: string;
+    write_owner: string;
+    date: string;
+    reply_id:string;
+}
 

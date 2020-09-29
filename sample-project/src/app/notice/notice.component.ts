@@ -9,7 +9,7 @@ import { NoticeModel } from '../shard/notice.model';
 import { QnAModel } from '../shard/qna.model';
 import { NoitceDialogComponent } from './noitce-dialog/noitce-dialog.component';
 import { v4 as uuidv4 } from 'uuid';
-import { combineLatest } from 'rxjs/operators';
+import { combineLatest, filter } from 'rxjs/operators';
 import { UtilityService } from '../shard/utility.service';
 @Component({
   selector: 'app-notice',
@@ -27,6 +27,7 @@ export class NoticeComponent implements OnInit, AfterViewInit {
   page_key = 'total';
   manager = '';
   dataSource = new MatTableDataSource<NoticeModel>();
+  sample_replyList: NoticeModel[] = [];
   constructor(
     private router: ActivatedRoute,
     private route: Router,
@@ -62,8 +63,10 @@ export class NoticeComponent implements OnInit, AfterViewInit {
             kind: kindlist[Math.floor(Math.random() * 3)]
           };
           if (noticemodel.kind === 'notice') {
-            noticemodel.write_owner =  this.manager;
+            noticemodel.write_owner = this.manager;
           }
+
+
           list.push(noticemodel);
         }
         if (!!value) {
@@ -110,7 +113,7 @@ export class NoticeComponent implements OnInit, AfterViewInit {
     const data_value = !!value ? value : initdata;
     const key = !!value ? 'update' : 'insert';
     if (key === 'insert') {
-      initdata.write_owner =  this.manager;
+      initdata.write_owner = this.manager;
     }
     const dialogRef = this.dialog.open(NoitceDialogComponent, {
       width: '900px',
@@ -118,9 +121,15 @@ export class NoticeComponent implements OnInit, AfterViewInit {
       data: { key, data_value }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+    // tslint:disable-next-line:no-shadowed-variable
+    dialogRef.afterClosed().pipe(filter(value => !!value)).subscribe((result: NoticeModel) => {
+      // tslint:disable-next-line:no-shadowed-variable
+      const index = this.dataSource.data.findIndex((data_value) => {
+        return data_value.id === result.id;
+      });
+      if (index !== null && index !== undefined) {
 
+      }
     });
   }
   // sample

@@ -16,7 +16,8 @@
     "aws": "0.0.3-2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "oracledb": "^5.0.0"
   },
   "devDependencies": {
     "@types/aws-sdk": "^2.7.0",

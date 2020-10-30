@@ -1,0 +1,837 @@
+hyojaejeon,2020-10-29 21:05:20,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-29 21:05:14,risk 라벨 콤마 제거
+KIMJONGHOON,2020-10-29 21:00:58,core.js:12501 ERROR TypeError: Cannot read property '_results' of undefined 에러처리
+KIMJONGHOON,2020-10-29 19:29:10,문구수정
+hyojaejeon,2020-10-29 19:21:23,skor null 처리 추가
+KIMJONGHOON,2020-10-29 19:02:07,Driverrs->Drivers
+KIMJONGHOON,2020-10-29 18:59:48,add app 컴포넌트ondestroy시 로그아웃 추가
+hyojaejeon,2020-10-29 18:50:19,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-29 18:49:48,overview active count 방식 변경
+jsaprk@carvi.co.kr,2020-10-29 18:48:42,vehicle# 은 붙여서
+jsaprk@carvi.co.kr,2020-10-29 18:25:52,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+KIMJONGHOON,2020-10-29 18:25:19,리포트 컴퍼니 차트 툴팁 작성
+hyojaejeon,2020-10-29 18:14:34,trips history   drunk 항목 추가
+jsaprk@carvi.co.kr,2020-10-29 18:10:31,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-29 18:09:07,trips history   상세 내역  risk , event 분리 표시
+hyojaejeon,2020-10-29 17:40:34,usage  y축 라벨 추가
+jsaprk@carvi.co.kr,2020-10-29 17:27:55,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+KIMJONGHOON,2020-10-29 17:27:25,다른방법강구할필요가 있음
+jsaprk@carvi.co.kr,2020-10-29 17:09:17,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+KIMJONGHOON,2020-10-29 17:08:28,add:브라우져 닫기에 로컬스토리지 삭제, 가드 이벤트 로그인이면 경고창 안뜨게 추가
+jsaprk@carvi.co.kr,2020-10-29 17:05:21,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-29 17:04:55,레포트 company 문구수정,    vehicle  테스트코드 수정
+jsaprk@carvi.co.kr,2020-10-29 16:43:44,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-29 16:43:26,레포트 에러 수정
+KIMJONGHOON,2020-10-29 16:41:25,오버뷰 컴포넌트 상태 개선 및 트립이벤트 소트, 버튼 영역 정렬
+KIMJONGHOON,2020-10-29 16:30:16,changed:리포트 차트 스타일시트
+hyojaejeon,2020-10-29 16:15:40,위시캣 usage,  company mau 차트  적용
+KIMJONGHOON,2020-10-29 15:54:18,add:컴포너트 랜더링 관리 및 개선  버튼영역 중복 제어
+jsaprk@carvi.co.kr,2020-10-29 15:34:15,Vehicle ID -> Device ID. Noti Vehicle # 등등
+KIMJONGHOON,2020-10-29 14:43:57,fixed 트립맵 느려지는현상 개선
+hyojaejeon,2020-10-29 14:01:02,비디오 노멀 비디오 url 문제 수정
+KIMJONGHOON,2020-10-29 13:33:46,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+KIMJONGHOON,2020-10-29 13:33:17,fixed 다른 트릅 선택시 index 초기화
+hyojaejeon,2020-10-29 13:32:31,allvideo param driver_id 타이밍 관련 수정
+KIMJONGHOON,2020-10-29 12:04:37,바차트 스타일 수정
+KIMJONGHOON,2020-10-29 11:52:36,fixed:노티갯수제한 9개까지
+KIMJONGHOON,2020-10-29 11:47:41,add:리포트 컴퍼티 severe , mild 차트 추가
+hyojaejeon,2020-10-29 11:13:47,time_stamp 포맷 수정, 썸네일 url 방식 수정
+hyojaejeon,2020-10-29 10:45:23,last videos 정렬 추가
+jsaprk@carvi.co.kr,2020-10-28 22:16:37,smoke 주소 얻기.
+jsaprk@carvi.co.kr,2020-10-28 21:56:31,noti . display vehicle no. (appsync 도 수정)
+jsaprk@carvi.co.kr,2020-10-28 21:56:05,trip history . smoke
+jsaprk@carvi.co.kr,2020-10-28 21:54:03,noti smoke -> smoke detected
+jsaprk@carvi.co.kr,2020-10-28 21:53:30,notification
+KIMJONGHOON,2020-10-28 18:59:37,조건 수정
+hyojaejeon,2020-10-28 18:49:38,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-28 18:49:20,레포트 risk 차트 원복
+KIMJONGHOON,2020-10-28 18:47:21,퍼포먼스 목록 위치교체
+hyojaejeon,2020-10-28 18:40:38,레포트 usage 라벨   hours 추가
+hyojaejeon,2020-10-28 18:29:32,smoke 필터링 추가 수정
+hyojaejeon,2020-10-28 18:27:18,trips smoke 필터 안된 부분 추가
+jsaprk@carvi.co.kr,2020-10-28 18:26:07,event 정렬
+KIMJONGHOON,2020-10-28 18:22:13,add:리스트 검색 필터
+KIMJONGHOON,2020-10-28 17:52:50,add:vehicles리스트 driver리스트 엑티브 아이콘추가
+hyojaejeon,2020-10-28 17:40:15,trips mild, severe 누락부분 추가, 레포트 차트 위치  변경 사항 적용
+hyojaejeon,2020-10-28 16:48:00,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-28 16:47:53,event vehicle_no 추가
+KIMJONGHOON,2020-10-28 16:32:44,placeholder 색상 변경
+KIMJONGHOON,2020-10-28 16:17:16,add:리포트 페이지 파이차트 추가
+KIMJONGHOON,2020-10-28 11:20:20,계산식 변경 및 undfiend에러 체크
+KIMJONGHOON,2020-10-28 11:03:32,리포트 컴퍼니 차트교체
+jsaprk@carvi.co.kr,2020-10-28 09:46:50,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+jsaprk@carvi.co.kr,2020-10-28 09:45:48,smoking vehicle number
+hyojaejeon,2020-10-27 22:35:18,smoke alert 추가
+jsaprk@carvi.co.kr,2020-10-27 21:41:07,문구수정
+hyojaejeon,2020-10-27 20:46:51,문구 수정
+KIMJONGHOON,2020-10-27 19:56:24,로직수정
+hyojaejeon,2020-10-27 19:10:38,레포트 bar 색상 변경
+KIMJONGHOON,2020-10-27 19:09:19,로직 수정
+KIMJONGHOON,2020-10-27 19:08:48,On taxi_@: 저장
+KIMJONGHOON,2020-10-27 19:08:48,index on taxi_@: bc6e95f 조건추가
+hyojaejeon,2020-10-27 18:58:24,레포트 컴퍼니   차트 bar  색상 변경
+KIMJONGHOON,2020-10-27 18:37:22,조건추가
+KIMJONGHOON,2020-10-27 18:34:55,노티 경고창 제어
+hyojaejeon,2020-10-27 18:29:26,레포트 컴퍼니 risk 두개로 분할
+jsaprk@carvi.co.kr,2020-10-27 16:58:22,t
+KIMJONGHOON,2020-10-27 16:56:02,컴바인리스트용 이벤트 작성
+jsaprk@carvi.co.kr,2020-10-27 16:53:30,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+jsaprk@carvi.co.kr,2020-10-27 16:53:18,video popup 정렬
+KIMJONGHOON,2020-10-27 16:51:49,어드민 노티 스모크 드렁크 호출 및 스타일시트 수정
+KIMJONGHOON,2020-10-27 14:36:42,서비스 펑션 추가
+KIMJONGHOON,2020-10-27 14:35:03,add:크래쉬 맵 Severe Impact 리스트 호출
+hyojaejeon,2020-10-27 14:08:16,risk 카운트 mild, severe 추가
+KIMJONGHOON,2020-10-27 13:58:45,중복 소팅 제거 및 프로미스 리턴값 정의
+KIMJONGHOON,2020-10-27 13:46:46,add : 리포트 페이지 serveimport  배열 처리
+KIMJONGHOON,2020-10-27 13:39:44,드라이버 히스토리 현재 페이지 값 수
+hyojaejeon,2020-10-27 13:36:31,trips history   smoke, crash 필터 부분 수정,
+hyojaejeon,2020-10-27 13:26:09,크래쉬 리무브 기능 추가
+jsaprk@carvi.co.kr,2020-10-27 12:49:41,Crash Detected -> Severe Impact
+KIMJONGHOON,2020-10-27 12:03:09,change: 비디오 팝업 스타일시트 및 데이터랜더링 항목 수정
+KIMJONGHOON,2020-10-27 11:36:09,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+KIMJONGHOON,2020-10-27 11:36:03,change:비디오 포멧 화면 랜더링 조건 수정
+hyojaejeon,2020-10-27 11:07:03,overview 정렬 기준 누락 추가
+KIMJONGHOON,2020-10-27 11:01:14,videoDatePipe 에러처리
+KIMJONGHOON,2020-10-27 10:22:18,fixed “Driving History” 클릭하면  Driving history로 이동되게 함
+hyojaejeon,2020-10-27 10:15:47,severe  crash  병합 카운트
+KIMJONGHOON,2020-10-27 09:59:50,비디오 중복제거 및 데이터 병합
+jsaprk@carvi.co.kr,2020-10-26 22:33:43,Risk count , Crash + Severe 두개가 당분간 존재. 더해야함.
+KIMJONGHOON,2020-10-26 21:36:44,맵 스타일 및 이벤트 영역 수정
+hyojaejeon,2020-10-26 20:26:51,crash  severe undefined 체크 추가,   risk  drunk type  undefined 체크 추가,
+hyojaejeon,2020-10-26 20:17:43,오버뷰 정렬
+jsaprk@carvi.co.kr,2020-10-26 20:11:30,오타 수정, 크래시 삭제시 팝업.
+hyojaejeon,2020-10-26 19:56:37,레포트 컴퍼니 risk  라벨 줄바꿈
+hyojaejeon,2020-10-26 19:45:06,레포트 차트 빈날짜 채우기 부분 버그 보완,  mild, severe 데이터 연결, collision, departure 문구수정
+jsaprk@carvi.co.kr,2020-10-26 17:49:26,trip history - impact icon 적용
+KIMJONGHOON,2020-10-26 17:36:32,fix  Driver - Trip History 상단 링크 영역 수정
+KIMJONGHOON,2020-10-26 17:25:40,이미지추가
+KIMJONGHOON,2020-10-26 17:21:17,괄호 추가
+KIMJONGHOON,2020-10-26 17:20:17,add : 크래쉬 삭제 버튼 추가
+hyojaejeon,2020-10-26 16:15:14,risk factor skor overall 가중치 적용 부분 수정
+KIMJONGHOON,2020-10-26 15:51:40,리포트그래프 원복
+KIMJONGHOON,2020-10-26 15:46:47,로그아웃 순서 변경
+hyojaejeon,2020-10-26 15:41:51,레포트 차트 x축 date 포맷 변경,  usage cumulative 시에  앞뒤 날짜 생성 방식 변경 (월단위 변경시 처리 ), vehicle 누적 부분 company_id 필터 적용
+hyojaejeon,2020-10-26 12:01:32,위시캣 파이차트
+jsaprk@carvi.co.kr,2020-10-26 11:39:13,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+jsaprk@carvi.co.kr,2020-10-26 11:38:55,Crash Detected -> Severe Impact
+KIMJONGHOON,2020-10-26 10:22:01,add : 로그인 세션 처리 기능 추가 fix overview 여백 조절
+KIMJONGHOON,2020-10-23 18:11:02,css 빠진거 추가
+KIMJONGHOON,2020-10-23 18:09:24,fix 전체 스타일 시트 수정
+hyojaejeon,2020-10-23 14:35:57,impact 항목 추가 복구
+hyojaejeon,2020-10-23 13:58:55,레포트 누락 부분 수정
+hyojaejeon,2020-10-23 13:50:26,impact 이벤트 추가
+jsaprk@carvi.co.kr,2020-10-23 13:28:05,crash smoke drunk 순서로
+hyojaejeon,2020-10-23 13:26:15,레포트 툴팁 수정
+hyojaejeon,2020-10-23 11:46:12,라스트 비디오 제한 해제
+hyojaejeon,2020-10-23 11:05:42,vehicle, driver risk   impact 추가
+hyojaejeon,2020-10-23 10:54:11,레포트 company  이벤트 위치 복구
+hyojaejeon,2020-10-23 10:33:15,impact 이벤트 추가 작업
+jsaprk@carvi.co.kr,2020-10-23 10:27:27,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+jsaprk@carvi.co.kr,2020-10-23 10:26:57,crash smoke drunk 순서로..
+KIMJONGHOON,2020-10-23 10:19:36,드라이버 페이지 정렬기능 추가
+KIMJONGHOON,2020-10-23 09:28:23,vehicle_no undefind 수정
+hyojaejeon,2020-10-23 05:46:16,reports drivere skor label 변경
+hyojaejeon,2020-10-23 05:37:29,report event list 정렬추가
+hyojaejeon,2020-10-23 05:24:20,차트 툴팁 콤마추가
+James Park,2020-10-23 03:29:30,챠트 3자리 구분
+James Park,2020-10-23 01:28:04,driver Ration Star
+James Park,2020-10-23 01:02:14,Crash Map - Vehicle Number 원복
+KIMJONGHOON,2020-10-22 22:50:58,섬네일 에러 추가
+KIMJONGHOON,2020-10-22 22:48:42,아이콘추가
+hyojaejeon,2020-10-22 22:03:28,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-22 22:02:21,레포트 데이터 포맷 변경
+KIMJONGHOON,2020-10-22 21:52:47,버그수정
+jsaprk@carvi.co.kr,2020-10-22 21:44:25,bug 수정
+jsaprk@carvi.co.kr,2020-10-22 21:33:28,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+KIMJONGHOON,2020-10-22 21:33:05,전략팀 수정분 이미지교체 데이터랜더링교체
+jsaprk@carvi.co.kr,2020-10-22 20:45:08,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+KIMJONGHOON,2020-10-22 20:44:38,비디오태그 사이즈 변경
+jsaprk@carvi.co.kr,2020-10-22 20:22:43,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+KIMJONGHOON,2020-10-22 18:55:16,오버뷰 차트 스타일시트 수정
+hyojaejeon,2020-10-22 18:47:05,오버뷰 무빙 trip,mileage, collect   무빙 에버리지 데이터 적용
+hyojaejeon,2020-10-22 18:30:37,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-22 18:30:31,오버뷰 레포트 작업
+jsaprk@carvi.co.kr,2020-10-22 18:27:16,remove alert
+KIMJONGHOON,2020-10-22 18:23:34,위시캣 소스 머지 (로그인부분)
+hyojaejeon,2020-10-22 17:33:06,라스트 비디오 포팅
+jsaprk@carvi.co.kr,2020-10-22 13:52:43,driver status - 투명도 변경 85->80
+KIMJONGHOON,2020-10-22 12:05:46,로그인 canActive처리
+jsaprk@carvi.co.kr,2020-10-22 11:08:00,문구, 에러 로그 제거
+hyojaejeon,2020-10-22 11:06:23,오버뷰 간격 조정,  all videos  최신 기준 리스트 표시,   드라이버 아이디 조정
+hyojaejeon,2020-10-22 10:55:34,오버뷰 차트 위치 조정
+hyojaejeon,2020-10-22 10:51:31,얼 비디오 드라이버 구분 제거
+hyojaejeon,2020-10-22 10:11:52,mau  버그 수정
+hyojaejeon,2020-10-22 10:06:28,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-22 10:06:20,레포트 스코어 가중치 적용 관련 수정
+jsaprk@carvi.co.kr,2020-10-22 09:36:09,Drunk to DUI for Last 3 Months Average and This Month Alerts
+hyojaejeon,2020-10-21 22:09:34,risk overall 가중치 적용 관련 수정
+hyojaejeon,2020-10-21 22:05:47,drunk 추가 관련 수정
+KIMJONGHOON,2020-10-21 21:56:57,리포트 차트 타이틀 스타일 수정
+jsaprk@carvi.co.kr,2020-10-21 21:47:44,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+jsaprk@carvi.co.kr,2020-10-21 21:47:24,drunk
+KIMJONGHOON,2020-10-21 21:30:34,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+KIMJONGHOON,2020-10-21 21:30:09,fix ppt 19시버전 (2,4,5,12,18,24)대응
+hyojaejeon,2020-10-21 21:30:05,3,6,7,8,9 페이지 수정
+jsaprk@carvi.co.kr,2020-10-21 21:07:06,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+jsaprk@carvi.co.kr,2020-10-21 21:06:35,blinker_status
+hyojaejeon,2020-10-21 19:45:25,3페이지 오버뷰 차트 수정
+hyojaejeon,2020-10-21 17:44:13,드라이버 vehicle  데이터 없는 월 데이터 에러 수정
+hyojaejeon,2020-10-21 17:14:32,레포트  mau, usage 빈 날짜 채우기 추가 ,   mau 라벨 수정
+KIMJONGHOON,2020-10-21 16:48:46,change:pdf버튼 스타일 수정
+hyojaejeon,2020-10-21 15:11:54,레포트 company 차트 작업
+KIMJONGHOON,2020-10-21 14:31:05,change:pdf이미지다운로드 기능 부활 add Risk Analysis Report 버튼추가
+KIMJONGHOON,2020-10-21 11:13:39,fixed:이벤트 루터 오류처리
+KIMJONGHOON,2020-10-21 10:30:34,add drink페이지 작성 change more 버튼 스타일 수정
+jsaprk@carvi.co.kr,2020-10-20 22:42:20,risk
+KIMJONGHOON,2020-10-20 18:50:45,pdf경고 문구 개행
+hyojaejeon,2020-10-20 18:48:42,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-20 18:48:21,차트 max 필터값 50 추가
+KIMJONGHOON,2020-10-20 18:41:58,문구 및 스타일시트 수정
+hyojaejeon,2020-10-20 18:32:07,스모크 검색 추가
+James Park,2020-10-20 18:22:03,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+James Park,2020-10-20 18:21:59,no data
+KIMJONGHOON,2020-10-20 18:20:50,fixed:indexof undfind처리
+James Park,2020-10-20 18:18:00,telephone no data
+KIMJONGHOON,2020-10-20 18:10:49,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+KIMJONGHOON,2020-10-20 18:10:40,merge  에러문구 삭제
+hyojaejeon,2020-10-20 18:10:16,레포트 차트 방식 변경,   vehicle lastused 컬럼 변경
+KIMJONGHOON,2020-10-20 18:00:19,add json 항목추가(언어)
+James Park,2020-10-20 17:51:40,sedan
+James Park,2020-10-20 17:46:52,macaron icon. chart max value
+KIMJONGHOON,2020-10-20 17:26:27,문구수정
+KIMJONGHOON,2020-10-20 17:25:26,changed 텍스트필드 삭제 , 히스토리백 추가
+hyojaejeon,2020-10-20 17:21:14,스코어 조건 에러 수정,   overview 차트  옵션 수정
+hyojaejeon,2020-10-20 17:09:39,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-20 17:09:21,파싱 에러 수정
+James Park,2020-10-20 17:03:45,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+James Park,2020-10-20 17:03:30,문구 추가수정
+hyojaejeon,2020-10-20 17:00:49,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-20 17:00:04,오버뷰 차트 전환
+James Park,2020-10-20 16:48:02,MENU
+KIMJONGHOON,2020-10-20 16:38:06,change:비디오아이콘 변경
+KIMJONGHOON,2020-10-20 15:52:19,fixed: 드라이버페이지,리포트페이지 스타일시트 수정 및 드라이버페이지 이미지 교체
+hyojaejeon,2020-10-20 13:26:28,오버뷰 차트 작업중
+KIMJONGHOON,2020-10-20 12:05:16,add:리포트 테이블 pdf다운로드 구현, fixed: trip 스타일시트 수정
+hyojaejeon,2020-10-20 11:57:42,오타수정,  노멀 비디오 리스트  드라이버 아이디 수정,   address api 변경
+hyojaejeon,2020-10-19 21:51:37,리퀘스트 요청 주석 제거
+hyojaejeon,2020-10-19 21:49:23,레포트 company 차트   동적 max 값 적용
+KIMJONGHOON,2020-10-19 21:32:36,비디오박스 스타일수정
+jsaprk@carvi.co.kr,2020-10-19 21:26:05,crash 오타
+KIMJONGHOON,2020-10-19 21:11:56,change:I1.mp4일때 항목제거
+hyojaejeon,2020-10-19 21:09:05,로그 삭제
+hyojaejeon,2020-10-19 21:08:42,노멀 영상 생성 시간 1분이내 인 파일  메세지
+hyojaejeon,2020-10-19 20:58:16,레포트 mau 에러수정,   차트 수정중
+KIMJONGHOON,2020-10-19 17:48:06,change:이벤트리스트 리프레쉬 대응
+KIMJONGHOON,2020-10-19 16:41:18,change:경고창 제작 및 모든 경고창 대응
+hyojaejeon,2020-10-19 16:28:29,전체 비디오 리스트   새로고침 현재 리스트 갱신 처리 추가
+KIMJONGHOON,2020-10-19 14:51:39,fixed:subscribe 데이터 10초마다 불러오기 작성,문구수정(띄어쓰기)
+KIMJONGHOON,2020-10-19 11:24:48,change:동적스크롤대응
+KIMJONGHOON,2020-10-19 11:15:35,fixed:트립히스토리페이지 테이블 조정 개행안되게
+hyojaejeon,2020-10-19 10:56:36,레포트 초기화 리스트 추가,  vehicle avg 컬럼 변경
+KIMJONGHOON,2020-10-19 10:42:22,fixed:리스크팩터 페이지 undefind처리
+hyojaejeon,2020-10-19 10:33:07,드라이버 누적 화면 수정
+KIMJONGHOON,2020-10-19 10:26:04,fixed: 맵아이콘속도 개선,드라이버 리스트 파이프에러 처리
+James Park,2020-10-19 01:41:11,report download alert
+James Park,2020-10-19 01:18:45,date format pipe
+hyojaejeon,2020-10-18 22:54:02,타이머 중복 제거
+hyojaejeon,2020-10-18 22:46:24,skor null 체크 추가
+KIMJONGHOON,2020-10-18 22:44:54,fix 수정
+KIMJONGHOON,2020-10-18 22:38:23,리포트 리로드 수정
+hyojaejeon,2020-10-18 22:28:09,얼 비디오 갱신 수정
+KIMJONGHOON,2020-10-18 22:09:40,저장
+hyojaejeon,2020-10-18 22:05:08,버튼 위치 수정
+hyojaejeon,2020-10-18 21:55:17,all videos 드라이버 차량 번호 추가
+KIMJONGHOON,2020-10-18 21:50:06,색깔 변환안된던거 수정
+hyojaejeon,2020-10-18 21:42:33,trips 항목추가, more 버튼 수정
+KIMJONGHOON,2020-10-18 21:28:14,fixed:드라이버히스토리 동영상 10개씩 보내는 기능 추가
+hyojaejeon,2020-10-18 21:27:24,trip 스크롤 포커싱
+hyojaejeon,2020-10-18 20:41:07,레포트 다운로드 수정
+KIMJONGHOON,2020-10-18 20:19:13,바톤터치
+hyojaejeon,2020-10-18 19:22:53,전체 비디오 lastevaluatedkey 추가
+hyojaejeon,2020-10-18 18:33:00,레포트 다운로드 수정
+KIMJONGHOON,2020-10-18 18:02:25,fixed 드라이버히스토리맵 수정
+jsaprk@carvi.co.kr,2020-10-18 17:58:25,report Km->km
+jsaprk@carvi.co.kr,2020-10-18 16:56:09,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+jsaprk@carvi.co.kr,2020-10-18 16:50:22,정렬, 빈 데이터 처리
+hyojaejeon,2020-10-18 16:39:36,usage 차트  단위 추가
+jsaprk@carvi.co.kr,2020-10-18 16:27:18,driver list date format
+hyojaejeon,2020-10-18 16:07:23,소수점 한자리로 변경
+KIMJONGHOON,2020-10-18 16:04:21,fixed:pdf파일이름변경
+hyojaejeon,2020-10-18 15:55:14,crash   디바이스 아이디 -> 번호로 변경,   번호 검색 추가
+KIMJONGHOON,2020-10-18 15:54:27,fixed:pdf다운로드 커서손가락
+KIMJONGHOON,2020-10-18 15:52:15,fixed:리포트 리로드 적용
+jsaprk@carvi.co.kr,2020-10-18 15:45:16,driver - rental history sort
+KIMJONGHOON,2020-10-18 15:37:26,add:pdf기능 작성
+jsaprk@carvi.co.kr,2020-10-18 15:27:31,title bold
+KIMJONGHOON,2020-10-18 14:56:22,fixed:툴팁css수정
+hyojaejeon,2020-10-18 14:08:58,데이터 포맷 콤마 추가
+KIMJONGHOON,2020-10-18 11:31:00,chaged:툴팁 이미지화
+James Park,2020-10-17 21:39:00,rental history sort
+James Park,2020-10-17 21:21:06,문구 수정
+James Park,2020-10-17 20:02:07,status 오류
+James Park,2020-10-17 17:15:44,video download button style
+hyojaejeon,2020-10-17 16:34:28,비디오 다운로드 방식 변경
+James Park,2020-10-17 15:32:00,crash event count
+James Park,2020-10-17 15:10:05,rental list filter
+James Park,2020-10-17 13:15:26,hr style 적용
+James Park,2020-10-17 13:02:27,20201017_이슈수정 문구 이미지 교체 시간표시 수정
+hyojaejeon,2020-10-16 23:32:29,take 제거
+KIMJONGHOON,2020-10-16 23:31:39,커밋
+hyojaejeon,2020-10-16 23:01:12,레포트 소수점,        타이틀
+hyojaejeon,2020-10-16 22:40:40,시간 포맷 변경
+hyojaejeon,2020-10-16 21:46:38,trip history 맵 지역정보 추가 ,    location 값없을때  - 표시 추가
+hyojaejeon,2020-10-16 21:17:07,드라이버, vehicle 검색 추가
+KIMJONGHOON,2020-10-16 20:53:47,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+KIMJONGHOON,2020-10-16 20:53:29,vehicle 돋보기 제거
+hyojaejeon,2020-10-16 20:53:21,레포트 드라이버 아이콘 수정
+KIMJONGHOON,2020-10-16 20:37:52,fixed:subscriptn중복처리 ,이미지 사이즈조절 스타일시트 제거
+hyojaejeon,2020-10-16 19:48:02,데이터 변수명 변경 적용,   분포도 요청 param 잘못된 부분 수정
+hyojaejeon,2020-10-16 18:36:08,분포 param 수정
+hyojaejeon,2020-10-16 18:29:28,trend 차트 색상 변경,   vehicle list  서치 추가
+KIMJONGHOON,2020-10-16 18:27:25,add : 상위분포 작성
+hyojaejeon,2020-10-16 17:42:03,risk factor trend 작업 ,   distribution 작업중
+jsaprk@carvi.co.kr,2020-10-16 17:15:16,맵 이벤트 선택시 - 차량번호 출력
+KIMJONGHOON,2020-10-16 16:44:10,fixed:드라이브히스토리 테이블 스타일시트 수정
+KIMJONGHOON,2020-10-16 16:40:15,fixed:리포트페이지 (컴퍼니)스타일시트 조절
+KIMJONGHOON,2020-10-16 16:12:47,fixed: 리포트페이지 startDate개행 스타일수정
+KIMJONGHOON,2020-10-16 15:55:08,fixed:드라이버 페이지 이미지변경 및 문구 수정
+KIMJONGHOON,2020-10-16 15:53:20,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+KIMJONGHOON,2020-10-16 15:48:24,임시커밋
+jsaprk@carvi.co.kr,2020-10-16 15:48:11,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+jsaprk@carvi.co.kr,2020-10-16 15:47:59,줄맞춤
+KIMJONGHOON,2020-10-16 15:35:07,fixed:드라이버 리스트 정렬 랜더링 조건 수정
+jsaprk@carvi.co.kr,2020-10-16 15:19:54,Km -> km
+jsaprk@carvi.co.kr,2020-10-16 15:15:37,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+jsaprk@carvi.co.kr,2020-10-16 15:15:19,레이아웃 변경 추가 수정필요
+hyojaejeon,2020-10-16 15:12:45,분포도  api
+KIMJONGHOON,2020-10-16 14:06:14,fixed: 오버뷰 통계 파이프 수정 ,  리포트 검색박스 스타일 조절
+KIMJONGHOON,2020-10-16 13:45:51,리스크 팩터 수정분 커밋
+jsaprk@carvi.co.kr,2020-10-16 10:16:39,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+KIMJONGHOON,2020-10-16 10:09:54,update:fcws반응,Ldws반응 주석처리
+KIMJONGHOON,2020-10-16 10:07:54,fiexd:드라이버페이지 테이블 스타일시트 수정
+hyojaejeon,2020-10-16 01:54:43,콤마 선 정리 레포트
+KIMJONGHOON,2020-10-16 01:39:18,fixed: H->h
+hyojaejeon,2020-10-16 01:35:38,레이어 깨짐,   렌탈 히스토리 디폴트 수정
+KIMJONGHOON,2020-10-16 01:29:44,fixed:드라이버 인포 스타일시트 수정
+hyojaejeon,2020-10-16 01:11:06,레포트 수정
+KIMJONGHOON,2020-10-16 01:01:39,리포트페이지 복원
+hyojaejeon,2020-10-16 00:54:05,차트 옵션 수정
+jsaprk@carvi.co.kr,2020-10-16 00:46:30,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+KIMJONGHOON,2020-10-16 00:41:00,fixed:PPT작업
+hyojaejeon,2020-10-16 00:29:36,레포트 선정리, smoke 정리
+hyojaejeon,2020-10-15 23:04:29,vehicle 문구 삭제
+hyojaejeon,2020-10-15 22:54:01,오버뷰 중복 아이콘 생성,   포커싱 데이터 수정
+jsaprk@carvi.co.kr,2020-10-15 22:15:58,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+jsaprk@carvi.co.kr,2020-10-15 22:08:41,20
+KIMJONGHOON,2020-10-15 22:01:29,fixed:ppt수정
+hyojaejeon,2020-10-15 21:28:17,2-11 page
+hyojaejeon,2020-10-15 21:26:11,2-10page
+KIMJONGHOON,2020-10-15 21:13:49,add: 시계추가  , fixed :아이콘 변경
+hyojaejeon,2020-10-15 20:47:38,문구수정 sb
+KIMJONGHOON,2020-10-15 20:39:12,fixed: 파워포인트 수정분
+hyojaejeon,2020-10-15 20:27:19,레포트 risk  이벤트 문구 변경 , 트립 alert 추가
+KIMJONGHOON,2020-10-15 19:40:42,fixed:비디오로직 수정
+hyojaejeon,2020-10-15 19:07:00,device_id 검색 -> vehicle_no 검색 변환
+KIMJONGHOON,2020-10-15 18:54:43,fixed:오버뷰 video 로직 수정
+hyojaejeon,2020-10-15 18:41:43,최고 과속 제한 속도 관련 추가 조건 ,   레포트 /   값 있을떄만 표시나게수정
+KIMJONGHOON,2020-10-15 18:36:01,add:엑티브 조건 강화 , fixed: 비디오 안나오는 문제 수정
+hyojaejeon,2020-10-15 17:46:46,risk factor  데이터 타입 null , undefine 체크 일괄 적용
+hyojaejeon,2020-10-15 17:46:14,active 체크 하드코딩 추가
+KIMJONGHOON,2020-10-15 17:35:44,fixed:VolumePipe replace null 에러 수정
+hyojaejeon,2020-10-15 16:04:40,위험 이벤트 발생 빈도 계산 방식 수정
+KIMJONGHOON,2020-10-15 15:35:16,fixed:드라이버페이지 문구 수정 (영문대문자변경)
+hyojaejeon,2020-10-15 15:17:37,로그 삭제
+hyojaejeon,2020-10-15 15:17:25,소스 복구
+KIMJONGHOON,2020-10-15 15:12:43,add:오버뷰 파이프 콤마추가
+KIMJONGHOON,2020-10-15 15:08:50,fixed:드라이버페이지 문구 수정 add:오버뷰 데이터 파이프 추가 및 스타일설정
+KIMJONGHOON,2020-10-15 14:51:15,fixed:드라이버 페이지 항목순서변경,문구 수정, 원 색상변경
+hyojaejeon,2020-10-15 12:24:40,overview title name 변경
+hyojaejeon,2020-10-15 11:08:32,overview icon 텍스트수정, 레포트 car 수정
+hyojaejeon,2020-10-15 10:34:10,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-15 10:26:57,overview 기본값 차량 대수 생성, event 개수 smoke 체크 제거
+KIMJONGHOON,2020-10-15 10:21:23,fixed:리포트페이지스타일수정,오버뷰시간파이프수정및이넘추가
+hyojaejeon,2020-10-14 23:22:34,risk factor 추가 보정
+KIMJONGHOON,2020-10-14 22:22:19,fixed:전체페이지수정
+KIMJONGHOON,2020-10-14 21:37:29,fixed: foucs 게이지 조건 수정
+hyojaejeon,2020-10-14 21:35:04,risk factor 수정
+KIMJONGHOON,2020-10-14 21:33:06,fixed:중복 문구변경
+KIMJONGHOON,2020-10-14 20:35:47,바이너리로직 수정
+hyojaejeon,2020-10-14 20:07:03,테스트중
+hyojaejeon,2020-10-14 19:30:50,distributions 연결 작업중
+KIMJONGHOON,2020-10-14 18:11:50,fixed: 리스크페이지 스타일시트 및 문구 수정 (김신혜팀장님 컨펌완)
+hyojaejeon,2020-10-14 16:53:18,null 잘못 계산 되는부분 예외처리
+hyojaejeon,2020-10-14 16:32:10,guard Event Frequency  공식 변경
+hyojaejeon,2020-10-14 16:12:38,risk factor   가중치 잘못들어간 부분 수정
+hyojaejeon,2020-10-14 15:50:56,risk factor 항목들 가중치 방식 변경,   trip_time 처리값 추가
+hyojaejeon,2020-10-14 14:15:10,rental  이벤트 카운트 방식 변경 적용
+hyojaejeon,2020-10-14 13:50:15,드라이버 퍼포먼스 초기화 추가,  레포트 누적 부분 trip_time 수정 누락 부분
+KIMJONGHOON,2020-10-14 13:47:14,fixed:오버뷰페이지 집계카운트 글자크기 조절
+KIMJONGHOON,2020-10-14 12:00:28,드라이버페이지 레이아웃 수정
+hyojaejeon,2020-10-13 22:58:19,risk factor 누락 수정
+hyojaejeon,2020-10-13 22:36:38,skor 가중치 적용 방식 수정
+hyojaejeon,2020-10-13 21:10:01,드라이버 퍼포먼스 신규 데이터 , 디자인 적용 , 영문 적용
+jsaprk@carvi.co.kr,2020-10-13 20:23:22,overview 테이블 정렬
+KIMJONGHOON,2020-10-13 17:44:04,테이블사이즈수정
+hyojaejeon,2020-10-13 16:25:15,vehicle, driver 정렬 수정, 드라이버 정보 변경 컬럼 수정
+hyojaejeon,2020-10-13 15:47:21,트립 필터 문구 수정,  레포트 데이터 처리 안맞는 부분 수정
+jsaprk@carvi.co.kr,2020-10-12 22:24:36,Current Trip Mileage
+jsaprk@carvi.co.kr,2020-10-12 22:16:00,driver id indexof null check
+jsaprk@carvi.co.kr,2020-10-12 22:15:24,sd card, camera, sim check timestamp
+jsaprk@carvi.co.kr,2020-10-12 21:32:21,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-12 21:06:58,드라이버 risk factor 신규 데이터 적용
+jsaprk@carvi.co.kr,2020-10-12 18:44:38,added new status timestamp. and null check
+jsaprk@carvi.co.kr,2020-10-12 16:07:30,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+jsaprk@carvi.co.kr,2020-10-12 11:59:06,sim, camera timestamp
+hyojaejeon,2020-10-12 11:22:29,atzuchar 등록개수추가,  트립 이벤트 필터 기능 수정
+hyojaejeon,2020-10-11 23:29:29,company skor line 설명 추가
+James Park,2020-10-11 21:04:44,왜 또 원복됐지...?
+James Park,2020-10-11 20:50:37,오탈자 수정......... 42 files
+hyojaejeon,2020-10-10 21:04:02,드라이버 이전 스코어 초기화 수정
+hyojaejeon,2020-10-10 20:51:07,컴퍼니 레포트 active car 연결  , 드라이버 통계 페이지 수정
+hyojaejeon,2020-10-10 19:26:36,report company cars, active cars 수정
+hyojaejeon,2020-10-10 18:39:22,드라이버 리스트 통계용 이벤트 합산 값
+hyojaejeon,2020-10-10 18:26:25,레포트 데이터 타입 변경 부분 적용
+jsaprk@carvi.co.kr,2020-10-10 17:56:28,3 digits comma 다시 업로드
+jsaprk@carvi.co.kr,2020-10-10 17:49:59,vehicle 상태 정보 오류
+jsaprk@carvi.co.kr,2020-10-10 17:49:08,aws 상태정보
+hyojaejeon,2020-10-10 16:56:43,오버뷰 누적 카운트 수정,  렌탈 히스토리 이벤트 컬럼 변경, 레포트 데이터 타입 변경 작업
+jsaprk@carvi.co.kr,2020-10-10 15:15:54,engine on time
+jsaprk@carvi.co.kr,2020-10-10 15:01:47,driver total hours display error
+jsaprk@carvi.co.kr,2020-10-10 14:48:30,ui bug
+jsaprk@carvi.co.kr,2020-10-10 14:48:15,3digits comma
+hyojaejeon,2020-10-10 14:38:07,크래쉬 포커싱 기능 추가
+jsaprk@carvi.co.kr,2020-10-10 14:31:40,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+jsaprk@carvi.co.kr,2020-10-10 14:31:11,icon resize
+hyojaejeon,2020-10-10 14:27:25,차량 통계 데이터 타입 변경 적용
+hyojaejeon,2020-10-10 14:26:57,오버뷰 이벤트 개수 체크 타입 변경
+jsaprk@carvi.co.kr,2020-10-10 13:52:01,response_icon
+jsaprk@carvi.co.kr,2020-10-10 11:49:21,location gps coordinate
+jsaprk@carvi.co.kr,2020-10-10 11:27:27,driver number of event 3자리 콤마
+hyojaejeon,2020-10-10 10:48:28,noti 손가락 표시 추가
+jsaprk@carvi.co.kr,2020-10-09 20:33:09,overview 상세화면
+jsaprk@carvi.co.kr,2020-10-09 19:37:49,vehicle number 출력
+hyojaejeon,2020-10-09 17:24:09,trips cumul 항목 삭제
+hyojaejeon,2020-10-09 17:22:09,크래쉬 새로고침 추가
+hyojaejeon,2020-10-09 17:21:29,상세 화면에서 noti 이동안되는 문제 수정,  크래쉬  새로고침 추가
+jsaprk@carvi.co.kr,2020-10-09 16:52:00,no sdcard 문구
+hyojaejeon,2020-10-09 16:37:51,로그아웃 에러 사항 적용
+hyojaejeon,2020-10-09 16:37:34,트립 히스토리, 드라이버 이벤트 카운트 체크 부분 전환
+jsaprk@carvi.co.kr,2020-10-09 14:29:53,차종 대소문자
+jsaprk@carvi.co.kr,2020-10-09 14:25:35,sd card query
+jsaprk@carvi.co.kr,2020-10-08 21:31:56,정렬 간격조정
+hyojaejeon,2020-10-08 20:07:34,드라이버 리스트 event of number 값 추가,  crash mode 변수 복구
+hyojaejeon,2020-10-08 17:50:06,삭제된 아이콘 복구
+hyojaejeon,2020-10-08 17:49:03,드라이버 디비 변경 작업
+hyojaejeon,2020-10-08 17:16:06,렌탈, 드라이버 누적 통계 신규 디비 변경
+hyojaejeon,2020-10-08 16:18:11,skor 소수점 한자리 변경,   rental list 디비 변경  ,  3x 이벤트 아이콘 추가
+jsaprk@carvi.co.kr,2020-10-08 16:14:00,engine on/off time
+jsaprk@carvi.co.kr,2020-10-08 14:54:50,driver list , vehicle 오탈자
+hyojaejeon,2020-10-08 14:30:26,trip history 포커스 마커 변경 추가
+hyojaejeon,2020-10-08 14:23:04,active list focus 유지 추가
+hyojaejeon,2020-10-08 14:12:44,map focus 유지 변경
+jsaprk@carvi.co.kr,2020-10-08 11:35:51,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+jsaprk@carvi.co.kr,2020-10-08 11:35:36,누적거리 속도 오류
+hyojaejeon,2020-10-08 10:53:55,레포트 컴퍼티 day 검색 로직 변경
+jsaprk@carvi.co.kr,2020-10-08 09:55:40,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-08 09:51:33,appsync 구독 취소 추가
+jsaprk@carvi.co.kr,2020-10-08 09:35:57,문구 수정
+jsaprk@carvi.co.kr,2020-10-08 09:31:51,vehicle list latest updated time
+jsaprk@carvi.co.kr,2020-10-08 09:20:23,vehicle last trip time
+jsaprk@carvi.co.kr,2020-10-08 09:20:02,marker size
+hyojaejeon,2020-10-07 18:26:55,오버뷰 맵 아이콘 포커스 버그 수정
+hyojaejeon,2020-10-07 17:39:07,오버뷰 맵 선택한 디바이스만 표시
+hyojaejeon,2020-10-07 16:58:49,오버뷰 맵 기능 수정 , 레포트 컴퍼니 버그수정, trip history api 적용
+jsaprk@carvi.co.kr,2020-10-07 16:18:29,comma 3자리
+hyojaejeon,2020-10-07 11:03:10,임시 trips history null 좌표 처리
+jsaprk@carvi.co.kr,2020-10-06 23:01:41,ovewview - total mileage
+jsaprk@carvi.co.kr,2020-10-06 22:09:50,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+jsaprk@carvi.co.kr,2020-10-06 22:09:33,오탈자수정, vehicle list 정렬
+hyojaejeon,2020-10-06 21:48:25,noti confirm 컬럼 변경
+jsaprk@carvi.co.kr,2020-10-06 20:52:17,문구 수정
+jsaprk@carvi.co.kr,2020-10-06 20:46:13,vehicle sort
+jsaprk@carvi.co.kr,2020-10-06 20:44:19,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-06 20:38:01,드라이버 정렬 수정, 문구수정,  오버뷰 글자 추가
+jsaprk@carvi.co.kr,2020-10-06 20:37:53,Revert "vehilcle list 정렬"
+jsaprk@carvi.co.kr,2020-10-06 20:35:07,vehilcle list 정렬
+hyojaejeon,2020-10-06 19:28:42,오버뷰 차트 작동 변경
+hyojaejeon,2020-10-06 19:10:14,risk 콤마 적용
+hyojaejeon,2020-10-06 18:10:53,data point 차트 데이터 추가
+hyojaejeon,2020-10-06 17:24:30,vehicle list  상태 표시 추가
+hyojaejeon,2020-10-06 17:08:39,noti 확인된 항목 하얀색 표시 수정, overview current 카운트 연결,  trip history 지연 문제 관련 코드 수정
+jsaprk@carvi.co.kr,2020-10-06 16:35:22,오탈자 수정.
+jsaprk@carvi.co.kr,2020-10-06 15:48:43,go vehicle
+jsaprk@carvi.co.kr,2020-10-06 15:29:34,go driver, go vehicle
+jsaprk@carvi.co.kr,2020-10-06 14:35:55,overview detail view 2line info and color matching.
+jsaprk@carvi.co.kr,2020-10-06 13:28:13,overview detail view table.
+hyojaejeon,2020-10-05 23:27:16,활성 디바이스 색상 변경
+hyojaejeon,2020-10-05 21:22:39,오버뷰 icon focus aws of 적용, focus ,zoom 기능 수정
+hyojaejeon,2020-10-05 20:39:25,noti 알림
+jsaprk@carvi.co.kr,2020-10-05 20:13:18,ovewview new icon
+jsaprk@carvi.co.kr,2020-10-05 15:02:43,overview icon
+jsaprk@carvi.co.kr,2020-10-05 13:27:27,connected with carvi border 제거
+jsaprk@carvi.co.kr,2020-10-05 11:51:20,오타 수정.
+hyojaejeon,2020-10-05 10:29:27,trip history all video 방식 변경
+jsaprk@carvi.co.kr,2020-10-05 10:05:22,inactive icon
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-10-05 02:46:54,알림팝업 수정
+hyojaejeon,2020-10-05 01:19:18,fail 상태 재요청
+hyojaejeon,2020-10-05 00:28:24,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-05 00:28:21,이벤트 테이블 정렬 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-10-05 00:14:14,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-10-05 00:13:58,팝업 예제 수정
+hyojaejeon,2020-10-04 23:39:14,트립 히스토리 수정
+hyojaejeon,2020-10-04 23:04:09,레포트 파킹 제거
+hyojaejeon,2020-10-04 22:49:05,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+James Park,2020-10-04 22:47:34,Merge branch 'taxi_@' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into taxi_@
+hyojaejeon,2020-10-04 22:46:26,파킹 메뉴 삭제, 레포트 active car 처리 수정
+James Park,2020-10-04 22:45:10,reports active cars
+hyojaejeon,2020-10-04 22:42:27,포커싱 기능 수정
+James Park,2020-10-04 22:09:45,vehicle 소수2자리.
+hyojaejeon,2020-10-04 22:05:57,비디오 리퀘스트요청 3개 초과시 메세지 요청 내용추가, focus 아이콘 변경 기능 추가
+hyojaejeon,2020-10-03 21:59:48,10/3 진행
+hyojaejeon,2020-10-03 18:31:14,오버뷰 맵 아이콘 변경 작업
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-10-03 17:31:36,레포트 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-10-03 17:02:59,언어,스코어, 오버뷰 수정
+hyojaejeon,2020-10-03 11:24:10,데이터 타입 바뀐 부분, parking 수정 에러
+hyojaejeon,2020-09-29 17:32:01,대시보드 수정사항 적용
+hyojaejeon,2020-09-29 10:16:14,오버뷰 통계 연결 수정
+hyojaejeon,2020-09-28 22:41:24,통계 변경 작업중, 애니메이션 기능 수정중
+hyojaejeon,2020-09-25 22:57:12,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+hyojaejeon,2020-09-25 22:57:06,노멀 전체 영상 프론트 작업
+jsaprk@carvi.co.kr,2020-09-25 22:27:11,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+jsaprk@carvi.co.kr,2020-09-25 22:26:35,reverse image.
+hyojaejeon,2020-09-25 17:31:19,noraml 비디오 리스트 연결
+hyojaejeon,2020-09-25 10:15:28,드라이버 리스트 활성 비활성 표시 변경
+hyojaejeon,2020-09-24 20:40:36,active 문구수정, taxi status 추가
+hyojaejeon,2020-09-24 19:49:52,차량 이동 애니메이션 처리 개선
+hyojaejeon,2020-09-24 15:25:46,애니메이션 좌표 수정
+hyojaejeon,2020-09-24 15:00:21,애니메이션 기능 개선
+hyojaejeon,2020-09-24 11:44:22,오버뷰 맵 안전화 작업
+jsaprk@carvi.co.kr,2020-09-24 11:12:55,.
+jsaprk@carvi.co.kr,2020-09-24 11:04:46,smile taxi company name, active count display
+hyojaejeon,2020-09-23 11:52:40,정렬 추가
+hyojaejeon,2020-09-23 11:00:40,마커, 디바이스 리스트 키값 처리 수정
+hyojaejeon,2020-09-23 10:38:25,오버뷰 맵 전체 디바이스리스트, 활성 비활성 표시, 선택 아이콘 크기조절
+hyojaejeon,2020-09-22 22:27:29,오버뷰 지도 활성 비활성 표시
+hyojaejeon,2020-09-22 22:02:34,overview 맵 애니메이션 좌표  보정 적용,   아이콘 추가
+hyojaejeon,2020-09-22 17:15:35,맵 실시간 위치 표시 버그 수정 및 안정화,  세션 종료시 로그아웃처리
+hyojaejeon,2020-09-22 15:03:00,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+hyojaejeon,2020-09-22 15:01:38,차량 선택시 지도위치 변경 로직 변경, 스피드 값 수정, 좌표값없을때  처리 로직 추가
+jsaprk@carvi.co.kr,2020-09-22 14:58:03,marker 대표 사이즈 2가지로 통일
+jsaprk@carvi.co.kr,2020-09-22 11:38:54,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+jsaprk@carvi.co.kr,2020-09-22 11:38:29,문구 수정
+hyojaejeon,2020-09-22 10:10:07,event history alert 문구 수정
+jsaprk@carvi.co.kr,2020-09-21 21:45:03,차량 아이콘 사이즈 셋팅
+hyojaejeon,2020-09-21 20:15:07,오버뷰 맵 개선작업
+hyojaejeon,2020-09-21 15:28:20,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+hyojaejeon,2020-09-21 15:28:14,오버뷰 아이콘 변경작업,
+jsaprk@carvi.co.kr,2020-09-21 13:24:25,문구수정
+hyojaejeon,2020-09-20 18:00:41,맵 애니메이션 재생 기능  타이밍 조절
+hyojaejeon,2020-09-18 20:25:52,overview map 애니메이션 기능 버그수정,  idle time 표시형태 변경
+hyojaejeon,2020-09-17 19:24:03,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+hyojaejeon,2020-09-17 19:22:24,overview map 애니메이션 기능 작업중, 비디오 전체 리스트 연결 작업중
+jsaprk@carvi.co.kr,2020-09-17 15:28:03,locations 에서 위치 가져오기
+jsaprk@carvi.co.kr,2020-09-17 13:18:49,crash icon, video request icon background - white.
+hyojaejeon,2020-09-15 17:38:22,영문 보정
+jsaprk@carvi.co.kr,2020-09-14 21:06:54,overview icon 반전 효과.
+James Park,2020-09-13 15:45:27,sudden event 용어 변경중...
+James Park,2020-09-13 14:30:35,ovewview - vehicle icom rotate.
+hyojaejeon,2020-09-11 21:15:23,9/11수정
+jsaprk@carvi.co.kr,2020-09-11 17:10:40,merge
+hyojaejeon,2020-09-11 17:04:18,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+hyojaejeon,2020-09-11 15:03:11,0911
+jsaprk@carvi.co.kr,2020-09-11 11:29:27,carvi -> CARVI 문구 수정
+jsaprk@carvi.co.kr,2020-09-11 10:35:15,video status
+hyojaejeon,2020-09-10 22:07:09,오버뷰 문구 수정, 크래쉬  지역 api 수정
+hyojaejeon,2020-09-10 21:10:35,오버뷰 맵 개선작업
+hyojaejeon,2020-09-10 13:07:55,오버뷰 라스트 비디오 정렬 처리, crash nodata 체크 오류 수정, time 포맷 변경
+hyojaejeon,2020-09-10 09:27:22,타임존 잘못 적용된 부분 수정
+hyojaejeon,2020-09-10 09:23:44,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+hyojaejeon,2020-09-10 09:19:54,event 에러수정
+hyojaejeon,2020-09-10 09:19:23,변경 사항 적용
+jsaprk@carvi.co.kr,2020-09-09 22:13:12,driver 운행시간 hhmmss 표시. rental history 소수점 처리
+hyojaejeon,2020-09-09 17:25:56,rent history page 링크 방식 변경, 트립 api 리전 변경
+hyojaejeon,2020-09-09 17:25:22,로고 홈링크 작업
+hyojaejeon,2020-09-09 17:24:54,로고 홈링크
+hyojaejeon,2020-09-09 13:48:04,문구 수정
+hyojaejeon,2020-09-08 23:02:43,overview 링크 언더라인, 색상변경 추가, vehicle detail 드라이버 정보 이동 링크 추가, crash 문자 발송시 확인 alert 추가
+hyojaejeon,2020-09-08 18:44:55,드라이버 헤더 위치 추가
+hyojaejeon,2020-09-08 18:41:04,드라이버 퍼포먼스 오류 수정
+hyojaejeon,2020-09-08 11:24:09,trip history 상세 표시 부분 버그 수정
+hyojaejeon,2020-09-08 00:05:32,overview 줌 , 지역이동 수정, 마지막 업데이트 시간 추가
+hyojaejeon,2020-09-07 19:07:24,아이콘 x2 추가, 대시보드 오류 내역 1차 수정
+hyojaejeon,2020-09-07 11:31:30,trip history 오류 수정
+hyojaejeon,2020-09-03 19:02:22,레포트 smoke 차트 계산부분 오류 수정
+hyojaejeon,2020-09-03 18:57:26,vehicle detail 데이터 없을때 임시 데이터 처리 부분 제거
+hyojaejeon,2020-09-03 18:51:53,비디오 3개 이상 요청 안되게 수정
+hyojaejeon,2020-09-03 16:00:32,레포트 컴퍼니  차트 데이터 연결 수정
+hyojaejeon,2020-09-03 16:00:14,overveiw 문구 수정
+hyojaejeon,2020-09-03 15:24:31,overview 오류 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-09-02 19:18:04,색상 고정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-09-02 19:00:20,디자인수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-09-02 16:27:49,비어클 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-09-02 15:25:43,수정
+hyojaejeon,2020-09-02 10:31:05,드라이버 퍼포먼스  스코어별 색상 변경
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-09-02 08:10:15,비어클 트립히스토리 링크
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-09-02 07:35:57,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-09-02 07:30:29,테이블 헤더 두줄 수정 퍼포먼스 트렌트 차트 색상 수정
+hyojaejeon,2020-09-01 17:36:16,드라이버 상세 화면 SKOR 트렌드 차트 작업
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-09-01 17:34:07,색상 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-09-01 17:32:55,배경 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-09-01 17:25:58,비디오 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-09-01 17:15:13,맵 아이콘, 오버뷰 차트, 비디오 수정
+hyojaejeon,2020-09-01 14:31:12,트립 map  시작 아이콘 변경
+hyojaejeon,2020-09-01 09:34:45,라이브러리 오류 수정
+hyojaejeon,2020-08-31 20:52:10,overview chart 수정
+hyojaejeon,2020-08-31 15:18:00,trip 메뉴 숨김, trips 맵 상세 정보 좌표 정보 api 연결, overview 차트수정
+hyojaejeon,2020-08-28 20:15:30,스크립트 버그 수정
+hyojaejeon,2020-08-28 18:31:47,레포트 데이터 처리 변경 작업중
+hyojaejeon,2020-08-28 18:31:31,썸네일 noimage 추가
+hyojaejeon,2020-08-28 14:21:35,이벤트 페이지 정렬 수정, 오버뷰 실시간 정보 표시 수정
+hyojaejeon,2020-08-28 13:07:52,헤더 노티 정렬 변경
+jsaprk@carvi.co.kr,2020-08-28 11:46:49,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+jsaprk@carvi.co.kr,2020-08-28 11:46:08,zoom
+hyojaejeon,2020-08-28 11:43:42,지역명 api 연결
+hyojaejeon,2020-08-28 10:24:21,vehicle, driver 검색 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-28 05:15:11,스코어 색상 및 차트 폰트 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-28 05:14:30,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-28 04:29:43,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+hyojaejeon,2020-08-27 22:30:51,맵 세부 내용 데이터 연결
+hyojaejeon,2020-08-27 22:22:20,더미 마킹 제거
+hyojaejeon,2020-08-27 21:14:18,트립 라우터 관련 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-27 17:56:28,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-27 17:15:34,라우터 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-27 16:53:13,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-27 16:53:07,수정
+hyojaejeon,2020-08-27 14:42:34,파싱 에러 수정
+hyojaejeon,2020-08-27 14:23:11,레포트 company   프로필 부분 롤백 된거 수정
+hyojaejeon,2020-08-27 14:08:59,레포트 company  event data 부분 퍼블리싱 수정
+hyojaejeon,2020-08-27 11:02:28,레포트 vehicle usage rent list, driver usage 연결,   risk 정렬 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-27 05:30:28,수정
+hyojaejeon,2020-08-26 20:58:06,company mau 연결
+hyojaejeon,2020-08-26 19:27:22,collect data 연결
+hyojaejeon,2020-08-26 17:39:15,parking 썸네일 표시 방식 변경
+hyojaejeon,2020-08-26 15:20:24,parking 썸네일   이미지 방식 변경
+hyojaejeon,2020-08-26 12:10:02,드라이버 상세 > risk factor > trend 데이터 연결 부분 수정, cash 리스트 reconfirm 항목 제거
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-25 16:49:12,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-25 16:17:08,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-25 16:16:58,video 수정
+hyojaejeon,2020-08-25 15:56:37,crash confirm 전송
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-25 15:49:22,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-25 15:39:59,crash
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-25 14:56:37,드라이버 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-25 14:30:19,수정
+hyojaejeon,2020-08-25 14:18:54,드라이버 상세   차트 데이터 연결 부분 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-25 13:56:52,디자인 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-25 11:44:43,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-25 11:44:34,수정
+hyojaejeon,2020-08-25 11:17:58,event list company_id 추가
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-25 10:46:39,수정
+hyojaejeon,2020-08-25 09:17:12,skor minus, plus 컨텐츠 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-25 08:28:35,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-25 03:24:54,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+hyojaejeon,2020-08-24 21:20:45,event reconfirm 기능 작업중
+hyojaejeon,2020-08-24 20:31:55,report driver skor company skor 추가
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-24 16:42:24,trip history 수정
+hyojaejeon,2020-08-24 15:14:11,company report  skor 수정, 버그 수정
+hyojaejeon,2020-08-24 14:53:56,드라이버 레포트 리스트 출력 부분 수정
+hyojaejeon,2020-08-24 14:53:36,company reports  skor prev_skor 추가
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-24 14:19:35,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-24 14:19:16,수정
+hyojaejeon,2020-08-24 11:24:22,드라이버 누적 event 처리 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-24 07:59:22,드라이버 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-24 00:46:43,crash 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-23 23:39:02,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-23 23:38:58,수정
+hyojaejeon,2020-08-23 21:52:15,map 오류 수정, rout url 오타 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-23 00:55:25,crash 및 레이아웃 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-22 03:46:21,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-22 03:46:13,레포트 수정
+hyojaejeon,2020-08-21 21:10:21,vehicle 누적 처리 관련
+jsaprk@carvi.co.kr,2020-08-21 20:08:40,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+jsaprk@carvi.co.kr,2020-08-21 20:08:21,Number of Uses -> Number of Rental
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-21 19:44:40,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-21 19:44:31,레포트 skor 차트 수정
+hyojaejeon,2020-08-21 17:49:16,custom 날짜 검색 수정 , donut 차트 데이터 수정
+hyojaejeon,2020-08-21 17:23:08,custom 검색 적용
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-21 17:00:06,수정
+hyojaejeon,2020-08-21 11:25:29,레포트 업데이트 시간 표시 기능 수정
+jsaprk@carvi.co.kr,2020-08-21 09:59:51,collision icon
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-21 04:49:29,드라이버 레포트 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-20 19:39:49,Vehicle 수정
+hyojaejeon,2020-08-20 14:49:10,event chart moving average test
+hyojaejeon,2020-08-20 13:49:19,레포트 수정중
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-20 13:12:53,레포트 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-20 01:35:32,레포트 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-19 16:51:53,오버뷰 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-19 16:28:20,오버뷰 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-19 16:04:06,오버뷰 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-19 14:13:20,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-19 14:13:04,수정
+jsaprk@carvi.co.kr,2020-08-19 13:50:38,문구 수정
+jsaprk@carvi.co.kr,2020-08-19 10:40:15,문구 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-18 17:48:19,오버뷰 수정
+hyojaejeon,2020-08-18 16:55:02,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+hyojaejeon,2020-08-18 16:54:52,레포트 api param 공백 에러 수정,   문구 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-18 16:53:58,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-18 13:14:38,드라이버 상세 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-18 08:44:49,드라이버 상세 페이지 작업
+hyojaejeon,2020-08-14 19:13:37,레포트 event list 적용
+hyojaejeon,2020-08-14 12:13:46,vehicle, driver event stat 누적 api
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-14 01:50:42,수정 및 드라이버 상세페이지 로직 수정중
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-14 01:49:31,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+hyojaejeon,2020-08-13 18:39:00,vehicle report 타입별 api 구분 작업중
+hyojaejeon,2020-08-13 18:10:33,레포트 데이터 연결 작업
+hyojaejeon,2020-08-13 14:02:33,radius pie chart 적용
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-13 01:57:53,이벤트 스모킹/ 파킹
+hyojaejeon,2020-08-12 18:10:19,레포트 드라이버 작업중
+hyojaejeon,2020-08-12 18:10:05,레포트 vehicle 데이터 연결
+hyojaejeon,2020-08-12 11:35:05,report vehicle search api
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-11 23:58:09,header 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-11 22:42:57,레포트 수정
+hyojaejeon,2020-08-11 15:23:22,report company 차트 색상 적용
+hyojaejeon,2020-08-11 14:13:18,라스트 3개월 데이터  api 연결
+jsaprk@carvi.co.kr,2020-08-11 13:15:35,Merge branches 'rental' and 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+jsaprk@carvi.co.kr,2020-08-11 13:14:46,google map uber strles 적용
+hyojaejeon,2020-08-11 11:57:06,report company 차트 타입별 색상, 옵션 ,라벨링 변경
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-10 13:15:07,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-10 12:36:05,레포트 수정
+hyojaejeon,2020-08-07 19:20:08,events graphql   limit 수정
+hyojaejeon,2020-08-07 19:19:23,테이블 width 조정
+hyojaejeon,2020-08-07 13:40:04,코드 오타 수정
+hyojaejeon,2020-08-07 13:28:54,overveiw gauge chart data 옵션 변경
+hyojaejeon,2020-08-07 13:20:53,gauge chart default 추가
+hyojaejeon,2020-08-07 10:54:31,overview chart option 추가
+hyojaejeon,2020-08-05 20:05:46,레포트 작업중, overview company name 추가
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-05 19:40:37,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-08-05 19:40:19,overview수정
+hyojaejeon,2020-08-05 18:44:51,oveveiw risk 계산 처리 버그 수정
+hyojaejeon,2020-08-05 14:10:19,overview active device api 제거, trips baidu -> google map 작업
+hyojaejeon,2020-08-04 19:23:30,active device 체크 로직 변경,   활성 디바이스 추가, 비활성화, 활성화 체크 기능
+hyojaejeon,2020-08-04 16:27:56,overview  google map active list 좌표 설정
+hyojaejeon,2020-08-04 11:31:57,overview google 수정
+hyojaejeon,2020-07-31 18:53:01,google key 변경, direction 기능 테스트 코드 추가
+hyojaejeon,2020-07-31 18:14:56,agm router 테스트
+hyojaejeon,2020-07-31 15:17:49,angular google map  기본 설정
+jsaprk@carvi.co.kr,2020-07-31 09:16:07,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+jsaprk@carvi.co.kr,2020-07-31 09:13:06,vehilce rental list
+hyojaejeon,2020-07-30 18:31:50,driver>rent history 기능연결 완료
+hyojaejeon,2020-07-29 19:59:23,driver 퍼포먼스
+eightynine01,2020-07-26 20:19:56,구글맵 적용 전 백업
+eightynine01,2020-07-26 16:45:11,css 작업 overview.component.scss Hello, Sir 윗부분까지
+hyojaejeon,2020-07-24 19:55:20,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+hyojaejeon,2020-07-24 19:55:08,safety grade 표시 추가
+eightynine01,2020-07-24 18:35:23,Merge remote-tracking branch 'origin/rental' into rental
+eightynine01,2020-07-24 18:34:58,trend 차트 수정
+eightynine01,2020-07-24 18:34:50,trend 차트 수정
+hyojaejeon,2020-07-24 18:15:01,total_count 추가
+hyojaejeon,2020-07-24 17:42:52,risk factor skor 하이라이트 표시
+Naegil_ceo (박태환),2020-07-24 15:25:19,driving-performance.component 데이터 구조 변경
+Naegil_ceo (박태환),2020-07-24 10:30:32,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+eightynine01,2020-07-23 21:04:12,driving-status-page.component.ts 1차 완성
+eightynine01,2020-07-23 19:15:45,driving-status-page.component.ts 1차 완성
+Naegil_ceo (박태환),2020-07-23 10:43:10,Merge branch 'rental' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash into rental
+eightynine01,2020-07-22 22:59:58,데이터 바인딩 테스트
+eightynine01,2020-07-22 22:59:53,데이터 바인딩 테스트
+Naegil_ceo (박태환),2020-07-22 16:52:45,driving-performance.component 추가, 작업
+Naegil_ceo (박태환),2020-07-22 14:30:56,driving-performance.component 추가, 작업
+hyojaejeon,2020-07-22 14:11:08,oveview 수정
+hyojaejeon,2020-07-21 11:15:00,헤더 css
+hyojaejeon,2020-07-21 11:11:56,뉴디자인 헤더, 배경색 적용
+Naegil_ceo (박태환),2020-07-16 15:40:38,rental-history-page.component 추가
+hyojaejeon,2020-07-15 13:43:59,driver_detail error 수정
+hyojaejeon,2020-07-09 11:13:50,Merge branch 'master' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash
+hyojaejeon,2020-07-08 19:13:02,driver 상세 팝업 수정중
+hyojaejeon,2020-07-08 16:02:00,event preview 처리
+jsaprk@carvi.co.kr,2020-07-06 21:12:24,소수점 아래 반올림, driver 항목 첫글자 대문자 변경
+hyojaejeon,2020-07-06 09:17:45,에러 수정
+hyojaejeon,2020-07-03 13:56:52,이벤트 포인트, 포인트 상세 툴팁 좌표 임시 수정
+hyojaejeon,2020-07-03 13:45:40,null 버그 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-07-02 18:15:06,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-07-02 18:00:55,Merge branch 'master' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-07-02 18:00:45,달력 수정
+hyojaejeon,2020-07-02 14:41:19,Merge branch 'master' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash
+hyojaejeon,2020-07-02 14:40:37,노티 이벤트 기준 변경
+jspark@carvi.co.kr,2020-07-02 14:24:43,Company SKOR Grade
+hyojaejeon,2020-07-02 14:09:13,문구수정, 테스트코드 제거
+hyojaejeon,2020-07-02 09:37:06,Merge branch 'master' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash
+hyojaejeon,2020-07-02 09:36:56,파비콘수정, overview 문구수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-07-02 06:42:26,trip 수정
+hyojaejeon,2020-07-01 19:15:38,레포트 컴퍼니 화면 추가 수정
+hyojaejeon,2020-07-01 18:37:54,문구 수정, 레포트 버그 수정
+hyojaejeon,2020-07-01 14:34:21,trips api 추가
+hyojaejeon,2020-06-30 15:40:35,레포트 이벤트 카운트 mau  추가
+hyojaejeon,2020-06-30 12:07:21,report company event count , score
+hyojaejeon,2020-06-30 11:04:20,Merge branch 'master' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash
+hyojaejeon,2020-06-30 11:04:10,report company 그래프연결
+hyojaejeon,2020-06-29 19:25:04,레포트 버튼 포인터 추가
+hyojaejeon,2020-06-29 14:08:47,report company event list 연결
+hyojaejeon,2020-06-29 10:40:16,report company profile 연결
+hyojaejeon,2020-06-29 10:30:00,report company profil 연결
+hyojaejeon,2020-06-26 19:34:25,레포트 연결 진행중
+hyojaejeon,2020-06-26 11:31:40,드라이버 정보 연결
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-25 19:32:41,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-25 19:17:42,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-25 19:13:01,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-25 19:07:49,overview company skor, 통계  api 교체(with car bookedcar제외)
+hyojaejeon,2020-06-19 18:12:03,임시 통계 연결 테스트
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-16 16:01:53,이벤트 비디오 지도마커 팝업 수정
+hyojaejeon,2020-06-16 10:49:48,cognito seoul 리전 변경
+hyojaejeon,2020-06-12 18:18:28,vehicle 리스트 항목 추가, 이벤트 타이틀 문구 수정
+hyojaejeon,2020-06-12 13:59:17,overview event 정보 연결, 지도 드라이버 상세 수정
+hyojaejeon,2020-06-12 09:50:27,Merge branch 'master' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash
+hyojaejeon,2020-06-12 09:50:19,overview 비디오 filepath 명칭 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-11 21:47:45,이벤트테이블 수정
+jspark@carvi.co.kr,2020-06-11 09:53:29,Merge branch 'master' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash
+jspark@carvi.co.kr,2020-06-10 21:41:04,overview heading 추가
+jspark@carvi.co.kr,2020-06-10 15:54:07,show vehicle icon and rotation.
+hyojaejeon,2020-06-10 13:30:59,event_history situation 추가
+hyojaejeon,2020-06-10 11:01:41,request vdo  time_stamp parse
+jspark@carvi.co.kr,2020-06-09 21:13:06,IMEI to Vehicle ID, Uppercase Vehicle_Type
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-09 18:44:35,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-09 18:22:28,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-09 18:16:32,Merge branch 'master' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-09 18:16:18,비디오, map 수정
+hyojaejeon,2020-06-09 16:00:29,vehicle_status username driver_id로 변경
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-09 10:56:14,Merge branch 'master' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-09 10:55:54,이벤트 새롷고침 및 수정
+hyojaejeon,2020-06-09 10:53:55,driverstat, companystat api 변경
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-05 18:47:00,active list
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-05 17:01:54,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-05 16:25:06,overview 통계
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-05 13:26:06,수정
+hyojaejeon,2020-06-04 22:25:58,getEventNoti
+hyojaejeon,2020-06-04 19:55:50,getevent url 변경
+hyojaejeon,2020-06-04 19:54:36,geteventurl 변경
+hyojaejeon,2020-06-04 11:31:46,appsync seoul region changed
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-03 16:17:14,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-03 15:13:02,이벤트, 오버뷰 실시간데이터
+jeon,2020-06-02 15:40:03,Merge branch 'master' of https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/carvi-dash
+jeon,2020-06-02 15:39:54,드라이버 리스트 테이블 위치조정, 레포트 오타? 삭제
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-06-02 14:35:21,이벤트 타입, 필터 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-29 19:09:06,오버뷰 수정중
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-29 19:07:32,노티 및 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-28 18:31:06,vehicle 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-28 18:29:41,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-28 17:49:03,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-28 17:33:17,오버뷰 소리, 리포트 서치
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-27 18:08:38,noti 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-27 17:01:35,이벤트 및 노티 api 호출
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-27 14:14:41,report 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-26 18:40:09,레포트 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-25 16:03:18,히어맵 주석 및 버전 변경
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-25 14:39:51,수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-25 14:39:19,드라이버, 트립 지도
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-21 17:39:14,videolist vehicle list
+jeon,2020-05-21 10:30:29,logout
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-20 18:05:23,event, overview
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-19 19:07:01,event smoke parking 돔 작업
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-19 18:17:45,event smoke
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-19 16:34:22,vehicle list 페이지 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-19 10:29:27,driver 더미데이터
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-19 10:26:46,vehicle
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-18 13:29:07,trip 페이지 수정
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-14 17:12:29,dirver trip history
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-13 15:29:59,driver
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-13 15:29:46,driver
+ㄱㅣㅁㅁㅣㄴㅎㅗ,2020-05-08 16:09:20,overview 수정
+jeon,2020-04-29 10:30:56,init
